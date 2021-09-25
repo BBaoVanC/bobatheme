@@ -1,0 +1,2 @@
+# bobatheme
+Simple Hugo theme
