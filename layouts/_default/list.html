@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ if .Data.Singular }}
+<h3>Filtering for "{{ .Title }}"</h3>
+<small>
+    <a href="{{ . | relURL }}">Remove filter</a>
+</small>
+{{ else }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+<ul>
+    {{ range .Pages }}
+    <li>
+        {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
+            {{ .Date.Format "2006-01-02" }}
+        </time>
+        {{ end }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>
+        No posts here!
+    </li>
+    {{ end }}
+</ul>
+{{ if .Data.Singular }}
+{{ else }}
+<small>
+    Site-wide tags:
+    <div>
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+        {{ end }}
+    </div>
+</small>
+{{ end }}
+{{ end }}
