@@ -14,9 +14,9 @@
 ) <!-- I don't know how to get rid of the whitespace in between here,
        so I'll just live with it for now. -->
 {{ end }}
+<br />
 {{ end }}
 
-<br />
 <span class="tags">
     {{ range (.GetTerms "tags") }}
     <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
