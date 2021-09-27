@@ -5,7 +5,7 @@
     <a href="{{ . | relURL }}">Remove filter</a>
 </small>
 {{ else }}
-<h1>{{ .Title }}</h1>
+<h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 <ul>
     {{ range .Pages }}
@@ -15,7 +15,7 @@
             {{ .Date.Format "2006-01-02" }}
         </time>
         {{ end }}
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     </li>
     {{ else }}
     <li>
