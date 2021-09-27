@@ -6,7 +6,7 @@
         {{- partial "header.html" . -}}
         {{ partial "navbar.html" . }}
 
-        <div class="row">
+        <div class="page">
             {{ if and (ne .Params.Toc false) .IsPage }}
             <div class="side">
                 <h3>Table of Contents</h3>

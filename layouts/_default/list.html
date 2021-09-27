@@ -27,11 +27,12 @@
 {{ else }}
 <small>
     Site-wide tags:
-    <div>
+    <span class="tags">
+        <br />
         {{ range .Site.Taxonomies.tags }}
         <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
         {{ end }}
-    </div>
+    </span>
 </small>
 {{ end }}
 {{ end }}

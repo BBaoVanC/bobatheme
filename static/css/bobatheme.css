@@ -1,10 +1,10 @@
 @media screen and (max-width: 700px) {
-  .row {
+  .page {
     flex-direction: column;
   }
 }
 @media screen and (max-width: 400px) {
-  .navbar a {
+  #main a {
     float: none;
     width: 100%;
   }
@@ -35,11 +35,11 @@ blockquote {
   font-size: 40px;
 }
 
-.navbar {
+#main {
   overflow: hidden;
   background-color: #222;
 }
-.navbar a {
+#main a {
   float: left;
   display: block;
   color: lightgray;
@@ -47,7 +47,7 @@ blockquote {
   padding: 14px 20px;
   text-decoration: none;
 }
-.navbar a:hover {
+#main a:hover {
   background-color: #444;
   color: white;
 }
@@ -55,7 +55,7 @@ blockquote {
 * {
   box-sizing: border-box;
 }
-.row {
+.page {
   flex: 1;
   display: flex;
   flex-wrap: wrap;

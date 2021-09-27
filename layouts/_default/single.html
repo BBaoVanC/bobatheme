@@ -1,12 +1,27 @@
 {{ define "main" }}
 <h1>{{ .Title | markdownify }}</h1>
+<!-- I'd like to get rid of the unnaturally large gap between the
+     header and the metadata (date, tags, etc) -->
 {{ if .Date }}
-<time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-    {{ .Date.Format "2006-01-02" }}
+<time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
+    {{ .Date.Format "January 2, 2006" }}
 </time>
+{{ if ne .Lastmod .Date }}
+( Modified
+<time datetime="{{ .Lastmod.Format "January 2, 2006" }}" pubdate>
+    {{ .Lastmod.Format "January 2, 2006" }}
+</time>
+) <!-- I don't know how to get rid of the whitespace in between here,
+       so I'll just live with it for now. -->
 {{ end }}
-{{ range (.GetTerms "tags") }}
-<a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
 {{ end }}
+
+<br />
+<span class="tags">
+    {{ range (.GetTerms "tags") }}
+    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+    {{ end }}
+</span>
+
 {{ .Content }}
 {{ end }}
