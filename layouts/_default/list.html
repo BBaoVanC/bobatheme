@@ -26,6 +26,7 @@
 </ul>
 {{ if .Data.Singular }}
 {{ else }}
+{{ if .Params.showtags }}
 <small>
     Site-wide tags:
     <span class="tags">
@@ -35,5 +36,6 @@
         {{ end }}
     </span>
 </small>
+{{ end }}
 {{ end }}
 {{ end }}
