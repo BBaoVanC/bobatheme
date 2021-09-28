@@ -8,9 +8,10 @@
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 <ul>
+    {{ $showDate := .Params.showdate }}
     {{ range .Pages }}
     <li>
-        {{ if .Date }}
+        {{ if $showDate }}
         <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
             {{ .Date.Format "2006-01-02" }}
         </time>
