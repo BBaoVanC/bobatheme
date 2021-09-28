@@ -8,7 +8,7 @@
         {{ partial "navbar.html" . }}
 
         <div class="page">
-            {{ if and (ne .Params.Toc false) .IsPage }}
+            {{ if and .Params.Toc .IsPage }}
             <div class="side">
                 <h3>Table of Contents</h3>
                 {{ .TableOfContents }}
