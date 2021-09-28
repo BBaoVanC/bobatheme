@@ -3,7 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/css/bobatheme.css">
-    <link rel="alternate icon" href="/favicon.ico" />
+
+    {{ with .Site.Params.faviconICO }}
+    <link rel="icon" type="image/x-icon" href="{{.}}" />
+    {{ end }}
+    {{ with .Site.Params.faviconPNG }}
+    <link rel="icon" type="image/png" href="{{.}}" />
+    {{ end }}
+
     {{ range .AlternativeOutputFormats -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
