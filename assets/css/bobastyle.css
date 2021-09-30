@@ -1,8 +1,4 @@
 /* Layout */
-.header {
-  padding: 10px;
-}
-
 .page {
   display: flex;
 }
@@ -19,6 +15,10 @@
   float: left;
   display: block;
   padding: 14px 20px;
+}
+
+.navbar-items {
+  float: right;
 }
 
 body {
@@ -48,17 +48,8 @@ body {
 
 
 /* Styling */
-.header {
-  text-align: center;
-  background: #1a406b;
-  color: lightgray;
-}
-.header h1 {
-  font-size: 40px;
-}
-
 #navbar {
-  background-color: #222;
+  background-color: #091a2c;
 }
 #navbar a {
   color: lightgray;
@@ -66,7 +57,7 @@ body {
   text-decoration: none;
 }
 #navbar a:hover {
-  background-color: #444;
+  background-color: #0e2a46;
   color: white;
 }
 .side {
