@@ -51,6 +51,7 @@ body {
 }
 .content {
   color: lightgray;
+  max-width: 720px;
 }
 .footer {
   text-align: center;
