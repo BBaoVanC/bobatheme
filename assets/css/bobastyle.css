@@ -35,11 +35,8 @@ body {
   .page {
     flex-direction: column;
   }
-}
 
-@media screen and (max-width: 400px) {
-  #navbar a {
-    float: none;
+  .navbar-items a {
     width: 100%;
   }
 }
@@ -48,6 +45,18 @@ body {
 
 
 /* Styling */
+.side {
+  background-color: #111;
+  color: lightgray;
+}
+.content {
+  color: lightgray;
+}
+.footer {
+  text-align: center;
+  background: #ddd;
+}
+
 #navbar {
   background-color: #091a2c;
 }
@@ -59,17 +68,6 @@ body {
 #navbar a:hover {
   background-color: #0e2a46;
   color: white;
-}
-.side {
-  background-color: #111;
-  color: lightgray;
-}
-.content {
-  color: lightgray;
-}
-.footer {
-  text-align: center;
-  background: #ddd;
 }
 
 body {
