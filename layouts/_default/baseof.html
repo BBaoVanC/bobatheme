@@ -4,21 +4,12 @@
     {{- partial "head.html" . -}}
 
     <body>
-        {{ partial "navbar.html" . }}
+        {{ partial "header.html" . }}
 
-        <div class="page">
-            {{ if and .Params.Toc .IsPage }}
-            <div class="side">
-                <h3>Table of Contents</h3>
-                {{ .TableOfContents }}
-            </div>
-            {{ end }}
-
-            <div class="content">
-            {{- block "main" . }}
-            {{ .Content }}
-            {{- end }}
-            </div>
+        <div class="content">
+        {{- block "main" . }}
+        {{ .Content }}
+        {{- end }}
         </div>
 
         {{- partial "footer.html" . -}}
