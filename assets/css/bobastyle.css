@@ -88,10 +88,6 @@ ul.breadcrumb li {
   display: inline;
 }
 
-ul.breadcrumb li a {
-  text-decoration: none;
-}
-
 ul.breadcrumb li+li:before {
   padding: 8px;
   content: "/\00a0";
@@ -99,5 +95,4 @@ ul.breadcrumb li+li:before {
 
 ul.breadcrumb li.active a {
   color: inherit;
-  text-decoration: none;
 }
