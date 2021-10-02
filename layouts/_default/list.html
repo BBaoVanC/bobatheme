@@ -15,6 +15,7 @@
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     </h2>
 
+    {{ if or .Date (.GetTerms "tags") }}
     <div class="post-metadata">
         {{ if .Date }}
         <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
@@ -33,6 +34,7 @@
             {{ end }}
         </span>
     </div>
+    {{ end }}
 
     <div class="post-description">
         {{ if .Description }}
