@@ -1,27 +1,29 @@
 {{ define "main" }}
-<h1>{{ .Title | markdownify }}</h1>
-<!-- I'd like to get rid of the unnaturally large gap between the
-     header and the metadata (date, tags, etc) -->
-{{ if .Date }}
-<time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
-    {{ .Date.Format "January 2, 2006" }}
-</time>
-{{ if ne .Lastmod .Date }}
-( Modified
-<time datetime="{{ .Lastmod.Format "January 2, 2006" }}" pubdate>
-    {{ .Lastmod.Format "January 2, 2006" }}
-</time>
-) <!-- I don't know how to get rid of the whitespace in between here,
-       so I'll just live with it for now. -->
-{{ end }}
-<br />
-{{ end }}
+<div class="post-title">
+    <h1>{{ .Title | markdownify }}</h1>
+</div>
 
-<span class="tags">
-    {{ range (.GetTerms "tags") }}
-    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+<div class="post-metadata">
+    {{ if .Date }}
+    <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
+        {{ .Date.Format "January 2, 2006" }}
+    </time>
+    {{ if ne .Lastmod .Date }}
+    ( Modified
+    <time datetime="{{ .Lastmod.Format "January 2, 2006" }}" pubdate>
+        {{ .Lastmod.Format "January 2, 2006" }}
+    </time>
+    ) <!-- I don't know how to get rid of the whitespace in between here,
+           so I'll just live with it for now. -->
     {{ end }}
-</span>
+    {{ end }}
+
+    <span class="tags">
+        {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+        {{ end }}
+    </span>
+</div>
 
 {{ if .Params.Toc }}
 <div id="table-of-contents">

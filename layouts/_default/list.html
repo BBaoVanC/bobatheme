@@ -7,35 +7,52 @@
 {{ else }}
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
-<ul>
-    {{ $showDate := .Params.showdate }}
-    {{ range .Pages }}
-    <li>
-        {{ if $showDate }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-            {{ .Date.Format "2006-01-02" }}
-        </time>
-        {{ end }}
+
+{{ $showDate := .Params.showdate }}
+{{ range .Pages }}
+<div class="post">
+    <h2 class="post-title">
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    </li>
-    {{ else }}
-    <li>
-        No posts here!
-    </li>
-    {{ end }}
-</ul>
-{{ if .Data.Singular }}
-{{ else }}
-{{ if .Params.showtags }}
-<small>
-    Site-wide tags:
-    <span class="tags">
-        <br />
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+    </h2>
+
+    <div class="post-metadata">
+        {{ if .Date }}
+        <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
+            {{ .Date.Format "January 2, 2006" }}
+        </time>
+        {{ if ne .Lastmod .Date }}
+        ( Modified
+        <time datetime="{{ .Lastmod.Format "January 2, 2006" }}" pubdate>
+            {{ .Lastmod.Format "January 2, 2006" }}
+        </time>
+        ) <!-- I don't know how to get rid of the whitespace in between here,
+               so I'll just live with it for now. -->
         {{ end }}
-    </span>
-</small>
+        {{ end }}
+
+        <span class="tags">
+            {{ range (.GetTerms "tags") }}
+            <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+            {{ end }}
+        </span>
+    </div>
+
+    <div class="post-description">
+        {{ if .Description }}
+        {{ .Description | markdownify }}
+        {{ else }}
+        {{ .Summary | markdownify }}
+        {{ end }}
+    </div>
+
+    <div class="readmore">
+        <a href="{{ .Permalink }}">Read more &rarr;</a>
+    </div>
+</div>
+{{ else }}
+<div>
+    No posts here!
+</div>
 {{ end }}
-{{ end }}
+
 {{ end }}

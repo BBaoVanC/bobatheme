@@ -11,6 +11,22 @@
   margin-right: 5px;
 }
 
+.post {
+  padding-bottom: 20px;
+}
+
+.post-title, .post-title h1 {
+  margin-bottom: 10px;
+}
+
+.post-description {
+  padding-top: 10px;
+}
+
+.readmore {
+  padding-top: 5px;
+}
+
 body {
   margin: auto;
   max-width: 720px;
@@ -24,24 +40,35 @@ body {
 
 
 /* Styling */
-.footer {
-  text-align: center;
-  background: #ddd;
+#navbar h2 {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.header a, #navbar {
+.header a {
+  color: inherit;
+}
+
+.post-title a {
   color: inherit;
   text-decoration: inherit;
 }
 
 body {
-  background-color: black;
+  background-color: #111;
   color: lightgray;
   font-family: sans-serif;
 }
+
 a {
   color: #4da6ff;
+  text-decoration: inherit;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
 blockquote {
   border-left: 5px solid #222;
   padding-left: 10px;
