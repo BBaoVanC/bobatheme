@@ -4,7 +4,20 @@
     {{- partial "head.html" . -}}
 
     <body>
-        {{ partial "header.html" . }}
+        <h2 class="header">
+            <a href="{{ "/" | relURL }}">{{ .Site.Title | markdownify }}</a>
+        </h2>
+
+        <nav id="navbar">
+            <a class="navbar-item" href="{{ "/" | relURL }}">Home</a>
+            {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+
+        {{ if .Site.Params.breadcrumbnav }}
+        {{ partial "breadcrumb.html" . }}
+        {{ end }}
 
         <div class="content">
         {{- block "main" . }}
