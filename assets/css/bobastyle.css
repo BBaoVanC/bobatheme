@@ -74,8 +74,12 @@ a:hover {
 }
 
 blockquote {
-  border-left: 5px solid #222;
+  border-left: 5px solid #333;
   padding-left: 10px;
+}
+
+hr {
+  color: #444;
 }
 
 /* Breadcrumb Navigation */
