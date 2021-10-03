@@ -96,3 +96,35 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li.active a {
   color: inherit;
 }
+
+/* Pagination */
+.pagination {
+  list-style: none;
+  text-align: center;
+}
+
+.page-item {
+  display: inline;
+}
+
+.page-link {
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: lightgray;
+}
+
+.page-item.active .page-link {
+  background-color: #163b64;
+  color: inherit;
+}
+
+.page-item.active .page-link:hover {
+  background-color: #2b72c0;
+  color: white;
+}
+
+.page-link:hover {
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+}

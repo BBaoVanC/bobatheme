@@ -8,7 +8,7 @@
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 
-{{ range .Pages }}
+{{ range .Paginator.Pages }}
 <div class="post">
     <h2 class="post-title">
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
@@ -52,5 +52,9 @@
     No posts here!
 </div>
 {{ end }}
+
+<div class="pagination">
+    {{ template "_internal/pagination.html" . }}
+</div>
 
 {{ end }}
