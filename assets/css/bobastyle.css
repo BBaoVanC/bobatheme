@@ -1,16 +1,4 @@
-/* Layout */
-.content, .footer {
-  padding: 20px;
-}
-
-.header a, #navbar {
-  padding-left: 20px;
-}
-
-.navbar-item {
-  margin-right: 5px;
-}
-
+/* Post layout (in list pages) */
 .post {
   padding-bottom: 20px;
 }
@@ -23,6 +11,11 @@
   padding-top: 10px;
 }
 
+.post-title a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .readmore {
   padding-top: 5px;
 }
@@ -31,37 +24,49 @@
   padding-left: 5px;
 }
 
-body {
-  margin: auto;
-  max-width: 720px;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 
-
-
-/* Styling */
-#navbar h2 {
-  color: inherit;
-  text-decoration: inherit;
+/* Header formatting (website title and article section headers) */
+.header a {
+  padding-left: 20px;
 }
 
 .header a, .section-header a {
   color: inherit;
 }
 
-.post-title a {
+
+
+/* Content formatting */
+.content {
+  padding: 20px;
+}
+
+
+
+/* Navbar formatting */
+#navbar {
+  padding-left: 20px;
+}
+
+#navbar h2 {
   color: inherit;
   text-decoration: inherit;
 }
 
+.navbar-item {
+  margin-right: 5px;
+}
+
+
+
+/* Basic elements */
 body {
   background-color: #111;
   color: lightgray;
   font-family: sans-serif;
+  margin: auto;
+  max-width: 720px;
 }
 
 a {
@@ -82,7 +87,13 @@ hr {
   color: #444;
 }
 
-/* Breadcrumb Navigation */
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Breadcrumb navigation */
 ul.breadcrumb {
   padding 10px 16px;
   list-style: none;
@@ -100,6 +111,8 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li.active a {
   color: inherit;
 }
+
+
 
 /* Pagination */
 .pagination {
