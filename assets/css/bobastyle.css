@@ -24,6 +24,15 @@
   padding-left: 10px;
 }
 
+.rss-link {
+  padding-left: 5px;
+}
+
+.rss-link a svg {
+  width: 30px;
+  height: 30px;
+}
+
 
 
 /* Header formatting (website title and article section headers) */
