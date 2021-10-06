@@ -21,7 +21,7 @@
 }
 
 .tags {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 
@@ -89,6 +89,18 @@ hr {
 
 * {
   box-sizing: border-box;
+}
+
+
+
+/* Icons */
+.icon {
+  width: 20px;
+  height: 20px;
+  color: lightgray;
+  text-align: center;
+  display: inline;
+  vertical-align: middle;
 }
 
 

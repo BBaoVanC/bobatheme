@@ -17,19 +17,26 @@
     {{ if or .Date (.GetTerms "tags") }}
     <div class="post-metadata">
         {{ if .Date }}
+
+        {{ partial "icon.html" "calendar" }}
         <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
             {{ .Date.Format "January 2, 2006" }}
         </time>
+
         {{ if ne .Lastmod .Date }}
         <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
             (Modified {{ .Lastmod.Format "January 2, 2006" }})
         </time>
         {{ end }}
+
         {{ end }}
 
         <span class="tags">
             {{ range (.GetTerms "tags") }}
-            <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+            <span class="tag">
+                {{ partial "icon.html" "tag" }}
+                <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            </span>
             {{ end }}
         </span>
     </div>
