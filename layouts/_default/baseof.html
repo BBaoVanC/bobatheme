@@ -17,10 +17,6 @@
             </nav>
         </div>
 
-        {{ if .Site.Params.breadcrumbnav }}
-        {{ partial "breadcrumb.html" . }}
-        {{ end }}
-
         <div class="content">
         {{- block "main" . }}
         {{ .Content }}

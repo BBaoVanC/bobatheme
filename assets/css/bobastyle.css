@@ -24,6 +24,10 @@
   padding-left: 10px;
 }
 
+.tag {
+  white-space: nowrap;
+}
+
 .rss-link {
   padding-left: 5px;
 }
@@ -110,27 +114,6 @@ hr {
   text-align: center;
   display: inline;
   vertical-align: middle;
-}
-
-
-
-/* Breadcrumb navigation */
-ul.breadcrumb {
-  padding 10px 16px;
-  list-style: none;
-}
-
-ul.breadcrumb li {
-  display: inline;
-}
-
-ul.breadcrumb li+li:before {
-  padding: 8px;
-  content: "/\00a0";
-}
-
-ul.breadcrumb li.active a {
-  color: inherit;
 }
 
 
