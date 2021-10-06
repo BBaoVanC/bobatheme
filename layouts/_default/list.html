@@ -66,6 +66,12 @@
     </div>
     {{ end }}
 
+    {{ with .Resources.GetMatch "feature" }}
+    <div class="post-image">
+        <img src="{{ .Permalink }}" alt="{{ .Title }}" />
+    </div>
+    {{ end }}
+
     <div class="post-description">
         {{ if .Description }}
         {{ .Description | markdownify }}

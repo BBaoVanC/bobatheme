@@ -7,13 +7,17 @@
   margin-bottom: 10px;
 }
 
+.post-title a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .post-description {
   padding-top: 10px;
 }
 
-.post-title a {
-  color: inherit;
-  text-decoration: inherit;
+.post-image {
+  padding-top: 15px;
 }
 
 .readmore {
@@ -80,6 +84,11 @@ body {
   font-family: "Open Sans", "Noto Sans", sans-serif;
   margin: auto;
   max-width: 720px;
+}
+
+img:not(.noborder) {
+  padding: 5px;
+  border: 5px solid #1b5b9b;
 }
 
 a {
