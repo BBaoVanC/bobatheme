@@ -1,13 +1,20 @@
 {{ define "main" }}
-{{ if .Data.Singular }}
-<h3>Filtering for "{{ .Title }}"</h3>
-<small>
-    <a href="{{ . | relURL }}">Remove filter</a>
-</small>
+{{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
+<h1>Filtering for "{{ .Title }}"</h1>
 {{ else }}
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 
+{{ if eq .Kind "taxonomy" }}
+<ul>
+    {{ range .Pages }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </li>
+    {{ end }}
+</ul>
+
+{{ else }}
 {{ range .Paginator.Pages }}
 <div class="post">
     <h2 class="post-title">
@@ -63,5 +70,7 @@
 <div class="pagination">
     {{ template "_internal/pagination.html" . }}
 </div>
+
+{{ end }}
 
 {{ end }}
