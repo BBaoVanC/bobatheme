@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
 <h1>
+    {{ partial "icon.html" "filter" }}
     Filtering for "{{ .Title }}"
     {{ if eq .Kind "term" }}
     <span class="rss-link">
