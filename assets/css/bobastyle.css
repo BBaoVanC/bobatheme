@@ -1,9 +1,9 @@
 /* Post layout (in list pages) */
 .post {
-  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.post-title, .post-title h1 {
+.post-title {
   margin-bottom: 10px;
 }
 
@@ -13,19 +13,19 @@
 }
 
 .post-description {
-  padding-top: 10px;
+  margin-top: 10px;
 }
 
 .post-image {
-  padding-top: 15px;
+  margin-top: 15px;
 }
 
 .readmore {
-  padding-top: 5px;
+  margin-top: 5px;
 }
 
 .tags {
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .tag {
@@ -33,7 +33,7 @@
 }
 
 .rss-link {
-  padding-left: 5px;
+  margin-left: 5px;
 }
 
 h1 svg.icon {
@@ -44,8 +44,8 @@ h1 svg.icon {
 
 
 /* Header formatting (website title and article section headers) */
-.header a {
-  padding-left: 20px;
+.top {
+  margin-left: 20px;
 }
 
 .header a, .section-header a {
@@ -62,10 +62,6 @@ h1 svg.icon {
 
 
 /* Navbar formatting */
-#navbar {
-  padding-left: 20px;
-}
-
 #navbar h2 {
   color: inherit;
   text-decoration: inherit;
@@ -106,7 +102,6 @@ a:hover {
 
 blockquote {
   border-left: 5px solid #333;
-  padding-left: 10px;
 }
 
 hr {
