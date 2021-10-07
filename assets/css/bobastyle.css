@@ -86,6 +86,10 @@ body {
   max-width: 720px;
 }
 
+img {
+  max-width: 100%;
+}
+
 img:not(.noborder) {
   padding: 5px;
   border: 5px solid #1b5b9b;
