@@ -69,9 +69,17 @@
     {{ end }}
 
     {{ with .Resources.GetMatch "feature" }}
-    <div class="post-image">
+    <div class="post-media">
         <img src="{{ .Permalink }}" alt="{{ .Title }}" />
     </div>
+    {{ else }}
+    {{ with .Resources.GetMatch "feature-video" }}
+    <div class="post-media">
+        <video controls>
+            <source src="{{ .Permalink }}" alt="{{ .Title }}">
+        </video>
+    </div>
+    {{ end }}
     {{ end }}
 
     <div class="post-description">
