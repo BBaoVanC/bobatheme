@@ -33,67 +33,7 @@
 
 {{ else }}
 {{ range .Paginator.Pages }}
-<div class="post">
-    <h2 class="post-title">
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    </h2>
-
-    {{ if or .Date (.GetTerms "tags") }}
-    <div class="post-metadata">
-        {{ if .Date }}
-
-        <span class="date">
-            {{ partial "icon.html" "calendar" }}
-            <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
-                {{ .Date.Format "January 2, 2006" }}
-            </time>
-
-            {{ if ne .Lastmod .Date }}
-            <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
-                (Modified {{ .Lastmod.Format "January 2, 2006" }})
-            </time>
-            {{ end }}
-
-            {{ end }}
-        </span>
-
-        <span class="tags">
-            {{ range (.GetTerms "tags") }}
-            <span class="tag">
-                {{ partial "icon.html" "tag" }}
-                <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-            </span>
-            {{ end }}
-        </span>
-    </div>
-    {{ end }}
-
-    {{ with .Resources.GetMatch "feature" }}
-    {{ if eq .MediaType.MainType "image" }}
-    <div class="post-media">
-        <img src="{{ .Permalink }}" alt="{{ .Title }}" />
-    </div>
-    {{ else if eq .MediaType.MainType "video" }}
-    <div class="post-media">
-        <video controls>
-            <source src="{{ .Permalink }}" alt="{{ .Title }}">
-        </video>
-    </div>
-    {{ end }}
-    {{ end }}
-
-    <div class="post-description">
-        {{ if .Description }}
-        {{ .Description | markdownify }}
-        {{ else }}
-        {{ .Summary | markdownify }}
-        {{ end }}
-    </div>
-
-    <div class="readmore">
-        <a href="{{ .Permalink }}">Read more &rarr;</a>
-    </div>
-</div>
+    {{ .Render "summary" }}
 {{ else }}
 <div>
     No posts here!
