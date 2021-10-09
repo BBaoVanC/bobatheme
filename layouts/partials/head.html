@@ -22,7 +22,7 @@
     <title>{{ print .Title " | " .Site.Title }}</title>
     {{ end }}
 
-    {{ template "_internal/opengraph.html" . }}
+    {{ partial "opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/schema.html" . }}
 

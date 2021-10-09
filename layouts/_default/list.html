@@ -69,11 +69,11 @@
     {{ end }}
 
     {{ with .Resources.GetMatch "feature" }}
+    {{ if eq .MediaType.MainType "image" }}
     <div class="post-media">
         <img src="{{ .Permalink }}" alt="{{ .Title }}" />
     </div>
-    {{ else }}
-    {{ with .Resources.GetMatch "feature-video" }}
+    {{ else if eq .MediaType.MainType "video" }}
     <div class="post-media">
         <video controls>
             <source src="{{ .Permalink }}" alt="{{ .Title }}">
