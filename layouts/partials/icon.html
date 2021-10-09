@@ -1,5 +1,5 @@
-{{ $sprites := resources.Get "icon/feather-sprite.svg" | fingerprint "sha256" }}
-<svg class="icon" fill="none" stroke="lightgray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <title>{{ . }} icon</title>
-    <use href="{{ printf "%s#%s" $sprites.Permalink . | relURL }}" />
-</svg>
+{{ $icon_resource := resources.Get (printf "feather/icons/%s.svg" .) }}
+{{ $icon := $icon_resource.Content }}
+{{ $icon = replaceRE `<svg` `<svg class="icon"` $icon }}
+{{ $icon = replaceRE `</svg>` `<title>{{ . }} icon</title></svg>` $icon }}
+{{ $icon | safeHTML }}
