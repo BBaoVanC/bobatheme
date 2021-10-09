@@ -2,8 +2,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{ $bobastyle := resources.Get "css/bobastyle.css" | fingerprint "sha256" }}
-    <link rel="stylesheet" type="text/css" href="{{ $bobastyle.Permalink }}">
+    {{ $bobastyle := resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ $bobastyle.Permalink }}" integrity="{{ $bobastyle.Data.Integrity }}">
 
     {{ with .Site.Params.faviconICO }}
     <link rel="icon" type="image/x-icon" href="{{.}}" />
