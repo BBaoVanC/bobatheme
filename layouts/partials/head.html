@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ .Hugo.Generator }}
 
     {{ $bobastyle := resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $bobastyle.Permalink }}" integrity="{{ $bobastyle.Data.Integrity }}">
