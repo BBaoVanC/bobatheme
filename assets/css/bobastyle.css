@@ -29,8 +29,12 @@
   margin-top: 5px;
 }
 
+.wordcount {
+  margin-left: 5px;
+}
+
 .tags {
-  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .tag {
