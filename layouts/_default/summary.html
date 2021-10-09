@@ -49,7 +49,9 @@
 
     <div class="post-description">
         {{ if .Description }}
-        {{ .Description | markdownify }}
+        <p>
+            {{ .Description | markdownify }}
+        </p>
         {{ else }}
         {{ .Summary }}
         {{ end }}
