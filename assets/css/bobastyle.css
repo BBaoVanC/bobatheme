@@ -113,6 +113,10 @@ blockquote {
   border-left: 5px solid #333;
 }
 
+blockquote p {
+  padding-left: 15px;
+}
+
 hr {
   border-color: #444;
 }
