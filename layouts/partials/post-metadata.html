@@ -17,10 +17,19 @@
         {{ end }}
     </span>
 
+    {{ if .Site.Params.wordcount }}
     <span class="wordcount">
         {{ partial "icon.html" "type" }}
         {{ .WordCount }} words
     </span>
+    {{ end }}
+
+    {{ if .Site.Params.readingtime }}
+    <span class="readingtime">
+        {{ partial "icon.html" "clock" }}
+        {{ .ReadingTime }} {{ if gt .ReadingTime 1 }} mins {{ else }} min {{ end }}
+    </span>
+    {{ end }}
 
     <div class="tags">
         {{ range (.GetTerms "tags") }}

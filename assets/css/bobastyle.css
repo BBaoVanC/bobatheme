@@ -29,7 +29,7 @@
   margin-top: 5px;
 }
 
-.wordcount {
+.wordcount, .rss-link, .readingtime {
   margin-left: 5px;
 }
 
@@ -39,10 +39,6 @@
 
 .tag {
   white-space: nowrap;
-}
-
-.rss-link {
-  margin-left: 5px;
 }
 
 h1 svg.icon {
