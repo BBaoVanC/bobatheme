@@ -1,5 +1,10 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="section-header">
     <a href="#{{ .Anchor | safeURL }}">
+        {{/* this took too much work but doesn't quite fit the theme
+        <span class="section-header-link">
+            {{ partial "icon.html" "link" }}
+        */}}
+        </span>
         {{ .Text | safeHTML }}
     </a>
 </h{{ .Level }}>

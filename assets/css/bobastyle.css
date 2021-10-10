@@ -49,6 +49,21 @@
   color: inherit;
 }
 
+/* this took too much work but doesn't quite fit the theme
+.section-header {
+  position: relative;
+}
+
+.section-header a {
+  text-decoration: none;
+}
+
+.section-header-link {
+  position: absolute;
+  left: -30px;
+}
+*/
+
 
 
 /* Content formatting */
