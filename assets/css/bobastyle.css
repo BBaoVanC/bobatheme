@@ -123,7 +123,7 @@ pre {
   overflow: auto;
 }
 
-pre, code {
+:not(pre) > code, pre {
   background-color: #282828;
   padding: 2px 4px;
   border-radius: 5px;
