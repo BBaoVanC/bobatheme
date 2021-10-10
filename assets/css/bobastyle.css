@@ -131,10 +131,16 @@ hr {
   border-color: #444;
 }
 
-code {
+pre {
+  width: 100%;
+  overflow: auto;
+}
+
+pre, code {
   background-color: #282828;
   padding: 2px 4px;
   border-radius: 5px;
+  overflow-wrap: break-word;
 }
 
 * {
