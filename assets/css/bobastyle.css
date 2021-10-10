@@ -29,15 +29,11 @@
   margin-top: 5px;
 }
 
-.wordcount, .rss-link, .readingtime {
+(.date, .wordcount, .readingtime, .gitcommit, .tag) + (.date, .wordcount, .readingtime, .gitcommit, .tag) {
   margin-left: 5px;
 }
 
-.tags {
-  margin-top: 5px;
-}
-
-.wordcount, .readingtime, .tag {
+.post-meta-item {
   white-space: nowrap;
 }
 
@@ -119,6 +115,12 @@ blockquote p {
 
 hr {
   border-color: #444;
+}
+
+code {
+  background-color: #282828;
+  padding: 2px 4px;
+  border-radius: 5px;
 }
 
 * {
