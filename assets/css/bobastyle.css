@@ -34,11 +34,6 @@
   margin-top: 5px;
 }
 
-h1 svg.icon {
-  width: 30px;
-  height: 30px;
-}
-
 
 
 /* Header formatting (website title and article section headers) */
@@ -134,6 +129,11 @@ code {
   text-align: center;
   display: inline;
   vertical-align: middle;
+}
+
+h1 svg.icon {
+  width: 30px;
+  height: 30px;
 }
 
 
