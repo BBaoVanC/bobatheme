@@ -17,24 +17,21 @@
   text-decoration: inherit;
 }
 
-.post-description {
-  margin-top: 10px;
+.post-meta-item {
+  margin-right: 5px;
+  white-space: nowrap;
 }
 
 .post-media {
   margin-top: 15px;
 }
 
+.post-description {
+  margin-top: 10px;
+}
+
 .readmore {
   margin-top: 5px;
-}
-
-(.date, .wordcount, .readingtime, .gitcommit, .tag) + (.date, .wordcount, .readingtime, .gitcommit, .tag) {
-  margin-left: 5px;
-}
-
-.post-meta-item {
-  white-space: nowrap;
 }
 
 h1 svg.icon {

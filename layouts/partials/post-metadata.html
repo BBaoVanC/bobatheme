@@ -2,7 +2,7 @@
 <div class="post-metadata">
     {{ if .Date }}
 
-    <span class="post-meta-item date">
+    <span class="post-meta-item">
         {{ partial "icon.html" "calendar" }}
         <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
             {{ .Date.Format "January 2, 2006" }}
@@ -18,21 +18,21 @@
     </span>
 
     {{ if .Site.Params.wordcount }}
-    <span class="post-meta-item wordcount">
+    <span class="post-meta-item">
         {{ partial "icon.html" "type" }}
         {{ .WordCount }} words
     </span>
     {{ end }}
 
     {{ if .Site.Params.readingtime }}
-    <span class="post-meta-item readingtime">
+    <span class="post-meta-item">
         {{ partial "icon.html" "clock" }}
         {{ .ReadingTime }} {{ if gt .ReadingTime 1 }} mins {{ else }} min {{ end }}
     </span>
     {{ end }}
 
     {{ with .GitInfo }}
-    <span class="post-meta-item gitcommit">
+    <span class="post-meta-item">
         {{ partial "icon.html" "git-commit" }}
         <a href="{{ (printf "%s/commit/%s" $.Site.Params.repoURL .Hash) | absURL }}">
             <code>{{ .AbbreviatedHash }}</code>
@@ -40,11 +40,13 @@
     </span>
     {{ end }}
 
-    {{ range (.GetTerms "tags") }}
-    <span class="post-meta-item tag">
-        {{ partial "icon.html" "tag" }}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-    </span>
-    {{ end }}
+    <div class="tags">
+        {{ range (.GetTerms "tags") }}
+        <span class="post-meta-item">
+            {{ partial "icon.html" "tag" }}
+            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        </span>
+        {{ end }}
+    </div>
 </div>
 {{ end }}
