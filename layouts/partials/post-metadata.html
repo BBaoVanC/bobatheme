@@ -1,4 +1,4 @@
-{{ if or .Date (.GetTerms "tags") }}
+{{ if or .GitInfo .Date (.GetTerms "tags") }}
 <div class="post-metadata">
     {{ if .Date }}
 

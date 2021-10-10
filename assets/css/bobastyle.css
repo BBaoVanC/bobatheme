@@ -22,6 +22,10 @@
   white-space: nowrap;
 }
 
+.post-metadata {
+  margin-bottom: 15px;
+}
+
 .post-media {
   margin-top: 15px;
 }
