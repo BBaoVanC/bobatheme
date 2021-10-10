@@ -13,6 +13,7 @@
 </h1>
 {{ else }}
 <h1>
+    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
     {{ .Title | markdownify }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}

@@ -1,5 +1,6 @@
 <div class="post">
     <h2 class="post-title">
+        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     </h2>
 
