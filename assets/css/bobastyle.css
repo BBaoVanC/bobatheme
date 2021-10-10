@@ -49,20 +49,23 @@
   color: inherit;
 }
 
-/* this took too much work but doesn't quite fit the theme
 .section-header {
   position: relative;
 }
 
-.section-header a {
+.section-header a:hover {
   text-decoration: none;
 }
 
 .section-header-link {
   position: absolute;
-  left: -30px;
+  left: -20px;
 }
-*/
+
+.section-header-link svg {
+  width: 15px;
+  height: 15px;
+}
 
 
 
