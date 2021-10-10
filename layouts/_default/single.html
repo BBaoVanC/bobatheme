@@ -1,6 +1,9 @@
 {{ define "main" }}
 <div class="post-title">
-    <h1>{{ .Title | markdownify }}</h1>
+    <h1>
+        {{ .Title | markdownify }}
+        {{ if .Draft }}{{ partial "icon.html" "edit" }}{{ end }}
+    </h1>
 </div>
 
 {{ partial "post-metadata.html" . }}

@@ -2,6 +2,7 @@
     <h2 class="post-title">
         {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Draft }}{{ partial "icon.html" "edit" }}{{ end }}
     </h2>
 
     {{ partial "post-metadata.html" . }}
