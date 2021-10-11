@@ -6,16 +6,19 @@
         <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
             {{ .Date.Format "January 2, 2006" }}
         </time>
+    </span>
 
-        {{ if ne .Lastmod .Date }}
+    {{ if not .Site.Params.repoURL }}
+    {{ if ne .Lastmod .Date }}
+    <span class="post-meta-item">
         {{ partial "icon.html" "edit-2" }}
         <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
             {{ .Lastmod.Format "January 2, 2006" }}
         </time>
         {{ end }}
-
-        {{ end }}
     </span>
+    {{ end }}
+    {{ end }}
 
     {{ if .Site.Params.wordcount }}
     <span class="post-meta-item">
@@ -31,6 +34,7 @@
     </span>
     {{ end }}
 
+    {{ if .Site.Params.repoURL }}
     {{ with .GitInfo }}
     <span class="post-meta-item">
         {{ partial "icon.html" "git-commit" }}
@@ -38,6 +42,7 @@
             <code>{{ .AbbreviatedHash }}</code>
         </a>
     </span>
+    {{ end }}
     {{ end }}
 
     <div class="tags">
