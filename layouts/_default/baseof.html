@@ -1,20 +1,11 @@
-{{ partial "credit.html" }}
+{{ partialCached "credit.html" . }}
 <!DOCTYPE html>
 <html lang="en">
     {{- partial "head.html" . -}}
 
     <body>
         <div class="top">
-            <h2 class="header">
-                <a href="{{ "/" | relURL }}">{{ .Site.Title | markdownify }}</a>
-            </h2>
-
-            <nav id="navbar">
-                <a class="navbar-item" href="{{ "/" | relURL }}">Home</a>
-                {{ range .Site.Menus.main }}
-                <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
-                {{ end }}
-            </nav>
+            {{ partialCached "top.html" . }}
         </div>
 
         <div class="content">

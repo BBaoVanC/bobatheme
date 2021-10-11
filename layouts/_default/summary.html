@@ -1,8 +1,8 @@
 <div class="post">
     <h2 class="post-title">
-        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+        {{ with .Parent.Params.icon }}{{ partialCached "icon.html" . . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Draft }}{{ partial "icon.html" "edit" }}{{ end }}
+        {{ if .Draft }}{{ partialCached "icon.html" "edit" "edit" }}{{ end }}
     </h2>
 
     {{ partial "post-metadata.html" . }}

@@ -2,7 +2,7 @@
     {{ .Text | safeHTML }}
     <a href="#{{ .Anchor | safeURL }}">
         <span class="section-header-link">
-            {{ partial "icon.html" "link" }}
+            {{ partialCached "icon.html" "link" "link" }}
         </span>
     </a>
 </h{{ .Level }}>
