@@ -3,8 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ hugo.Generator }}
 
-    {{ $bobastyle := resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ $bobastyle.Permalink }}" integrity="{{ $bobastyle.Data.Integrity }}">
+    {{ with resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}">
+    {{ end }}
 
     {{ with .Site.Params.faviconICO }}
     <link rel="icon" type="image/x-icon" href="{{.}}" />

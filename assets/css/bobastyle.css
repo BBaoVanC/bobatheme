@@ -118,6 +118,13 @@ hr {
   border-color: #444;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Code blocks */
 pre {
   width: 100%;
   overflow: auto;
@@ -128,10 +135,6 @@ pre {
   padding: 2px 4px;
   border-radius: 5px;
   overflow-wrap: break-word;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 
