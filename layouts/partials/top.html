@@ -3,7 +3,7 @@
 </h2>
 
 <nav id="navbar">
-    <a class="navbar-item" href="{{ "/" | relURL }}">Home</a>
+    <a class="navbar-item" href="{{ "/" | relLangURL }}">Home</a>
     {{ range .Site.Menus.main }}
     <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}

@@ -1,0 +1,31 @@
+[credit_comment]
+  other = "<!-- bobatheme está en GitHub con la licencia MIT a https://github.com/BBaoVanC/bobatheme. -->"
+
+[long_date]
+  other = "{{ .Date.Day }} de {{ index .Data.meses (printf `%d` .Date.Month) }} de {{ .Date.Year }}"
+
+[wordcount]
+  one = "{{ . }} palabra"
+  other = "{{ . }} palabras"
+
+[readingtime]
+  one = "{{ . }} min"
+  other = "{{ . }} mins"
+
+[read_more]
+  other = "Leer más"
+
+
+[browser_no_video_support]
+  other = "Tu navegador de internet no admite video."
+
+
+[filtering_for]
+  other = "Filtrando por \"{{ . }}\""
+
+[no_posts]
+  other = "¡No páginas aquí!"
+
+
+[table_of_contents]
+  other = "Índice"

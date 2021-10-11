@@ -1,0 +1,31 @@
+[credit_comment]
+  other = "<!-- bobatheme is available under the MIT license at https://github.com/BBaoVanC/bobatheme. -->"
+
+[long_date]
+  other = "{{ .Date.Format `January 2, 2006` }}"
+
+[wordcount]
+  one = "{{ . }} word"
+  other = "{{ . }} words"
+
+[readingtime]
+  one = "{{ . }} min"
+  other = "{{ . }} mins"
+
+[read_more]
+  other = "Read more"
+
+
+[browser_no_video_support]
+  other = "Your browser does not support video."
+
+
+[filtering_for]
+  other = "Filtering for \"{{ . }}\""
+
+[no_posts]
+  other = "No posts here!"
+
+
+[table_of_contents]
+  other = "Table of Contents"

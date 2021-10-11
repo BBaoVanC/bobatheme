@@ -2,7 +2,7 @@
 {{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
 <h1>
     {{ partialCached "icon.html" "filter" "filter" }}
-    Filtering for "{{ .Title }}"
+    {{ i18n "filtering_for" .Title }}
     {{ if eq .Kind "term" }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}
@@ -37,7 +37,7 @@
     {{ .Render "summary" }}
 {{ else }}
 <div>
-    No posts here!
+    {{ i18n "no_posts" }}
 </div>
 {{ end }}
 
