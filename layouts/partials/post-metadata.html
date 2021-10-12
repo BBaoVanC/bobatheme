@@ -20,6 +20,15 @@
     {{ end }}
     {{ end }}
 
+    {{ if .IsTranslated }}
+    <span class="post-meta-item">
+        {{ partialCached "icon.html" "globe" "globe" }}
+        {{ range .Translations }}
+        <a href="{{ .Permalink }}">{{ .Language }}</a>
+        {{ end }}
+    </span>
+    {{ end }}
+
     {{ if .Site.Params.wordcount }}
     <span class="post-meta-item">
         {{ partialCached "icon.html" "type" "type" }}
