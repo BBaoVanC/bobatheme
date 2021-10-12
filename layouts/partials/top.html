@@ -3,7 +3,11 @@
 </h2>
 
 <nav id="navbar">
-    <a class="navbar-item" href="{{ "/" | relLangURL }}">Home</a>
+    {{ with .Site.GetPage "/" }}
+    {{/* if I use relLangURL, then it does /es/es/ instead of /es/ (for example) */}}
+    <a class="navbar-item" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+    {{ end }}
+
     {{ range .Site.Menus.main }}
     <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
