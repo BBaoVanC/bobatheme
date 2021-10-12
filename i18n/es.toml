@@ -1,5 +1,5 @@
 [credit_comment]
-  other = "<!-- bobatheme está en GitHub con la licencia MIT a https://github.com/BBaoVanC/bobatheme. -->"
+  other = "<!-- bobatheme está disponible en GitHub basado en la licensia MIT: https://github.com/BBaoVanC/bobatheme. -->"
 
 [long_date]
   other = "{{ .Date.Day }} de {{ index .Data.meses (printf `%d` .Date.Month) }} de {{ .Date.Year }}"
@@ -24,7 +24,7 @@
   other = "Filtrando por \"{{ . }}\""
 
 [no_posts]
-  other = "¡No páginas aquí!"
+  other = "¡No hay contenido para mostrar!"
 
 
 [table_of_contents]
