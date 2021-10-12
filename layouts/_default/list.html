@@ -1,23 +1,23 @@
 {{ define "main" }}
 {{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
 <h1>
-    {{ partialCached "icon.html" "filter" "filter" }}
+    {{ partial "icon.html" "filter" }}
     {{ i18n "filtering_for" .Title }}
     {{ if eq .Kind "term" }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}
-        <a href="{{ .Permalink }}">{{ partialCached "icon.html" "rss" "rss" }}</a>
+        <a href="{{ .Permalink }}">{{ partial "icon.html" "rss" }}</a>
         {{ end }}
     </span>
     {{ end }}
 </h1>
 {{ else }}
 <h1>
-    {{ with .Params.icon }}{{ partialCached "icon.html" . . }}{{ end }}
+    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
     {{ .Title | markdownify }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}
-        <a href="{{ .Permalink }}">{{ partialCached "icon.html" "rss" "rss" }}</a>
+        <a href="{{ .Permalink }}">{{ partial "icon.html" "rss" }}</a>
         {{ end }}
     </span>
 </h1>

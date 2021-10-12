@@ -2,7 +2,7 @@
 <div class="post-title">
     <h1>
         {{ .Title | markdownify }}
-        {{ if .Draft }}{{ partialCached "icon.html" "edit" "edit" }}{{ end }}
+        {{ if .Draft }}{{ partial "icon.html" "edit" }}{{ end }}
     </h1>
 </div>
 
