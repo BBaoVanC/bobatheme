@@ -68,12 +68,16 @@
 
 
 /* Navbar formatting */
-#navbar h2 {
+.navbar, .langbar {
+  margin: 5px 0px;
+}
+
+(.navbar, .langbar) h2 {
   color: inherit;
   text-decoration: inherit;
 }
 
-.navbar-item {
+.navbar-item, .langbar-item {
   margin-right: 5px;
 }
 

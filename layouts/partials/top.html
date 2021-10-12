@@ -2,7 +2,7 @@
     <a href="{{ "/" | relURL }}">{{ .Site.Title | markdownify }}</a>
 </h2>
 
-<nav id="navbar">
+<nav class="navbar">
     {{ with .Site.GetPage "/" }}
     {{/* if I use relLangURL, then it does /es/es/ instead of /es/ (for example) */}}
     <a class="navbar-item" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
@@ -12,3 +12,17 @@
     <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
 </nav>
+
+{{ if .Site.IsMultiLingual }}
+<nav class="langbar">
+    {{ range .Site.Home.AllTranslations }}
+
+    {{ if eq .Language $.Site.Language }}
+    <b><a class="langbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></b>
+    {{ else }}
+    <a class="langbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+    {{ end }}
+
+    {{ end }}
+</nav>
+{{ end }}
