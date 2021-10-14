@@ -4,7 +4,7 @@
     {{ hugo.Generator }}
 
     {{ with resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}">
+    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
 
     {{ with .Site.Params.faviconICO }}
