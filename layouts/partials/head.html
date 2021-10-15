@@ -8,10 +8,10 @@
     {{ end }}
 
     {{ with .Site.Params.faviconICO }}
-    <link rel="icon" type="image/x-icon" href="{{.}}" />
+    <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />
     {{ end }}
     {{ with .Site.Params.faviconPNG }}
-    <link rel="icon" type="image/png" href="{{.}}" />
+    <link rel="icon" type="image/png" href="{{ . | absURL }}" />
     {{ end }}
 
     {{ range .AlternativeOutputFormats -}}

@@ -1,15 +1,14 @@
 <h2 class="header">
-    <a href="{{ "/" | relURL }}">{{ .Site.Title | markdownify }}</a>
+    <a href="{{ "/" | absLangURL }}">{{ .Site.Title | markdownify }}</a>
 </h2>
 
 <nav class="navbar">
     {{ with .Site.GetPage "/" }}
-    {{/* if I use relLangURL, then it does /es/es/ instead of /es/ (for example) */}}
-    <a class="navbar-item" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+    <a class="navbar-item" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
     {{ end }}
 
     {{ range .Site.Menus.main }}
-    <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+    <a class="navbar-item" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
     {{ end }}
 </nav>
 
