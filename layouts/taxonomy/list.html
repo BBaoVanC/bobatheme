@@ -1,15 +1,27 @@
 {{ define "main" }}
 
 <h1>
-    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
-    {{ .Title | markdownify }}
+    {{ partial "icon.html" "filter" }}
+    {{ i18n "filtering_for" .Title }}
+    {{ if eq .Kind "term" }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}
         <a href="{{ .Permalink }}">{{ partial "icon.html" "rss" }}</a>
         {{ end }}
     </span>
+    {{ end }}
 </h1>
 
+{{ if eq .Kind "taxonomy" }}
+<ul>
+    {{ range .Pages }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </li>
+    {{ end }}
+</ul>
+
+{{ else }}
 {{ range .Paginator.Pages }}
     {{ .Render "summary" }}
 {{ else }}
@@ -22,6 +34,8 @@
 <div class="pagination">
     {{ template "_internal/pagination.html" . }}
 </div>
+{{ end }}
+
 {{ end }}
 
 {{ end }}
