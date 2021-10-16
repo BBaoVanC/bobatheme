@@ -24,7 +24,7 @@
     {{ if .IsHome }}
     <title>{{ .Site.Title }}</title>
     {{ else }}
-    <title>{{ (print .Title " | " .Site.Title) | markdownify | plainify }}</title>
+    <title>{{ print .Title " | " .Site.Title }}</title>
     {{ end }}
 
     {{ partial "opengraph.html" . }}
