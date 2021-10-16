@@ -129,16 +129,23 @@ hr {
 
 
 /* Code blocks */
-pre {
+.highlight pre {
   width: 100%;
   overflow: auto;
 }
 
-:not(pre) > code, pre {
+.highlight > pre {
+  padding: 12px 8px;
+}
+
+:not(pre) > code {
   background-color: #282828;
   padding: 2px 4px;
-  border-radius: 5px;
   overflow-wrap: break-word;
+}
+
+code {
+  border-radius: 5px;
 }
 
 
