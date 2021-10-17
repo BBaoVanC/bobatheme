@@ -90,6 +90,7 @@ body {
   font-family: "Open Sans", "Noto Sans", sans-serif;
   margin: auto;
   max-width: 720px;
+  overflow-wrap: break-word;
 }
 
 img, video {
@@ -129,11 +130,6 @@ hr {
 
 
 /* Code blocks */
-.highlight pre {
-  width: 100%;
-  overflow: auto;
-}
-
 .highlight > pre {
   padding: 12px 8px;
 }
