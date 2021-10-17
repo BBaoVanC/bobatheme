@@ -132,6 +132,7 @@ hr {
 /* Code blocks */
 .highlight > pre {
   padding: 12px 8px;
+  overflow: auto;
 }
 
 :not(pre) > code {
