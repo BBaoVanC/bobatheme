@@ -145,6 +145,10 @@ code {
   border-radius: 5px;
 }
 
+.chroma .lnt {
+  display: block;
+} /* fixes line numbers on firefox when there's only one line */
+
 
 
 /* Icons */
