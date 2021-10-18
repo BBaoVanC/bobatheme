@@ -17,7 +17,12 @@
         {{ with .Site.Copyright }}
         <footer>
             <hr>
-            {{ . | safeHTML }}
+            <small>
+                &copy;
+                {{ now.Format "2006" }}
+                {{ $.Site.Author.name }}
+                {{ . | safeHTML }}
+            </small>
         </footer>
         {{ end }}
     </body>

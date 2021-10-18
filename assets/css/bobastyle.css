@@ -42,7 +42,7 @@
 
 /* Header formatting (website title and article section headers) */
 .top {
-  margin-left: 20px;
+  margin: 20px;
 }
 
 .header a, .section-header a {
@@ -62,7 +62,11 @@
 }
 
 .content, footer {
-  padding: 20px;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
 }
 
 
