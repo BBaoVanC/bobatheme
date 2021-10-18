@@ -13,6 +13,13 @@
         {{ .Content }}
         {{- end }}
         </div>
+
+        {{ with .Site.Copyright }}
+        <hr>
+        <footer>
+            {{ . | safeHTML }}
+        </footer>
+        {{ end }}
     </body>
 
 </html>
