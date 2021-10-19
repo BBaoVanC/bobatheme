@@ -17,5 +17,9 @@
 
 <hr>
 
+{{ with .Resources.GetMatch "feature" }}
+{{ partial "featured_media.html" . }}
+{{ end }}
+
 {{ .Content }}
 {{ end }}
