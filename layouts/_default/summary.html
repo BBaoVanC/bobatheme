@@ -12,7 +12,9 @@
     {{ partial "post-metadata.html" . }}
 
     {{ with .Resources.GetMatch "feature" }}
-    {{ partial "featured_media.html" . }}
+    <div class="post-media">
+        {{ partial "figure.html" . }}
+    </div>
     {{ end }}
 
     <div class="post-description">

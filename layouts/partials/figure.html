@@ -1,0 +1,17 @@
+<figure>
+    {{ $media := . | resources.Fingerprint "sha512" }}
+    {{ if eq .MediaType.MainType "image" }}
+    <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
+    {{ else if eq .MediaType.MainType "video" }}
+    <video controls>
+        <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
+        {{ i18n "browser_no_video_support" }}
+    </video>
+    {{ end }}
+
+    {{ with $media.Title }}
+    <figcaption>
+        {{ . | markdownify }}
+    </figcaption>
+    {{ end }}
+</figure>
