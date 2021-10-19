@@ -1,13 +1,15 @@
 <figure>
 
+    {{ $img := $.Page.Resources.GetMatch (.Get "resrc") | resources.Fingerprint "sha512" }}
+
     {{ if .Get "href" }}<a href="{{ .Get "href" }}">{{ end }}
-        <img src="{{ .Get "src" }}"
+        <img src="{{ $img.Permalink }}"
              {{ if or (.Get "alt") (.Get "caption") }}
-             alt="{{ with .Get "alt" }}
-                  {{ . }}
-                  {{ else }}
-                  {{ .Get "caption" | markdownify }}
-                  {{ end }}"
+             alt="{{ with .Get "alt" -}}
+                  {{ . -}}
+                  {{ else -}}
+                  {{ .Get "caption" | markdownify -}}
+                  {{ end -}}"
              {{ end }}
 
              {{ with .Get "width" }} width="{{ . }}" {{ end }}
