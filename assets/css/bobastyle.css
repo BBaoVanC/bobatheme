@@ -106,6 +106,12 @@ img:not(.noborder), video:not(.noborder) {
   border: 5px solid #1b5b9b;
 }
 
+figcaption {
+  font-style: italic;
+  font-size: small;
+  text-align: center;
+}
+
 a {
   color: #4da6ff;
   text-decoration: inherit;

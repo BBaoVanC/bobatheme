@@ -1,0 +1,24 @@
+<figure>
+
+    {{ if .Get "href" }}<a href="{{ .Get "href" }}">{{ end }}
+        <img src="{{ .Get "src" }}"
+             {{ if or (.Get "alt") (.Get "caption") }}
+             alt="{{ with .Get "alt" }}
+                  {{ . }}
+                  {{ else }}
+                  {{ .Get "caption" | markdownify }}
+                  {{ end }}"
+             {{ end }}
+
+             {{ with .Get "width" }} width="{{ . }}" {{ end }}
+             {{ with .Get "height" }} height="{{ . }}" {{ end }}
+        />
+    {{ if .Get "href" }}</a>{{ end }}
+
+    {{ with .Get "caption" }}
+    <figcaption>
+        {{ . | markdownify }}
+    </figcaption>
+    {{ end }}
+
+</figure>
