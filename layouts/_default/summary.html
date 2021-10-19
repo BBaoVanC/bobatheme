@@ -12,17 +12,24 @@
     {{ partial "post-metadata.html" . }}
 
     {{ with .Resources.GetMatch "feature" }}
-    {{ if eq .MediaType.MainType "image" }}
     <div class="post-media">
-        <img src="{{ .Permalink }}" alt="{{ .Title }}" />
+        <figure>
+            {{ $media := . | resources.Fingerprint "sha512" }}
+            {{ if eq .MediaType.MainType "image" }}
+            <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
+            {{ else if eq .MediaType.MainType "video" }}
+            <video controls>
+                <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
+            </video>
+            {{ end }}
+
+            {{ with $media.Title }}
+            <figcaption>
+                {{ . | markdownify }}
+            </figcaption>
+            {{ end }}
+        </figure>
     </div>
-    {{ else if eq .MediaType.MainType "video" }}
-    <div class="post-media">
-        <video controls>
-            <source src="{{ .Permalink }}" alt="{{ .Title }}">
-        </video>
-    </div>
-    {{ end }}
     {{ end }}
 
     <div class="post-description">

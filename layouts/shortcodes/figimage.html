@@ -1,0 +1,22 @@
+<figure>
+
+    {{ $img := $.Page.Resources.GetMatch (.Get "src") | resources.Fingerprint "sha512" }}
+
+    {{ if .Get "href" }}<a href="{{ .Get "href" }}">{{ end }}
+        <img src="{{ $img.Permalink }}"
+             {{ with $img.Title }}
+             alt="{{ . }}"
+             {{ end }}
+
+             {{ with .Get "width" }}width="{{ . }}"{{ end }}
+             {{ with .Get "height" }}height="{{ . }}"{{ end }}
+        />
+    {{ if .Get "href" }}</a>{{ end }}
+
+    {{ with $img.Title }}
+    <figcaption>
+        {{ . | markdownify }}
+    </figcaption>
+    {{ end }}
+
+</figure>

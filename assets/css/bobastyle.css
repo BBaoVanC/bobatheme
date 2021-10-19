@@ -28,6 +28,7 @@
 
 .post-media {
   margin-top: 15px;
+  display: inline-block;
 }
 
 .post-description {
@@ -104,6 +105,10 @@ img, video {
 img:not(.noborder), video:not(.noborder) {
   padding: 5px;
   border: 5px solid #1b5b9b;
+}
+
+figure {
+  margin: auto;
 }
 
 figcaption {
