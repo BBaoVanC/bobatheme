@@ -219,7 +219,7 @@ h1 svg.icon {
 
 /* Print compatibility */
 @media print {
-  .top, footer, .section-header-link {
+  .top, .section-header-link {
     display: none;
   }
 
