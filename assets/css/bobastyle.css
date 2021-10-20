@@ -214,3 +214,25 @@ h1 svg.icon {
   color: white;
   text-decoration: none;
 }
+
+
+
+/* Print compatibility */
+@media print {
+  .top, footer, .section-header-link {
+    display: none;
+  }
+
+  .icon {
+    color: black;
+  }
+
+  :not(pre) > code {
+    background-color: lightgray;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+}
