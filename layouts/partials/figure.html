@@ -1,7 +1,31 @@
 <figure>
     {{ $media := . | resources.Fingerprint "sha512" }}
+
     {{ if eq .MediaType.MainType "image" }}
-    <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
+
+    {{ $tiny := $media.Resize "500x" }}
+    {{ $small := $media.Resize "800x" }}
+    {{ $medium := $media.Resize "1200x" }}
+    {{ $large := $media.Resize "1500x" }}
+    <img src="{{ $media.Permalink }}"
+         alt="{{ $media.Title }}"
+         srcset='
+         {{ if ge $media.Width "500" }}
+             {{ $tiny.RelPermalink}} 500w,
+         {{ end }}
+         {{ if ge $media.Width "800" }}
+             {{ $small.RelPermalink }} 800w,
+         {{ end }}
+         {{ if ge $media.Width "1200" }}
+             {{ $medium.RelPermalink }} 1200w,
+         {{ end }}
+         {{ if ge $media.Width "1500" }}
+             {{ $large.RelPermalink }} 1500w,
+         {{ end }}
+         {{ $media.RelPermalink }} {{ $media.Width }}w
+         '
+    />
+
     {{ else if eq .MediaType.MainType "video" }}
     <video controls>
         <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
