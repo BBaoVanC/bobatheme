@@ -20,7 +20,7 @@ enableGitInfo = true
   faviconICO = "/favicon.ico"
   faviconPNG = "/favicon.png"
 
-  # show word count and/or reading time
+  # show word count and/or reading time (enabled by default)
   wordcount = true
   readingtime = true
 
