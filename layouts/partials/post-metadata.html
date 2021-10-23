@@ -47,7 +47,7 @@
     {{ with .GitInfo }}
     <span class="post-meta-item">
         {{ partial "icon.html" "git-commit" }}
-        <a href="{{ (printf "%s/commit/%s" $.Site.Params.repoURL .Hash) | absLangURL }}">
+        <a href="{{ (printf "%s/commit/%s" $.Site.Params.repoURL .Hash) | absURL }}">
             <code>{{ .AbbreviatedHash }}</code>
         </a>
     </span>

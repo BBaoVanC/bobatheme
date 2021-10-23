@@ -1,14 +1,14 @@
 <h2 class="header">
-    <a href="{{ "/" | absLangURL }}">{{ .Site.Title | markdownify }}</a>
+    <a href="{{ .Site.Home.Permalink | absLangURL }}">{{ .Site.Title | markdownify }}</a>
 </h2>
 
 <nav class="navbar">
-    {{ with .Site.GetPage "/" }}
+    {{ with .Site.Home }}
     <a class="navbar-item" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
     {{ end }}
 
     {{ range .Site.Menus.main }}
-    <a class="navbar-item" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+    <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
 </nav>
 
