@@ -3,6 +3,7 @@
 title: {{ replace .Name "-" " " | title }}
 menu: main
 toc: true
+comments: false
 
 ---
 

@@ -29,13 +29,6 @@
     </span>
     {{ end }}
 
-    {{ if ne .Site.Params.wordcount false }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "type" }}
-        {{ i18n "wordcount" .WordCount }}
-    </span>
-    {{ end }}
-
     {{ if ne .Site.Params.readingtime false }}
     <span class="post-meta-item">
         {{ partial "icon.html" "clock" }}
