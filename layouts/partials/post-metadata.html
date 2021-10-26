@@ -20,6 +20,13 @@
     {{ end }}
     {{ end }}
 
+    {{ with .Params.author }}
+    <span class="post-meta-item">
+        {{ partial "icon.html" "user" }}
+        {{ . }}
+    </span>
+    {{ end }}
+
     {{ if .IsTranslated }}
     <span class="post-meta-item">
         {{ partial "icon.html" "globe" }}

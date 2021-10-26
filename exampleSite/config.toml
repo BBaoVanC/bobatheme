@@ -1,11 +1,14 @@
 baseURL = "https://example.com"
 theme = "bobatheme"
 defaultContentLanguage = "en"
-author = "bbaovanc"
+copyright = '&copy; 2021 bbaovanc <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>'
 sectionPagesMenu = "main"
 enableRobotsTXT = true
 paginate = 5
 enableGitInfo = true
+
+[author]
+  name = "bbaovanc"
 
 [markup]
   [markup.highlight]
