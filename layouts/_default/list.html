@@ -5,7 +5,7 @@
     {{ .Title | markdownify }}
     <span class="rss-link">
         {{ with .OutputFormats.Get "rss" }}
-        <a href="{{ .Permalink }}">{{ partial "icon.html" "rss" }}</a>
+        <a href="{{ .Permalink }}">{{ partial "icon.html" "rss-feed" }}</a>
         {{ end }}
     </span>
 </h1>

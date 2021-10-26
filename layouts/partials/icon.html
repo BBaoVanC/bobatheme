@@ -1,4 +1,4 @@
-{{ $icon_resource := resources.Get (printf "feather/icons/%s.svg" .) }}
+{{ $icon_resource := resources.Get (printf "jam/icons/%s.svg" .) }}
 {{ $icon := $icon_resource.Content }}
 {{ $icon = replaceRE `<svg` `<svg class="icon"` $icon }}
 {{ $icon = replaceRE `</svg>` (printf `<title>%s icon</title></svg>` .) $icon }}

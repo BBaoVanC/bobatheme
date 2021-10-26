@@ -1,4 +1,4 @@
-[submodule "assets/feather"]
-	path = assets/feather
-	url = https://github.com/feathericons/feather.git
-        branch = master
+[submodule "assets/jam"]
+	path = assets/jam
+	url = https://github.com/michaelampr/jam.git
+	branch = master

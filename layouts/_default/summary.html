@@ -6,7 +6,7 @@
 
         {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Draft }}{{ partial "icon.html" "edit" }}{{ end }}
+        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
     </h2>
 
     {{ partial "post-metadata.html" . }}
