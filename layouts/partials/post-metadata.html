@@ -47,7 +47,7 @@
     {{ with .GitInfo }}
     <span class="post-meta-item">
         {{ partial "icon.html" "branch" }}
-        <a href="{{ (printf "%s/commit/%s" $.Site.Params.repoURL .Hash) | absURL }}">
+        <a href="{{ (printf "%s/blob/%s/content/%s" $.Site.Params.repoURL .Hash $.File.Path) | absURL }}">
             <code>{{ .AbbreviatedHash }}</code>
         </a>
     </span>
