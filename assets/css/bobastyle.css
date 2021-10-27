@@ -112,7 +112,7 @@ img, video {
   max-width: 100%;
 }
 
-img:not(.noborder), video:not(.noborder) {
+figure.border img, figure.border video {
   padding: 5px;
   border: 7px solid #1b5b9b;
 }

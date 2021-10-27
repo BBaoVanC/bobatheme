@@ -13,7 +13,7 @@
 
     {{ with .Resources.GetMatch "feature" }}
     <div class="post-media">
-        {{ partial "figure.html" . }}
+        {{ partial "figure.html" (dict "src" . "border" true) }}
     </div>
     {{ end }}
 

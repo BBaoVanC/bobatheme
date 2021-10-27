@@ -1,4 +1,12 @@
+{{ $hidecaption := index . "hidecaption" }}
+
+{{ if index . "border" }}
+<figure class="border">
+{{ else }}
 <figure>
+{{ end }}
+    {{ with index . "src" }}
+
     {{ $media := . | resources.Fingerprint "sha512" }}
     {{ if eq .MediaType.MainType "image" }}
     <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
@@ -9,9 +17,13 @@
     </video>
     {{ end }}
 
+    {{ if not $hidecaption }}
     {{ with $media.Title }}
     <figcaption>
         {{ . | markdownify }}
     </figcaption>
+    {{ end }}
+    {{ end }}
+
     {{ end }}
 </figure>

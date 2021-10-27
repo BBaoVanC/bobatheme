@@ -1,2 +1,15 @@
 {{ $resource := $.Page.Resources.GetMatch (.Get "src") }}
-{{ partial "figure.html" $resource }}
+
+{{ $border := false }}
+{{ if .Get "border" }}
+{{ $border = true }}
+{{ end }}
+
+{{ $hidecaption := false }}
+{{ if .Get "hidecaption" }}
+{{ $hidecaption = true }}
+{{ end }}
+
+<p>
+    {{ partial "figure.html" (dict "src" $resource "border" $border "hidecaption" $hidecaption) }}
+</p>
