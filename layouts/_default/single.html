@@ -10,12 +10,12 @@
 
 {{ if .Params.Toc }}
 <div id="table-of-contents">
-    <h2>{{ i18n "table_of_contents" }}</h2>
-    {{ .TableOfContents }}
+    <details>
+        <summary>{{ i18n "table_of_contents" }}</summary>
+        {{ .TableOfContents }}
+    </details>
 </div>
 {{ end }}
-
-<hr>
 
 {{ with .Resources.GetMatch "feature" }}
 <div class="post-media">

@@ -62,8 +62,14 @@
 
 
 /* Content formatting */
-#table-of-contents h2 {
-  font-size: 20px;
+#table-of-contents {
+  background-color: #222;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+#table-of-contents summary {
+  cursor: pointer;
 }
 
 .content, footer {
