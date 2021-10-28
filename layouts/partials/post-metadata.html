@@ -20,7 +20,17 @@
     {{ end }}
     {{ end }}
 
+    {{ $authorString := "" }}
+
+    {{ with .Params.authors }}
+    {{ $authorString = delimit . ", " }}
+    {{ else }}
     {{ with .Params.author }}
+    {{ $authorString = . }}
+    {{ end }}
+    {{ end }}
+
+    {{ with $authorString }}
     <span class="post-meta-item">
         {{ partial "icon.html" "user-circle" }}
         {{ . }}

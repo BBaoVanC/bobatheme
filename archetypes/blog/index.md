@@ -2,10 +2,12 @@
 
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date | time.Format "2006-01-02" }}
-author: {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
 toc: true
 comments: true
 draft: true
+
+authors:
+  - {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
 
 tags:
   - awesome

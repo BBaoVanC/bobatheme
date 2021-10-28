@@ -1,10 +1,12 @@
 ---
 
 title: {{ replace .Name "-" " " | title }}
-author: {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
 menu: main
 toc: true
 comments: false
+
+authors:
+  - {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
 
 ---
 
