@@ -1,6 +1,6 @@
 ---
 
-title: {{ replace .Name "-" " " | title }}
+title: {{ replace .Name "-" " " | humanize }}
 menu: main
 toc: true
 comments: false

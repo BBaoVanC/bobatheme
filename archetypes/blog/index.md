@@ -1,6 +1,6 @@
 ---
 
-title: {{ replace .Name "-" " " | title }}
+title: {{ replace .Name "-" " " | humanize }}
 date: {{ .Date | time.Format "2006-01-02" }}
 toc: true
 comments: true
