@@ -30,6 +30,19 @@ enableGitInfo = true
   # used for last update
   repoURL = "https://github.com/BBaoVanC/bobatheme"
 
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
+
+  [privacy.twitter]
+    enableDNT = true
+
+  [privacy.vimeo]
+    enableDNT = true
+
+  [privacy.youtube]
+    privacyEnhanced = true
+
 [languages]
   [languages.en]
     languageName = "English"
