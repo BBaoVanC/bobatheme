@@ -1,0 +1,13 @@
+{{ $border := false }}
+{{ if .Get "border" }}
+{{ $border = true }}
+{{ end }}
+
+{{ $hidecaption := false }}
+{{ if .Get "hidecaption" }}
+{{ $hidecaption = true }}
+{{ end }}
+
+<p>
+    {{ partial "remote_figure.html" (dict "src" (.Get "src") "border" $border "hidecaption" $hidecaption "type" "image" "alt" (.Get "alt")) }}
+</p>
