@@ -45,6 +45,41 @@
 
 
 
+/* Subsection formatting */
+.section {
+  margin-bottom: 40px;
+  transition: transform .2s;
+  background-color: #222;
+  border-radius: 5px;
+  padding: 1px 25px;
+}
+
+.section:hover {
+  transform: scale(1.025);
+}
+
+.section-title {
+  margin: 10px 0;
+}
+
+.section-anchor {
+  color: inherit;
+}
+
+.section-anchor:hover {
+  text-decoration: none;
+}
+
+.section-description {
+  margin-bottom: 5px;
+}
+
+.view-section {
+  margin-top: 5px;
+}
+
+
+
 /* Header formatting (website title and article section headers) */
 .top {
   margin: 20px;
