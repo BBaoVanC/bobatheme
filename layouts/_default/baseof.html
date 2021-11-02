@@ -8,6 +8,10 @@
             {{ partial "top.html" . }}
         </div>
 
+        {{ if not .IsHome }}
+        {{ partial "breadcrumb.html" . }}
+        {{ end }}
+
         <div class="content">
         {{- block "main" . }}
         {{ .Content }}

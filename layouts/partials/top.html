@@ -4,24 +4,25 @@
 
 <nav class="navbar">
     {{ with .Site.Home }}
-    <a class="navbar-item" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
+    <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
     {{ end }}
 
     {{ range .Site.Menus.main }}
-    <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+
+    {{ $isActive := false }}
+    {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+    {{ $isActive = true }}
+    {{ end }}
+
+    <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+
     {{ end }}
 </nav>
 
 {{ if .Site.IsMultiLingual }}
 <nav class="langbar">
     {{ range .Site.Home.AllTranslations }}
-
-    {{ if eq .Language $.Site.Language }}
-    <a class="langbar-item selected" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ else }}
-    <a class="langbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end }}
-
+    <a class="langbar-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
     {{ end }}
 </nav>
 {{ end }}
