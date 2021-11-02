@@ -278,9 +278,20 @@ h1 svg.icon {
 }
 
 .page-link:hover {
+  text-decoration: none;
+}
+
+:not(li.disabled) > .page-link:hover {
   background-color: #444;
   color: white;
-  text-decoration: none;
+}
+
+li.disabled {
+  opacity: .5;
+}
+
+li.disabled > .page-link:hover {
+  cursor: not-allowed;
 }
 
 
