@@ -48,14 +48,14 @@
 /* Subsection formatting */
 .section {
   margin-bottom: 40px;
-  transition: transform .2s;
   background-color: #222;
   border-radius: 5px;
   padding: 1px 25px;
 }
 
 .section:hover {
-  transform: scale(1.025);
+  background-color: #333;
+  color: #fff;
 }
 
 .section-title {
