@@ -43,15 +43,13 @@
     </span>
     {{ end }}
 
-    {{ if .Site.Params.repoURL }}
-    {{ with .GitInfo }}
+    {{ with .Site.Params.historyURL }}
     <span class="post-meta-item">
-        {{ partial "icon.html" "branch" }}
-        <a href="{{ (printf "%s/blob/%s/content/%s" $.Site.Params.repoURL .Hash $.File.Path) | absURL }}" target="_blank" rel="noopener">
-            <code>{{ .AbbreviatedHash }}</code>
+        {{ partial "icon.html" "history" }}
+        <a href="{{ printf "%s/content/%s" . $.File.Path }}" target="_blank" rel="noopener">
+            View history
         </a>
     </span>
-    {{ end }}
     {{ end }}
 
     <div class="tags">

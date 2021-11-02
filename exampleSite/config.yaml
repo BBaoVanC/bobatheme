@@ -27,8 +27,8 @@ params:
   wordcount: true
   readingtime: true
 
-  # used for last update
-  repoURL: https://github.com/BBaoVanC/bobatheme
+  # used for "View history"
+  historyURL: https://github.com/BBaoVanC/bobatheme/commits/master
 
 privacy:
   googleAnalytics:
