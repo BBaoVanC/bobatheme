@@ -126,6 +126,7 @@ footer {
   border-radius: 8px;
   margin-top: 5px;
   align-items: flex-start;
+  overflow: auto;
 }
 
 .navbar-item, .langbar-item {
