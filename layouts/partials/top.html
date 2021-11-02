@@ -17,7 +17,7 @@
     {{ range .Site.Home.AllTranslations }}
 
     {{ if eq .Language $.Site.Language }}
-    <b><a class="langbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></b>
+    <a class="langbar-item selected" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
     {{ else }}
     <a class="langbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
     {{ end }}

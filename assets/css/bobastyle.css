@@ -119,16 +119,40 @@ footer {
 
 /* Navbar formatting */
 .navbar, .langbar {
-  margin: 5px 0px;
-}
-
-(.navbar, .langbar) h2 {
-  color: inherit;
-  text-decoration: inherit;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: #222;
+  border-radius: 8px;
+  margin-top: 5px;
+  align-items: flex-start;
 }
 
 .navbar-item, .langbar-item {
-  margin-right: 5px;
+  /*flex-grow: 1;*/
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/*.navbar-item:first-child,
+.langbar-item:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.navbar-item:last-child,
+.langbar-item:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}*/
+
+.navbar-item:hover, .langbar-item:hover {
+  background-color: #444;
+  text-decoration: none;
+}
+
+.langbar-item.selected {
+  font-weight: bold;
 }
 
 
