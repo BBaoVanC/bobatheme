@@ -7,7 +7,7 @@
 {{ end }}
     {{ with index . "src" }}
 
-    {{ $media := . | resources.Fingerprint "sha512" }}
+    {{ $media := . }}
     {{ if eq .MediaType.MainType "image" }}
     <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
     {{ else if eq .MediaType.MainType "video" }}
