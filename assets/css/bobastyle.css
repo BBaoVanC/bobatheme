@@ -125,6 +125,7 @@ footer {
   background-color: #222;
   border-radius: 8px;
   margin-top: 5px;
+  padding: 4px;
   align-items: flex-start;
   overflow: auto;
 }
@@ -132,7 +133,7 @@ footer {
 .navbar-item, .langbar-item {
   /*flex-grow: 1;*/
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 /*.navbar-item:first-child,
