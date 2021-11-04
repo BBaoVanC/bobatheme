@@ -13,8 +13,8 @@
     {{ $gitinfo = true }}
     {{ end }}
 
-    {{ if not $gitinfo }}
-    {{ if ne .Lastmod .Date }}
+    {{/* TODO: make this be a tooltip */}}
+    {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
     <span class="post-meta-item">
         {{ partial "icon.html" "pencil" }}
         <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
@@ -22,7 +22,6 @@
         </time>
         {{ end }}
     </span>
-    {{ end }}
     {{ end }}
 
     {{ with .Params.authors }}
