@@ -1,3 +1,4 @@
+<!-- See https://github.com/BBaoVanC/hugo/blob/opengraph-video-resources/tpl/tplimpl/embedded/templates/opengraph.html -->
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
