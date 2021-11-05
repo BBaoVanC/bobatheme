@@ -2,27 +2,29 @@
     <a href="{{ .Site.Home.Permalink | absLangURL }}">{{ .Site.Title | markdownify }}</a>
 </h2>
 
-<nav class="navbar">
-    {{ with .Site.Home }}
-    <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
+<div class="topbar">
+    <nav class="navbar">
+        {{ with .Site.Home }}
+        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
+        {{ end }}
+
+        {{ range .Site.Menus.main }}
+
+        {{ $isActive := false }}
+        {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+        {{ $isActive = true }}
+        {{ end }}
+
+        <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+
+        {{ end }}
+    </nav>
+
+    {{ if .Site.IsMultiLingual }}
+    <nav class="langpicker">
+        {{ range .Site.Home.AllTranslations }}
+        <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
+    </nav>
     {{ end }}
-
-    {{ range .Site.Menus.main }}
-
-    {{ $isActive := false }}
-    {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
-    {{ $isActive = true }}
-    {{ end }}
-
-    <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-
-    {{ end }}
-</nav>
-
-{{ if .Site.IsMultiLingual }}
-<nav class="langbar">
-    {{ range .Site.Home.AllTranslations }}
-    <a class="langbar-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end }}
-</nav>
-{{ end }}
+</div>
