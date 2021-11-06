@@ -1,0 +1,7 @@
+<aside>
+    {{ with .Inner }}
+    {{ . | markdownify }}
+    {{ else }}
+    {{ errorf "The aside shortcode needs to be a closing one (similar to the highlight shortcode, see https://gohugo.io/templates/shortcode-templates/#inner" }}
+    {{ end }}
+</aside>

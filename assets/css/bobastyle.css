@@ -183,6 +183,13 @@ figcaption {
   text-align: center;
 }
 
+aside {
+  background-color: #222;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
 a {
   color: #4da6ff;
   text-decoration: inherit;
@@ -208,6 +215,10 @@ hr {
 
 
 /* Code blocks */
+.highlight {
+  margin: 16px 0;
+}
+
 .highlight > pre {
   padding: 12px 8px;
   overflow: auto;
