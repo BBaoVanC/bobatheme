@@ -60,11 +60,16 @@
     </span>
     {{ end }}
 
-    {{ with .Site.Params.historyURL }}
+    {{ with .Site.Params.gitFileURL }}
     <span class="post-meta-item">
-        {{ partial "icon.html" "history" }}
+        {{ with $.Site.Params.gitFileIcon }}
+        {{ partial "icon.html" . }}
+        {{ else }}
+        {{ partial "icon.html" "file" }}
+        {{ end }}
+
         <a href="{{ printf "%s/content/%s" . $.File.Path }}" target="_blank" rel="noopener">
-            View history
+            View source
         </a>
     </span>
     {{ end }}

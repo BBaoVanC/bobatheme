@@ -27,8 +27,9 @@ params:
   wordcount: true
   readingtime: true
 
-  # used for "View history"
-  historyURL: https://github.com/BBaoVanC/bobatheme/commits/master
+  # used for "View source"
+  gitFileURL: https://github.com/BBaoVanC/bobatheme/blob/master
+  gitFileIcon: github-circle
 
 privacy:
   googleAnalytics:
