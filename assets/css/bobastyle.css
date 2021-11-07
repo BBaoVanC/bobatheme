@@ -32,7 +32,6 @@
 
 .post-media {
   margin-top: 15px;
-  display: inline-block;
 }
 
 .post-description {
@@ -175,6 +174,7 @@ figure.border img, figure.border video {
 
 figure {
   margin: auto;
+  display: inline-block;
 }
 
 figcaption {
