@@ -1,1 +1,8 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}}title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }}target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>{{/* DO NOT REMOVE THE TRAILING NEWLINE HERE -- it prevents there from being whitespace in between the link and the next word/element (for example: if there's a period right after a link) */}}
+<a
+    href="{{ .Destination | safeURL }}"
+    {{ with .Title}}title="{{ . }}"{{ end }}
+    {{ if strings.HasPrefix .Destination "http" }}target="_blank" rel="noopener"{{ end }}
+>
+    {{- .Text | safeHTML -}}
+</a>
+{{- print "" -}}
