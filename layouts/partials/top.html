@@ -21,10 +21,17 @@
     </nav>
 
     {{ if .Site.IsMultiLingual }}
-    <nav class="langpicker">
-        {{ range .Site.Home.AllTranslations }}
-        <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-        {{ end }}
-    </nav>
+    <details class="langpicker">
+        <summary>
+            {{ partial "icon.html" "world" -}}
+        </summary>
+        <ul class="languages">
+            {{ range .Site.Home.AllTranslations }}
+            <li>
+                <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </details>
     {{ end }}
 </div>

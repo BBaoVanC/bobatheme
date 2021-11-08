@@ -128,7 +128,7 @@ footer {
   align-items: flex-start;
 }
 
-.navbar, .langpicker {
+.navbar {
   display: flex;
 }
 
@@ -137,18 +137,41 @@ footer {
   overflow: auto;
 }
 
-.navbar a, .langpicker a {
+.navbar a {
   padding: 8px 12px;
   border-radius: 12px;
 }
 
-.navbar-item:hover, .langpicker-item:hover {
+.navbar-item:hover, .langpicker summary:hover, .langpicker[open] summary {
   background-color: #444;
   text-decoration: none;
 }
 
 .topbar .active {
   font-weight: bold;
+}
+
+.langpicker {
+  position: relative;
+  white-space: nowrap;
+}
+
+.langpicker summary {
+  cursor: pointer;
+  margin-left: 24px;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.langpicker .languages {
+  position: absolute;
+  margin-top: 8px;
+  right: 0;
+  background-color: #222;
+  border: 2px solid #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  list-style: none;
 }
 
 
