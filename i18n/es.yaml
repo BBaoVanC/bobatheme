@@ -20,9 +20,6 @@ browser_no_video_support:
   other: "Tu navegador de internet no admite video."
 
 
-filtering_for:
-  other: "Filtrando por \"{{ . }}\""
-
 no_posts:
   other: "¡No hay contenido para mostrar!"
 
