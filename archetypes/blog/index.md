@@ -1,7 +1,7 @@
 ---
 
 title: {{ replace .Name "-" " " | humanize }}
-date: {{ .Date | time.Format "2006-01-02" }}
+date: {{ .Date }}
 toc: true
 comments: true
 draft: true
