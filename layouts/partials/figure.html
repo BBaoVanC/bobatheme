@@ -1,9 +1,9 @@
 {{ $hidecaption := index . "hidecaption" }}
 
-{{ if index . "border" }}
-<figure class="border">
-{{ else }}
+{{ if index . "noborder" }}
 <figure>
+{{ else }}
+<figure class="border">
 {{ end }}
     {{ with index . "src" }}
 
