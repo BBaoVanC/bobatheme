@@ -190,9 +190,16 @@ img, video {
   max-width: 100%;
 }
 
-figure.border img, figure.border video {
+.post-media > figure.border img,
+.post-media > figure.border video {
   padding: 5px;
   border: 7px solid #1b5b9b;
+}
+
+figure.border img,
+figure.border video {
+  padding: 5px;
+  border: 2px solid #1b5b9b;
 }
 
 figure {
