@@ -1,0 +1,24 @@
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
+
+params:
+  readingtime: true
+
+taxonomies:
+  tag: tags
+  author: authors
+
+privacy:
+  googleAnalytics:
+    disable: true
+
+  twitter:
+    enableDNT: true
+
+  vimeo:
+    enableDNT: true
+
+  youtube:
+    privacyEnhanced: true
