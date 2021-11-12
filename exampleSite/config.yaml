@@ -7,42 +7,34 @@ enableRobotsTXT: true
 paginate: 5
 enableGitInfo: true
 
+taxonomies:
+  _merge: deep
+
 author:
   name: bbaovanc
 
-markup:
-  highlight:
-    noClasses: false
-    lineNos: true
+markup: # this just keeps the bobatheme markup styling
+  _merge: deep
 
 params:
   # these are for the OpenGraph/Twitter embeds in Hugo
   description: Example website for bobatheme
 
-  # these are for favicons in bobatheme
-  faviconICO: favicon.ico
-  faviconPNG: favicon.png
+  # these are for favicons in bobatheme (unset by default)
+  # faviconICO: /favicon.ico
+  # faviconPNG: /favicon.png
 
-  # show word count and/or reading time (enabled by default)
-  wordcount: true
-  readingtime: true
+  # show reading time (enabled by default)
+  # readingtime: true
 
-  # used for "View source"
-  gitFileURL: https://github.com/BBaoVanC/bobatheme/blob/master
-  gitFileIcon: github-circle
+  # used for "View source" (unset by default)
+  # gitFileURL: https://github.com/BBaoVanC/bobatheme/blob/master
+  # gitFileIcon: github-circle
 
+# see https://gohugo.io/about/hugo-and-gdpr/#all-privacy-settings
+# you probably want to keep this default
 privacy:
-  googleAnalytics:
-    disable: true
-
-  twitter:
-    enableDNT: true
-
-  vimeo:
-    enableDNT: true
-
-  youtube:
-    privacyEnhanced: true
+  _merge: deep
 
 languages:
   en:
