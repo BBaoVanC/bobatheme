@@ -1,4 +1,4 @@
-{{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime .Site.Params.gitFileURL }}
+{{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime }}
 <div class="post-metadata">
     {{ if .Date }}
     <span class="post-meta-item">
@@ -7,22 +7,11 @@
             {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
         </time>
     </span>
-
-    {{/* TODO: make this be a tooltip */}}
-    {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "pencil" }}
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
-            {{ i18n "long_date" (dict "Date" .Lastmod "Data" .Site.Data) }}
-        </time>
-        {{ end }}
-    </span>
     {{ end }}
 
     {{ partial "authors-meta-item.html" . }}
     {{ partial "translations-meta-item.html" . }}
     {{ partial "readingtime-meta-item.html" . }}
-    {{ partial "viewsource-meta-item.html" . }}
     {{ partial "series-meta-item.html" . }}
     {{ partial "tags-meta-item.html" . }}
 </div>

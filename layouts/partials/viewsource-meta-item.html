@@ -1,0 +1,13 @@
+{{ with .Site.Params.gitFileURL }}
+<span class="post-meta-item">
+    {{ with $.Site.Params.gitFileIcon }}
+    {{ partial "icon.html" . }}
+    {{ else }}
+    {{ partial "icon.html" "file" }}
+    {{ end }}
+
+    <a href="{{ printf "%s/content/%s" . $.File.Path }}" target="_blank" rel="noopener">
+        View source
+    </a>
+</span>
+{{ end }}

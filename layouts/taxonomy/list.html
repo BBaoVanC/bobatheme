@@ -23,13 +23,64 @@
 </h1>
 
 {{ if eq .Kind "taxonomy" }}
-<ul>
-    {{ range .Pages }}
-    <li>
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    </li>
-    {{ end }}
-</ul>
+
+{{ if eq .Data.Singular "series" }}
+<div class="series-taxonomy">
+    <ul>
+        {{ range .Pages }}
+        <li>
+            <div class="post">
+                <h2 class="post-title">
+                    {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+                    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+                    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+                </h2>
+                <div class="post-metadata">
+                    {{ partial "translations-meta-item.html" . }}
+
+                    {{ if ne .Site.Params.readingtime false }}
+                    <span class="post-meta-item">
+                        {{ partial "icon.html" "clock" }}
+                        {{ $readingtime := 0 }}
+                        {{ range .Data.Pages }}
+                        {{ $readingtime = (add $readingtime .ReadingTime) }}
+                        {{ end }}
+                        {{ i18n "readingtime" $readingtime }}
+                    </span>
+                    {{ end }}
+
+                    {{ partial "viewsource-meta-item.html" . }}
+                </div>
+
+                {{ with .Description }}
+                <div class="post-description">
+                    <p>{{ . | markdownify }}</p>
+                </div>
+                {{ end }}
+
+                <div class="series-pages">
+                    <ul>
+                        {{ range .Data.Pages.Reverse }}
+                        <li>{{ .Render "summary" }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ else }}
+<div class="taxonomy">
+    <ul>
+        {{ range .Pages }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
 
 {{ else }}
 

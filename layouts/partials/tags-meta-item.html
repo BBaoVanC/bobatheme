@@ -1,0 +1,8 @@
+<div class="tags">
+    {{ range (.GetTerms "tags") }}
+    <span class="post-meta-item">
+        {{ partial "icon.html" "tag" }}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </span>
+    {{ end }}
+</div>

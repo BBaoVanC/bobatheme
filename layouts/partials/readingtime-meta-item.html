@@ -1,0 +1,6 @@
+{{ if ne .Site.Params.readingtime false }}
+<span class="post-meta-item">
+    {{ partial "icon.html" "clock" }}
+    {{ i18n "readingtime" .ReadingTime }}
+</span>
+{{ end }}
