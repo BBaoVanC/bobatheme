@@ -1,9 +1,5 @@
 <div class="post">
     <h2 class="post-title">
-        {{ range .Params.categories }}
-        <code>{{ . }}</code>
-        {{ end }}
-
         {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
