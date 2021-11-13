@@ -10,43 +10,45 @@
     </span>
 </h1>
 
-{{ with .Sections }}
-<div class="sections">
-    {{ range . }}
+<div class="list-page-content">
+    {{ with .Sections }}
+    <div class="sections">
+        {{ range . }}
 
-    <a class="section-anchor" href="{{ .Permalink }}">
-        <div class="section">
-            <h2 class="section-title">
-                {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
-                {{ .Title | markdownify }}
-            </h2>
+        <a class="section-anchor" href="{{ .Permalink }}">
+            <div class="section">
+                <h2 class="section-title">
+                    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
+                    {{ .Title | markdownify }}
+                </h2>
 
-            <div class="section-description">
-                {{ if .Description }}
-                <p>
-                    {{ .Description | markdownify }}
-                </p>
-                {{ else }}
-                {{ .Summary }}
-                {{ end }}
+                <div class="section-description">
+                    {{ if .Description }}
+                    <p>
+                        {{ .Description | markdownify }}
+                    </p>
+                    {{ else }}
+                    {{ .Summary }}
+                    {{ end }}
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    {{ end }}
-</div>
-{{ end }}
-
-<div class="page-list">
-    <ul>
-        {{ range .Paginator.Pages }}
-        <li>{{ .Render "summary" }}</li>
-        {{ else }}
-        <div>
-            {{ i18n "no_posts" }}
-        </div>
         {{ end }}
-    </ul>
+    </div>
+    {{ end }}
+
+    <div class="page-list">
+        <ul>
+            {{ range .Paginator.Pages }}
+            <li>{{ .Render "summary" }}</li>
+            {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+            {{ end }}
+        </ul>
+    </div>
 </div>
 
 {{ if gt .Paginator.TotalPages 1 }}
