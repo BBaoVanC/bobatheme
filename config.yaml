@@ -4,6 +4,8 @@ markup:
     lineNos: true
 
 params:
+  faviconICO: favicon.ico
+  faviconPNG: favicon.png
   readingtime: true
 
 taxonomies:
