@@ -40,7 +40,8 @@
   margin-bottom: 15px;
 }
 
-.tags, .series {
+.tags,
+.series {
   margin-top: 10px;
 }
 
@@ -98,7 +99,8 @@
   margin: 20px;
 }
 
-.header a, .section-header a {
+.header a,
+.section-header a {
   color: inherit;
 }
 
@@ -120,7 +122,8 @@
   cursor: pointer;
 }
 
-.content, footer {
+.content,
+footer {
   margin: 20px;
 }
 
@@ -156,7 +159,9 @@ footer {
   border-radius: 12px;
 }
 
-.navbar-item:hover, .langpicker summary:hover, .langpicker[open] summary {
+.navbar-item:hover,
+.langpicker summary:hover,
+.langpicker[open] summary {
   background-color: #444;
   text-decoration: none;
 }
@@ -200,7 +205,8 @@ body {
   overflow-wrap: break-word;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
 }
 
@@ -370,7 +376,8 @@ li.disabled > .page-link:hover {
 
 /* Print compatibility */
 @media print {
-  .top, .section-header-link {
+  .top,
+  .section-header-link {
     display: none;
   }
 
