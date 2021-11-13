@@ -10,8 +10,9 @@
     </span>
 </h1>
 
+{{ with .Sections }}
 <div class="sections">
-    {{ range .Sections }}
+    {{ range . }}
 
     <a class="section-anchor" href="{{ .Permalink }}">
         <div class="section">
@@ -34,13 +35,18 @@
 
     {{ end }}
 </div>
+{{ end }}
 
-<div class="posts">
-    {{ range .Paginator.Pages }}
-        {{ .Render "summary" }}
-    {{ else }}
-        {{ i18n "no_posts" }}
-    {{ end }}
+<div class="page-list">
+    <ul>
+        {{ range .Paginator.Pages }}
+        <li>{{ .Render "summary" }}</li>
+        {{ else }}
+        <div>
+            {{ i18n "no_posts" }}
+        </div>
+        {{ end }}
+    </ul>
 </div>
 
 {{ if gt .Paginator.TotalPages 1 }}

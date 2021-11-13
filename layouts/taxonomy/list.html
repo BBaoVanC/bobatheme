@@ -5,6 +5,8 @@
         {{ partial "icon.html" "tag" }}
     {{ else if eq .Data.Singular "author" }}
         {{ partial "icon.html" "user-circle" }}
+    {{ else if eq .Data.Singular "series" }}
+        {{ partial "icon.html" "files" }}
     {{ else }}
         {{ partial "icon.html" "filter" }}
     {{ end }}
@@ -30,13 +32,24 @@
 </ul>
 
 {{ else }}
-{{ range .Paginator.Pages }}
-    {{ .Render "summary" }}
-{{ else }}
-<div>
-    {{ i18n "no_posts" }}
-</div>
+
+
+{{ $items := .Paginator.Pages }}
+{{ if eq .Data.Singular "series" }}
+{{ $items = .Paginator.Pages.Reverse }}
 {{ end }}
+<div class="page-list">
+    <ul>
+        {{ range $items }}
+        <li>{{ .Render "summary" }}</li>
+        {{ else }}
+        <div>
+            {{ i18n "no_posts" }}
+        </div>
+        {{ end }}
+    </ul>
+</div>
+
 
 {{ if gt .Paginator.TotalPages 1 }}
 <div class="pagination">

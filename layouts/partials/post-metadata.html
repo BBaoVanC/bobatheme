@@ -74,6 +74,17 @@
     </span>
     {{ end }}
 
+    {{ with .Params.series }}
+    <div class="series">
+        {{ range ($.GetTerms "series") }}
+        <span class="post-meta-item">
+            {{ partial "icon.html" "files" }}
+            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        </span>
+        {{ end }}
+    </div>
+    {{ end }}
+
     <div class="tags">
         {{ range (.GetTerms "tags") }}
         <span class="post-meta-item">

@@ -11,6 +11,7 @@ params:
 taxonomies:
   tag: tags
   author: authors
+  series: series
 
 privacy:
   googleAnalytics:
