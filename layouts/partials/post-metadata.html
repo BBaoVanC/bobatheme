@@ -1,17 +1,12 @@
-{{ if or .Date .IsTranslated .Site.Params.wordcount .Site.Params.readingtime .Site.Params.repoURL }}
+{{ if or .Date .IsTranslated .Site.Params.readingtime .Site.Params.repoURL }}
 <div class="post-metadata">
     {{ if .Date }}
     <span class="post-meta-item">
         {{ partial "icon.html" "calendar" }}
-        <time datetime="{{ .Date.Format "January 2, 2006" }}" pubdate>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
             {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
         </time>
     </span>
-
-    {{ $gitinfo := false }}
-    {{ with .GitInfo }}
-    {{ $gitinfo = true }}
-    {{ end }}
 
     {{/* TODO: make this be a tooltip */}}
     {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
