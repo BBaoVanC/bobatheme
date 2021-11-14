@@ -28,8 +28,8 @@
     {{ end }}
 
     {{ partial "opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/schema.html" . }}
+    {{ partial "twitter_cards.html" . }}
+    {{ partial "schema.html" . }}
 
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
