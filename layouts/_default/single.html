@@ -52,6 +52,36 @@
 </div>
 {{ end }}
 
+{{ if or .NextInSection .PrevInSection }}
+<div class="prevnext">
+    {{ with .NextInSection }}
+    <a class="prev" href="{{ .Permalink }}">
+        <div class="prev-caption">
+            &larr; Newer
+        </div>
+        <div class="prev-post">
+            {{ .Title }}
+        </div>
+    </a>
+    {{ else }}
+    <div class="prev"></div>
+    {{ end }}
+
+    {{ with .PrevInSection }}
+    <a class="next" href="{{ .Permalink }}">
+        <div class="next-caption">
+            Older &rarr;
+        </div>
+        <div class="next-post">
+            {{ .Title }}
+        </div>
+    </a>
+    {{ else }}
+    <div class="next"></div>
+    {{ end }}
+</div>
+{{ end }}
+
 {{ if .Params.comments }}
 {{ partial "comments.html" . }}
 {{ end }}

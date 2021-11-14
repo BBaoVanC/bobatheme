@@ -411,6 +411,53 @@ li.disabled > .page-link:hover {
 
 
 
+/* Previous and next page */
+.prevnext {
+  display: flex;
+  margin: 20px 0;
+}
+
+.prevnext > * {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  background-color: #222;
+  padding: 8px 16px;
+}
+
+.prevnext > a:hover {
+  background-color: #333;
+  text-decoration: none;
+}
+
+.prevnext > .prev {
+  text-align: left;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.prevnext > .next {
+  text-align: right;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.prevnext .prev-caption,
+.prevnext .next-caption {
+  opacity: 65%;
+}
+
+.prevnext .prev-post,
+.prevnext .next-post {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
 /* Print compatibility */
 @media print {
   .top,
