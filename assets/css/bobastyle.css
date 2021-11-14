@@ -142,10 +142,17 @@
 
 
 /* Content formatting */
+.series-box {
+  background-color: #222;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
 #table-of-contents {
   background-color: #222;
   padding: 8px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 #table-of-contents summary {

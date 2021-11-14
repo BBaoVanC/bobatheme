@@ -8,6 +8,17 @@
 
 {{ partial "post-metadata.html" . }}
 
+{{ with (.GetTerms "series") }}
+{{ range . }}
+<div class="series-box">
+    {{ partial "icon.html" "info" }}
+    This post is part of a series:
+    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+</div>
+{{ end }}
+{{ end }}
+
+
 {{ if .Params.Toc }}
 <div id="table-of-contents">
     <details>
