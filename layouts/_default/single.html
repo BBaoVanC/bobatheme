@@ -8,14 +8,25 @@
 
 {{ partial "post-metadata.html" . }}
 
+
 {{ with (.GetTerms "series") }}
+
+{{ $series := slice }}
 {{ range . }}
+{{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
+{{ end }}
+
 <div class="series-box">
     {{ partial "icon.html" "info" }}
+    {{ if gt (len $series) 1 }}
+    This post is part of multiple series:
+    {{ else }}
     This post is part of a series:
-    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
+
+    {{ delimit $series ", " }}
 </div>
-{{ end }}
+
 {{ end }}
 
 
