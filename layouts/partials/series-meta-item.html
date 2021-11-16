@@ -1,10 +1,12 @@
-{{ with .Params.series }}
+{{ with (.GetTerms "series") }}
+
+{{ $series := slice }}
+{{ range . }}
+{{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
+{{ end }}
+
 <div class="series">
-    {{ range ($.GetTerms "series") }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "files" }}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-    </span>
-    {{ end }}
+    {{ partial "icon.html" "files" }}
+    {{ delimit $series ", " }}
 </div>
 {{ end }}

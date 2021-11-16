@@ -1,8 +1,14 @@
+{{ with (.GetTerms "tags") }}
+
+{{ $tags := slice }}
+{{ range . }}
+{{ $tags = $tags | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
+{{ end }}
+
 <div class="tags">
-    {{ range (.GetTerms "tags") }}
+    {{ partial "icon.html" "tag" }}
     <span class="post-meta-item">
-        {{ partial "icon.html" "tag" }}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{ delimit $tags ", " }}
     </span>
-    {{ end }}
 </div>
+{{ end }}
