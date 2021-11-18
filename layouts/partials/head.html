@@ -9,6 +9,9 @@
     {{ with resources.Get "css/syntax.css" | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
+    {{ with resources.Get "css/syntax-light.css" | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ end }}
 
     {{ with .Site.Params.faviconICO }}
     <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />

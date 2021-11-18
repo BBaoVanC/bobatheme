@@ -94,7 +94,9 @@
 {{ end }}
 
 {{ if .Params.comments }}
-{{ partial "comments.html" . }}
+<div class="comments">
+    {{ partial "comments.html" . }}
+</div>
 {{ end }}
 
 {{ end }}
