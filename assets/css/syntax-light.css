@@ -2,7 +2,6 @@
   .chroma {
     color: black;
   }
-/* Background */ .chroma { background-color: #f8f8f8 }
 /* Other */ .chroma .x { color: #000000 }
 /* Error */ .chroma .err { color: #a40000 }
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
@@ -84,4 +83,14 @@
 /* GenericTraceback */ .chroma .gt { color: #a40000; font-weight: bold }
 /* GenericUnderline */ .chroma .gl { color: #000000; text-decoration: underline }
 /* TextWhitespace */ .chroma .w { color: #f8f8f8; text-decoration: underline }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Background */ .chroma { background-color: #f8f8f8 }
+}
+
+@media print {
+  .chroma {
+    background-color: white;
+  }
 }

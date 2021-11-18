@@ -31,11 +31,15 @@
 
 
 {{ if .Params.Toc }}
-<div id="table-of-contents">
+<div class="table-of-contents">
     <details>
         <summary>{{ i18n "table_of_contents" }}</summary>
         {{ .TableOfContents }}
     </details>
+</div>
+<div class="table-of-contents print">
+    {{ i18n "table_of_contents" }}
+    {{ .TableOfContents }}
 </div>
 {{ end }}
 
