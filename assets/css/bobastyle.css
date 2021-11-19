@@ -236,6 +236,15 @@ footer {
   list-style: none;
 }
 
+.langpicker .unavailable {
+  color: inherit;
+}
+
+.langpicker .unavailable:hover {
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
 
 
 /* Basic elements */

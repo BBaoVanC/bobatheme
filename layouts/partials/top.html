@@ -26,9 +26,25 @@
             {{ partial "icon.html" "world" -}}
         </summary>
         <ul class="languages">
-            {{ range .Site.Home.AllTranslations }}
+            {{ range .AllTranslations }}
             <li>
                 <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            </li>
+            {{ end }}
+
+            {{ $site_translations := slice }}
+            {{ range .Site.Languages }}
+            {{ $site_translations = $site_translations | append .LanguageName }}
+            {{ end }}
+
+            {{ $translation_codes := slice }}
+            {{ range .AllTranslations }}
+            {{ $translation_codes = $translation_codes | append .Language }}
+            {{ end }}
+
+            {{ range (.Site.Languages | complement $translation_codes) }}
+            <li>
+                <a class="langpicker-item unavailable">{{ .LanguageName }}</a>
             </li>
             {{ end }}
         </ul>
