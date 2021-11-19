@@ -566,7 +566,8 @@ li.disabled > .page-link:hover {
   }
 
   * {
-    color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
   body {
