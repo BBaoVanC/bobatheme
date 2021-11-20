@@ -33,7 +33,6 @@
     {{ partial "opengraph.html" . }}
     {{ partial "twitter_cards.html" . }}
     {{ partial "schema.html" . }}
-    {{ partial "seo_schema.html" . }}
 
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
