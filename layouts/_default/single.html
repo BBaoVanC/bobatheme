@@ -72,7 +72,7 @@
     {{ with .NextInSection }}
     <a class="prev" href="{{ .Permalink }}">
         <div class="prev-caption">
-            &larr; Newer
+            &larr; {{ i18n "newer_post" }}
         </div>
         <div class="prev-post">
             {{ .Title }}
@@ -85,7 +85,7 @@
     {{ with .PrevInSection }}
     <a class="next" href="{{ .Permalink }}">
         <div class="next-caption">
-            Older &rarr;
+            {{ i18n "older_post" }} &rarr;
         </div>
         <div class="next-post">
             {{ .Title }}

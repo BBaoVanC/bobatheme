@@ -29,3 +29,9 @@ table_of_contents:
 
 see_also:
   other: "See also"
+
+older_post:
+  other: "Older"
+
+newer_post:
+  other: "Newer"
