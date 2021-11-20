@@ -1,0 +1,51 @@
+{{/* See https://github.com/spech66/hugo-best-practices#add-a-schemaorg-partial */}}
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "{{ .Site.BaseURL }}"
+    },
+    "articleSection" : "{{ .Section }}",
+    "name" : "{{ .Title }}",
+    "headline" : "{{ .Title }}",
+    // "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+    "description" : "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+    "inLanguage" : "{{ .Lang }}",
+    {{ with .Params.authors -}}
+    "author" : [
+    {{ $len := len . }}
+    {{ range $i, $author := . -}}
+    {{ $url := (printf `authors/%s` ($author | anchorize)) -}}
+        {
+            "@type": "Person",
+            "name": "{{ $author }}",
+            "url": "{{ $url | absLangURL }}",
+            {{ with ($.Site.GetPage $url) -}}
+            "description": "{{ with .Description }}{{ . | plainify }}{{ end }}"
+            {{ end -}}
+        {{ if eq (add $i 1) $len -}}
+        }
+        {{ else }}
+        },
+        {{ end }}
+    {{ end -}}
+    ],{{ end }}
+
+    {{ $images := $.Resources.ByType "image" -}}
+    {{ $featured := $images.GetMatch "*feature*" -}}
+    {{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{ with $featured -}}
+    "image": "{{ .Permalink }}",
+    {{ end }}
+
+    "copyrightYear" : "{{ .Date.Format "2006" }}",
+    "datePublished": "{{ .Date | safeHTML }}",
+    "dateModified" : "{{ .Lastmod | safeHTML }}",
+    "url" : "{{ .Permalink }}",
+    "wordCount" : "{{ .WordCount }}",
+    "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }} "Blog" ]
+
+}
+</script>
