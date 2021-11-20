@@ -40,9 +40,13 @@
     "image": "{{ .Permalink }}",
     {{ end }}
 
-    "copyrightYear" : "{{ .Date.Format "2006" }}",
-    "datePublished": "{{ .Date | safeHTML }}",
-    "dateModified" : "{{ .Lastmod | safeHTML }}",
+    {{ with .Date -}}
+    "copyrightYear" : "{{ .Format "2006" }}",
+    "datePublished": "{{ . | safeHTML }}",
+    {{ end }}
+    {{ with .Lastmod }}
+    "dateModified" : "{{ . | safeHTML }}",
+    {{ end }}
     "url" : "{{ .Permalink }}",
     "wordCount" : "{{ .WordCount }}",
     "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }} "Blog" ]
