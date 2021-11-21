@@ -75,7 +75,7 @@
             &larr; {{ i18n "newer_post" }}
         </div>
         <div class="prev-post">
-            {{ .Title }}
+            {{ .Title | markdownify }}
         </div>
     </a>
     {{ else }}
@@ -88,7 +88,7 @@
             {{ i18n "older_post" }} &rarr;
         </div>
         <div class="next-post">
-            {{ .Title }}
+            {{ .Title | markdownify }}
         </div>
     </a>
     {{ else }}

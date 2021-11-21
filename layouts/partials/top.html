@@ -5,7 +5,7 @@
 <div class="topbar">
     <nav class="navbar">
         {{ with .Site.Home }}
-        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title }}</a>
+        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
         {{ end }}
 
         {{ range .Site.Menus.main }}

@@ -1,15 +1,15 @@
 {{ range .AlternativeOutputFormats }}
-    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | plainify }}">
 {{ end }}
 {{ with .OutputFormats.Get "rss" }}
-    <link rel="start" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+    <link rel="start" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | plainify }}">
 {{ end }}
 
 {{ with .PrevInSection }}
-    <link rel="prev" title="{{ .Title }}" href="{{ .Permalink }}">
+    <link rel="prev" title="{{ .Title | plainify }}" href="{{ .Permalink }}">
 {{ end }}
 {{ with .NextInSection }}
-    <link rel="next" title="{{ .Title }}" href="{{ .Permalink }}">
+    <link rel="next" title="{{ .Title | plainify }}" href="{{ .Permalink }}">
 {{ end }}
 
 <link rel="canonical" href="{{ .Permalink }}">

@@ -11,7 +11,7 @@
         {{ partial "icon.html" "filter" }}
     {{ end }}
 
-    {{ .Title }}
+    {{ .Title | markdownify }}
 
     {{ if eq .Kind "term" }}
     <span class="rss-link">
