@@ -23,7 +23,7 @@
     {{ if .Site.IsMultiLingual }}
     <details class="langpicker">
         <summary>
-            {{ partial "icon.html" "world" -}}
+            {{- partial "icon.html" "world" -}}
         </summary>
         <ul class="languages">
             {{ range .AllTranslations }}

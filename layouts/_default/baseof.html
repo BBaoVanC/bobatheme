@@ -1,7 +1,7 @@
 {{ partial "credit.html" }}
 <!DOCTYPE html>
 <html lang="{{ .Language.Lang }}">
-    {{- partial "head.html" . -}}
+    {{ partial "head.html" . }}
 
     <body>
         <div class="top">
@@ -13,9 +13,9 @@
         {{ end }}
 
         <div class="content">
-        {{- block "main" . }}
+        {{ block "main" . }}
         {{ .Content }}
-        {{- end }}
+        {{ end }}
         </div>
 
         {{ with .Site.Copyright }}
