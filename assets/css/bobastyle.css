@@ -40,7 +40,7 @@
 
 .post-meta-item {
   margin-right: 10px;
-  white-space: nowrap;
+  display: inline-block;
 }
 
 .post-metadata {

@@ -7,8 +7,6 @@
 
 <div class="tags">
     {{ partial "icon.html" "tag" }}
-    <span class="post-meta-item">
-        {{ delimit $tags ", " }}
-    </span>
+    {{ delimit $tags ", " }}
 </div>
 {{ end }}
