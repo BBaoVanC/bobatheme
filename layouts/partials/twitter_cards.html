@@ -5,11 +5,23 @@
 {{ end }}
 
 {{ with $featured }}
-    <meta name="twitter:card" content="summary">
+    {{ $ratio := 0 }}
+    {{ if gt .Width .Height }}
+        {{ $ratio = div (float .Width) .Height }}
+    {{ else }}
+        {{ $ratio = div (float .Height) .Width }}
+    {{ end }}
+
+    {{ if lt $ratio 1.75 }}
+        <meta name="twitter:card" content="summary_large_image">
+    {{ else }}
+        <meta name="twitter:card" content="summary">
+    {{ end }}
+
     <meta name="twitter:image" content="{{ $featured.Permalink }}">
 {{ end }}
 
-<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:title" content="{{ .Title | plainify }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
 {{ with .Site.Social.twitter }}
