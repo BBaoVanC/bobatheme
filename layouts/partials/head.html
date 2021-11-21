@@ -20,10 +20,6 @@
     <link rel="icon" type="image/png" href="{{ . | absURL }}" />
     {{ end }}
 
-    {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-
     {{ if .IsHome }}
     <title>{{ .Site.Title }}</title>
     {{ else }}
@@ -33,8 +29,9 @@
     {{ partial "opengraph.html" . }}
     {{ partial "twitter_cards.html" . }}
     {{ partial "schema.html" . }}
-
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
-
+    {{ partial "link_tags.html" . }}
     {{ partial "author-metadata.html" . }}
+
+    <meta name="language" content="{{ .Language.Lang }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 </head>
