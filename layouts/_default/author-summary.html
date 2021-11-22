@@ -1,0 +1,16 @@
+<div class="post">
+    <h2 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+    </h2>
+
+    {{ partial "author-metadata.html" . }}
+
+    <div class="post-description">
+        {{ partial "description-or-summary.html" . }}
+    </div>
+
+    <div class="readmore">
+        <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
+    </div>
+</div>

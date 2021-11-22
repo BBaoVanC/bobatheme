@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <h1>
+        {{ partial "icon.html" "user-circle" }}
+        {{ .Title | markdownify }}
+    </h1>
+
+    <div class="page-list">
+        <ul>
+            {{ range .Paginator.Pages }}
+                <li>{{ .Render "author-summary" }}</li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

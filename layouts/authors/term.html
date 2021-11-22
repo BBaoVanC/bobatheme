@@ -1,15 +1,17 @@
 {{ define "main" }}
     <h1>
-        {{ partial "icon.html" "files" }}
+        {{ partial "icon.html" "user-circle" }}
         {{ .Title | markdownify }}
         {{ partial "rss-link.html" . }}
     </h1>
 
-    {{ partial "description-or-summary.html" . }}
+    {{ partial "author-metadata.html" . }}
+
+    {{ .Content }}
 
     <div class="page-list">
         <ul>
-            {{ range .Paginator.Pages.Reverse }}
+            {{ range .Paginator.Pages }}
                 <li>{{ .Render "summary" }}</li>
             {{ else }}
                 <div>

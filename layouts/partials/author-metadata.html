@@ -1,9 +1,17 @@
-{{ with .Params.authors }}
+<div class="post-metadata">
+    {{/* Calculate the total word count */}}
+    {{ $total_words := 0 }}
+    {{ range .Data.Pages }}
+        {{ $total_words = add $total_words .WordCount }}
+    {{ end }}
 
-<meta name="author" content="{{ delimit . ", " }}">
+    <span class="post-meta-item">
+        {{ partial "icon.html" "newspaper" }}
+        {{ i18n "post_count" (len .Data.Pages) }}
+    </span>
 
-{{ range . }}
-<meta property="article:author" content="{{ . }}">
-{{ end }}
-
-{{ end }}
+    <span class="post-meta-item">
+        {{ partial "icon.html" "align-left" }}
+        {{ i18n "wordcount" $total_words }}
+    </span>
+</div>

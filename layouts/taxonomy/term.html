@@ -2,8 +2,6 @@
     <h1>
         {{ if eq .Data.Singular "tag" }}
             {{ partial "icon.html" "tag" }}
-        {{ else if eq .Data.Singular "author" }}
-            {{ partial "icon.html" "user-circle" }}
         {{ else }}
             {{ partial "icon.html" "filter" }}
         {{ end }}
@@ -12,7 +10,7 @@
         {{ partial "rss-link.html" . }}
     </h1>
 
-    {{ partial "term-description.html" . }}
+    {{ partial "description-or-summary.html" . }}
     <div class="page-list">
         <ul>
             {{ range .Paginator.Pages }}

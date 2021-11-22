@@ -23,6 +23,10 @@ browser_no_video_support:
 no_posts:
   other: "No posts here!"
 
+post_count:
+  one: "{{ . }} post"
+  other: "{{ . }} posts"
+
 
 table_of_contents:
   other: "Table of Contents"
