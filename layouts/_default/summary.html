@@ -14,13 +14,7 @@
     {{ end }}
 
     <div class="post-description">
-        {{ if .Description }}
-        <p>
-            {{ .Description | markdownify }}
-        </p>
-        {{ else }}
-        {{ .Summary }}
-        {{ end }}
+        {{ partial "description-or-summary.html" . }}
     </div>
 
     <div class="readmore">

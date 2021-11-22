@@ -1,0 +1,5 @@
+{{ with .Description }}
+    <p>{{ . | markdownify }}</p>
+{{ else }}
+    {{ .Summary }}
+{{ end }}

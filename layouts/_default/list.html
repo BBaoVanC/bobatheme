@@ -23,13 +23,7 @@
                 </h2>
 
                 <div class="section-description">
-                    {{ if .Description }}
-                    <p>
-                        {{ .Description | markdownify }}
-                    </p>
-                    {{ else }}
-                    {{ .Summary }}
-                    {{ end }}
+                    {{ partial "description-or-summary.html" . }}
                 </div>
             </div>
         </a>
