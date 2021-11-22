@@ -1,10 +1,17 @@
 <div class="post">
     <h2 class="post-title">
+        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
     </h2>
 
-    {{ partial "author-metadata.html" . }}
+    {{ partial "post-metadata/short.html" . }}
+
+    {{ with .Resources.GetMatch "feature" }}
+    <div class="post-media">
+        {{ partial "figure.html" (dict "src" . "border" true) }}
+    </div>
+    {{ end }}
 
     <div class="post-description">
         {{ partial "description-or-summary.html" . }}

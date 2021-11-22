@@ -5,14 +5,14 @@
         {{ partial "rss-link.html" . }}
     </h1>
 
-    {{ partial "author-metadata.html" . }}
+    {{ partial "post-metadata/author.html" . }}
 
     {{ .Content }}
 
     <div class="page-list">
         <ul>
             {{ range .Paginator.Pages }}
-                <li>{{ .Render "summary" }}</li>
+                <li>{{ .Render "summary/post" }}</li>
             {{ else }}
                 <div>
                     {{ i18n "no_posts" }}

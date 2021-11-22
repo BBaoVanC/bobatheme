@@ -19,10 +19,10 @@
     </span>
     {{ end }}
 
-    {{ partial "authors-meta-item.html" . }}
-    {{ partial "translations-meta-item.html" . }}
-    {{ partial "readingtime-meta-item.html" . }}
-    {{ partial "viewsource-meta-item.html" . }}
-    {{ partial "tags-meta-item.html" . }}
+    {{ partial "post-meta-item/authors.html" . }}
+    {{ partial "post-meta-item/translations.html" . }}
+    {{ partial "post-meta-item/readingtime.html" . }}
+    {{ partial "post-meta-item/viewsource.html" . }}
+    {{ partial "post-meta-item/tags.html" . }}
 </div>
 {{ end }}

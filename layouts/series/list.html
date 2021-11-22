@@ -7,7 +7,7 @@
     <div class="series-taxonomy">
         <ul>
             {{ range .Pages }}
-                <li>{{ .Render "series-summary" }}</li>
+                <li>{{ .Render "summary/series" }}</li>
             {{ end }}
         </ul>
     </div>

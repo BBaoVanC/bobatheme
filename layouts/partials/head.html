@@ -26,11 +26,11 @@
     <title>{{ (print .Title " | " .Site.Title) | plainify }}</title>
     {{ end }}
 
-    {{ partial "opengraph.html" . }}
-    {{ partial "twitter_cards.html" . }}
-    {{ partial "schema.html" . }}
-    {{ partial "link_tags.html" . }}
-    {{ partial "author_meta_tags.html" . }}
+    {{ partial "seo-tags/opengraph.html" . }}
+    {{ partial "seo-tags/twitter-cards.html" . }}
+    {{ partial "seo-tags/schema.html" . }}
+    {{ partial "seo-tags/link.html" . }}
+    {{ partial "seo-tags/author.html" . }}
 
     <meta name="language" content="{{ .Language.Lang }}">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">

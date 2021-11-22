@@ -35,7 +35,7 @@
     <div class="page-list">
         <ul>
             {{ range .Paginator.Pages }}
-            <li>{{ .Render "summary" }}</li>
+            <li>{{ .Render "summary/post" }}</li>
             {{ else }}
             <div>
                 {{ i18n "no_posts" }}
