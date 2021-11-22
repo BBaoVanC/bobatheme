@@ -1,0 +1,5 @@
+<span class="rss-link">
+    {{ with .OutputFormats.Get "rss" }}
+    <a href="{{ .Permalink }}" target="_blank" rel="noopener">{{ partial "icon.html" "rss-feed" }}</a>
+    {{ end }}
+</span>

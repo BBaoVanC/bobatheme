@@ -1,0 +1,5 @@
+{{ if gt .Paginator.TotalPages 1 }}
+    <div class="pagination">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+{{ end }}

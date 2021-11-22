@@ -9,15 +9,21 @@
         {{ end }}
 
         {{ .Title | markdownify }}
+        {{ partial "rss-link.html" . }}
     </h1>
 
-    <div class="taxonomy">
+    {{ partial "term-description.html" . }}
+    <div class="page-list">
         <ul>
-            {{ range .Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-            </li>
+            {{ range .Paginator.Pages }}
+                <li>{{ .Render "summary" }}</li>
+            {{ else }}
+                <div>
+                    {{ i18n "no_posts" }}
+                </div>
             {{ end }}
         </ul>
     </div>
+
+    {{ partial "pagination.html" . }}
 {{ end }}

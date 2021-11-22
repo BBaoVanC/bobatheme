@@ -1,0 +1,5 @@
+{{ with .Description }}
+    <div class="term-description">
+        <p>{{ . | markdownify }}</p>
+    </div>
+{{ end }}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <h1>
+        {{ partial "icon.html" "files" }}
+        {{ .Title | markdownify }}
+        {{ partial "rss-link.html" . }}
+    </h1>
+
+    {{ partial "term-description.html" . }}
+
+    <div class="page-list">
+        <ul>
+            {{ range .Paginator.Pages.Reverse }}
+                <li>{{ .Render "summary" }}</li>
+            {{ else }}
+                <div>
+                    {{ i18n "no_posts" }}
+                </div>
+            {{ end }}
+        </ul>
+    </div>
+
+    {{ partial "pagination.html" . }}
+{{ end }}

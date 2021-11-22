@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <h1>
+        {{ partial "icon.html" "files" }}
+        {{ .Title | markdownify }}
+    </h1>
+
+    <div class="series-taxonomy">
+        <ul>
+            {{ range .Pages }}
+                <li>{{ .Render "series-summary" }}</li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}
