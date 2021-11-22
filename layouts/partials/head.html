@@ -33,5 +33,5 @@
     {{ partial "seo-tags/author.html" . }}
 
     <meta name="language" content="{{ .Language.Lang }}">
-    <meta name="description" content="{{ (partial "description-or-summary.html" .) | plainify }}">
+    <meta name="description" content="{{ (partial "seo-tags/description.html" .) | plainify }}">
 </head>

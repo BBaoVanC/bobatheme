@@ -1,9 +1,7 @@
-{{- with .Description -}}
-    <p>{{- . | markdownify -}}</p>
-{{- else -}}
-    {{- with .Summary -}}
-        {{- . -}}
-    {{- else -}}
-        {{- .Site.Params.description -}}
-    {{- end -}}
-{{- end -}}
+{{ with .Description }}
+    <p>{{ . | markdownify }}</p>
+{{ else }}
+    {{ with .Summary }}
+        {{ . }}
+    {{ end }}
+{{ end }}

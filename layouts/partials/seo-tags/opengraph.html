@@ -1,5 +1,5 @@
 <meta property="og:title" content="{{ .Title | plainify }}">
-<meta property="og:description" content="{{ (partial "description-or-summary.html" .) | plainify }}">
+<meta property="og:description" content="{{ (partial "seo-tags/description.html" .) | plainify }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 
