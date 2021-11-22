@@ -66,6 +66,28 @@
 
 
 
+/* Tags list format */
+.tag-list ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  flex-flow: row wrap;
+  padding: 0;
+}
+
+.tag-list a {
+  background-color: #222;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.tag-list a:hover {
+  text-decoration: none;
+  background-color: #333;
+}
+
+
+
 /* Series list format */
 .series-pages ul {
   display: flex;
@@ -510,6 +532,7 @@ li.disabled > .page-link:hover {
 
   .topbar,
   .section,
+  .tag-list a,
   .page-list li,
   .series-taxonomy li,
   .series-box,
@@ -523,6 +546,7 @@ li.disabled > .page-link:hover {
   }
 
   .section:hover,
+  .tag-list a:hover,
   .navbar-item:hover,
   .langpicker summary:hover,
   .langpicker[open] summary,
