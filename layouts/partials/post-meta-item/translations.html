@@ -1,8 +1,8 @@
 {{ if .IsTranslated }}
-<span class="post-meta-item">
-    {{ partial "icon.html" "world" }}
-    {{ range .Translations }}
-    <a href="{{ .Permalink }}">{{ .Language }}</a>
-    {{ end }}
-</span>
+    <span class="post-meta-item">
+        {{ partial "icon.html" "world" }}
+        {{ range .Translations }}
+            <a href="{{ .Permalink }}">{{ .Language }}</a>
+        {{ end }}
+    </span>
 {{ end }}

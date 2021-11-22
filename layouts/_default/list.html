@@ -1,37 +1,35 @@
 {{ define "main" }}
-
-<h1>
-    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
-    {{ .Title | markdownify }}
-    <span class="rss-link">
-        {{ with .OutputFormats.Get "rss" }}
-        <a href="{{ .Permalink }}" target="_blank" rel="noopener">{{ partial "icon.html" "rss-feed" }}</a>
-        {{ end }}
-    </span>
-</h1>
-
-<div class="list-page-content">
-    {{ with .Sections }}
-    <div class="sections">
-        {{ range . }}
-            {{ .Render "summary/section" }}
-        {{ end }}
-    </div>
-    {{ end }}
-
-    <div class="page-list">
-        <ul>
-            {{ range .Paginator.Pages }}
-            <li>{{ .Render "summary/post" }}</li>
-            {{ else }}
-            <div>
-                {{ i18n "no_posts" }}
-            </div>
+    <h1>
+        {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
+        {{ .Title | markdownify }}
+        <span class="rss-link">
+            {{ with .OutputFormats.Get "rss" }}
+            <a href="{{ .Permalink }}" target="_blank" rel="noopener">{{ partial "icon.html" "rss-feed" }}</a>
             {{ end }}
-        </ul>
+        </span>
+    </h1>
+
+    <div class="list-page-content">
+        {{ with .Sections }}
+            <div class="sections">
+                {{ range . }}
+                    {{ .Render "summary/section" }}
+                {{ end }}
+            </div>
+        {{ end }}
+
+        <div class="page-list">
+            <ul>
+                {{ range .Paginator.Pages }}
+                    <li>{{ .Render "summary/post" }}</li>
+                {{ else }}
+                    <div>
+                        {{ i18n "no_posts" }}
+                    </div>
+                {{ end }}
+            </ul>
+        </div>
     </div>
-</div>
 
-{{ partial "pagination.html" . }}
-
+    {{ partial "pagination.html" . }}
 {{ end }}

@@ -1,12 +1,11 @@
 {{ with (.GetTerms "tags") }}
+    {{ $tags := slice }}
+    {{ range . }}
+        {{ $tags = $tags | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
+    {{ end }}
 
-{{ $tags := slice }}
-{{ range . }}
-{{ $tags = $tags | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-{{ end }}
-
-<div class="tags">
-    {{ partial "icon.html" "tag" }}
-    {{ delimit $tags ", " }}
-</div>
+    <div class="tags">
+        {{ partial "icon.html" "tag" }}
+        {{ delimit $tags ", " }}
+    </div>
 {{ end }}

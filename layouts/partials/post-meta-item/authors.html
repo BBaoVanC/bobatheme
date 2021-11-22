@@ -1,19 +1,16 @@
 {{ with .Params.authors }}
-<span class="post-meta-item">
-    {{ partial "icon.html" "user-circle" }}
+    <span class="post-meta-item">
+        {{ partial "icon.html" "user-circle" }}
 
-    {{ if index $.Site.Taxonomies "authors" }}
-
-    {{ $authors := slice }}
-    {{ range . }}
-    {{ $url := (printf "authors/%s" (. | anchorize)) | absLangURL }}
-    {{ $authors = $authors | append (printf `<a href="%s">%s</a>` $url . | safeHTML) }}
-    {{ end }}
-    {{ delimit $authors ", " }}
-
-    {{ else }}
-    {{ delimit . ", " }}
-
-    {{ end }}
-</span>
+        {{ if index $.Site.Taxonomies "authors" }}
+            {{ $authors := slice }}
+            {{ range . }}
+                {{ $url := (printf "authors/%s" (. | anchorize)) | absLangURL }}
+                {{ $authors = $authors | append (printf `<a href="%s">%s</a>` $url . | safeHTML) }}
+            {{ end }}
+            {{ delimit $authors ", " }}
+        {{ else }}
+            {{ delimit . ", " }}
+        {{ end }}
+    </span>
 {{ end }}

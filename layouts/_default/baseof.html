@@ -9,22 +9,22 @@
         </div>
 
         {{ if not .IsHome }}
-        {{ partial "breadcrumb.html" . }}
+            {{ partial "breadcrumb.html" . }}
         {{ end }}
 
         <div class="content">
         {{ block "main" . }}
-        {{ .Content }}
+            {{ .Content }}
         {{ end }}
         </div>
 
         {{ with .Site.Copyright }}
-        <footer>
-            <hr>
-            <small>
-                {{ . | safeHTML }}
-            </small>
-        </footer>
+            <footer>
+                <hr>
+                <small>
+                    {{ . | safeHTML }}
+                </small>
+            </footer>
         {{ end }}
     </body>
 

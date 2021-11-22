@@ -1,28 +1,28 @@
 {{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime .Site.Params.gitFileURL }}
-<div class="post-metadata">
-    {{ if .Date }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "calendar" }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-            {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
-        </time>
-    </span>
+    <div class="post-metadata">
+        {{ if .Date }}
+            <span class="post-meta-item">
+                {{ partial "icon.html" "calendar" }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
+                    {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
+                </time>
+            </span>
 
-    {{/* TODO: make this be a tooltip */}}
-    {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "pencil" }}
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
-            {{ i18n "long_date" (dict "Date" .Lastmod "Data" .Site.Data) }}
-        </time>
+            {{/* TODO: make this be a tooltip */}}
+            {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
+                <span class="post-meta-item">
+                    {{ partial "icon.html" "pencil" }}
+                    <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
+                        {{ i18n "long_date" (dict "Date" .Lastmod "Data" .Site.Data) }}
+                    </time>
+                    {{ end }}
+                </span>
         {{ end }}
-    </span>
-    {{ end }}
 
-    {{ partial "post-meta-item/authors.html" . }}
-    {{ partial "post-meta-item/translations.html" . }}
-    {{ partial "post-meta-item/readingtime.html" . }}
-    {{ partial "post-meta-item/viewsource.html" . }}
-    {{ partial "post-meta-item/tags.html" . }}
-</div>
+        {{ partial "post-meta-item/authors.html" . }}
+        {{ partial "post-meta-item/translations.html" . }}
+        {{ partial "post-meta-item/readingtime.html" . }}
+        {{ partial "post-meta-item/viewsource.html" . }}
+        {{ partial "post-meta-item/tags.html" . }}
+    </div>
 {{ end }}

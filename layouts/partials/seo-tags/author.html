@@ -1,9 +1,7 @@
 {{ with .Params.authors }}
+    <meta name="author" content="{{ delimit . ", " }}">
 
-<meta name="author" content="{{ delimit . ", " }}">
-
-{{ range . }}
-<meta property="article:author" content="{{ . }}">
-{{ end }}
-
+    {{ range . }}
+        <meta property="article:author" content="{{ . }}">
+    {{ end }}
 {{ end }}

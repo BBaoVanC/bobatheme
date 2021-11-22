@@ -1,18 +1,18 @@
 {{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime }}
-<div class="post-metadata">
-    {{ if .Date }}
-    <span class="post-meta-item">
-        {{ partial "icon.html" "calendar" }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-            {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
-        </time>
-    </span>
-    {{ end }}
+    <div class="post-metadata">
+        {{ if .Date }}
+            <span class="post-meta-item">
+                {{ partial "icon.html" "calendar" }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
+                    {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
+                </time>
+            </span>
+        {{ end }}
 
-    {{ partial "post-meta-item/authors.html" . }}
-    {{ partial "post-meta-item/translations.html" . }}
-    {{ partial "post-meta-item/readingtime.html" . }}
-    {{ partial "post-meta-item/series.html" . }}
-    {{ partial "post-meta-item/tags.html" . }}
-</div>
+        {{ partial "post-meta-item/authors.html" . }}
+        {{ partial "post-meta-item/translations.html" . }}
+        {{ partial "post-meta-item/readingtime.html" . }}
+        {{ partial "post-meta-item/series.html" . }}
+        {{ partial "post-meta-item/tags.html" . }}
+    </div>
 {{ end }}

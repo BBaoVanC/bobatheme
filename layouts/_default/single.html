@@ -1,106 +1,102 @@
 {{ define "main" }}
-<div class="post-title">
-    <h1>
-        {{ .Title | markdownify }}
-        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-    </h1>
-</div>
+    <div class="post-title">
+        <h1>
+            {{ .Title | markdownify }}
+            {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+        </h1>
+    </div>
 
-{{ partial "post-metadata/full.html" . }}
+    {{ partial "post-metadata/full.html" . }}
 
-
-{{ with (.GetTerms "series") }}
-
-{{ $series := slice }}
-{{ range . }}
-{{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-{{ end }}
-
-<div class="series-box">
-    {{ partial "icon.html" "info" }}
-    {{ if gt (len $series) 1 }}
-    This post is part of multiple series:
-    {{ else }}
-    This post is part of a series:
-    {{ end }}
-
-    {{ delimit $series ", " }}
-</div>
-
-{{ end }}
-
-
-{{ if .Params.Toc }}
-<div class="table-of-contents">
-    <details>
-        <summary>{{ i18n "table_of_contents" }}</summary>
-        {{ .TableOfContents }}
-    </details>
-</div>
-<div class="table-of-contents print">
-    {{ i18n "table_of_contents" }}
-    {{ .TableOfContents }}
-</div>
-{{ end }}
-
-{{ with .Resources.GetMatch "feature" }}
-<div class="post-media">
-    {{ partial "figure.html" (dict "src" . "border" true) }}
-</div>
-{{ end }}
-
-{{ .Content }}
-
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-<div class="see-also">
-    <h2>{{ i18n "see_also" }}</h2>
-
-    <ul>
+    {{ with (.GetTerms "series") }}
+        {{ $series := slice }}
         {{ range . }}
-        <li>
-            {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-            <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        </li>
+            {{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
         {{ end }}
-    </ul>
-</div>
-{{ end }}
 
-{{ if or .NextInSection .PrevInSection }}
-<div class="prevnext">
-    {{ with .NextInSection }}
-    <a class="prev" href="{{ .Permalink }}">
-        <div class="prev-caption">
-            &larr; {{ i18n "newer_post" }}
+        <div class="series-box">
+            {{ partial "icon.html" "info" }}
+            {{ if gt (len $series) 1 }}
+                This post is part of multiple series:
+            {{ else }}
+                This post is part of a series:
+            {{ end }}
+
+            {{ delimit $series ", " }}
         </div>
-        <div class="prev-post">
-            {{ .Title | markdownify }}
-        </div>
-    </a>
-    {{ else }}
-    <div class="prev"></div>
     {{ end }}
 
-    {{ with .PrevInSection }}
-    <a class="next" href="{{ .Permalink }}">
-        <div class="next-caption">
-            {{ i18n "older_post" }} &rarr;
+
+    {{ if .Params.Toc }}
+        <div class="table-of-contents">
+            <details>
+                <summary>{{ i18n "table_of_contents" }}</summary>
+                {{ .TableOfContents }}
+            </details>
         </div>
-        <div class="next-post">
-            {{ .Title | markdownify }}
+        <div class="table-of-contents print">
+            {{ i18n "table_of_contents" }}
+            {{ .TableOfContents }}
         </div>
-    </a>
-    {{ else }}
-    <div class="next"></div>
     {{ end }}
-</div>
-{{ end }}
 
-{{ if .Params.comments }}
-<div class="comments">
-    {{ partial "comments.html" . }}
-</div>
-{{ end }}
+    {{ with .Resources.GetMatch "feature" }}
+        <div class="post-media">
+            {{ partial "figure.html" (dict "src" . "border" true) }}
+        </div>
+    {{ end }}
 
+    {{ .Content }}
+
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
+        <div class="see-also">
+            <h2>{{ i18n "see_also" }}</h2>
+
+            <ul>
+                {{ range . }}
+                    <li>
+                        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+                        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+
+    {{ if or .NextInSection .PrevInSection }}
+        <div class="prevnext">
+            {{ with .NextInSection }}
+                <a class="prev" href="{{ .Permalink }}">
+                    <div class="prev-caption">
+                        &larr; {{ i18n "newer_post" }}
+                    </div>
+                    <div class="prev-post">
+                        {{ .Title | markdownify }}
+                    </div>
+                </a>
+            {{ else }}
+                <div class="prev"></div>
+            {{ end }}
+
+            {{ with .PrevInSection }}
+                <a class="next" href="{{ .Permalink }}">
+                    <div class="next-caption">
+                        {{ i18n "older_post" }} &rarr;
+                    </div>
+                    <div class="next-post">
+                        {{ .Title | markdownify }}
+                    </div>
+                </a>
+            {{ else }}
+                <div class="next"></div>
+            {{ end }}
+        </div>
+    {{ end }}
+
+    {{ if .Params.comments }}
+        <div class="comments">
+            {{ partial "comments.html" . }}
+        </div>
+    {{ end }}
 {{ end }}

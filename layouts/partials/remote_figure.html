@@ -4,24 +4,25 @@
 {{ $alt := index . "alt" }}
 
 {{ if index . "border" }}
-<figure class="border">
+    <figure class="border">
 {{ else }}
-<figure>
+    <figure>
 {{ end }}
+
     {{ if eq $type "image" }}
-    <img src="{{ $src }}" alt="{{ $alt }}" />
+        <img src="{{ $src }}" alt="{{ $alt }}" />
     {{ else if eq $type "video" }}
-    <video controls>
-        <source src="{{ $src }}" alt="{{ $alt }}">
-        {{ i18n "browser_no_video_support" }}
-    </video>
+        <video controls>
+            <source src="{{ $src }}" alt="{{ $alt }}">
+            {{ i18n "browser_no_video_support" }}
+        </video>
     {{ end }}
 
     {{ if not $hidecaption }}
-    {{ with $alt }}
-    <figcaption>
-        {{ . | markdownify }}
-    </figcaption>
-    {{ end }}
+        {{ with $alt }}
+            <figcaption>
+                {{ . | markdownify }}
+            </figcaption>
+        {{ end }}
     {{ end }}
 </figure>

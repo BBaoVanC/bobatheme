@@ -1,29 +1,28 @@
 {{ $hidecaption := index . "hidecaption" }}
 
 {{ if index . "noborder" }}
-<figure>
+    <figure>
 {{ else }}
-<figure class="border">
+    <figure class="border">
 {{ end }}
+
     {{ with index . "src" }}
+        {{ $media := . }}
+        {{ if eq .MediaType.MainType "image" }}
+            <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
+        {{ else if eq .MediaType.MainType "video" }}
+            <video controls>
+                <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
+                {{ i18n "browser_no_video_support" }}
+            </video>
+        {{ end }}
 
-    {{ $media := . }}
-    {{ if eq .MediaType.MainType "image" }}
-    <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
-    {{ else if eq .MediaType.MainType "video" }}
-    <video controls>
-        <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
-        {{ i18n "browser_no_video_support" }}
-    </video>
-    {{ end }}
-
-    {{ if not $hidecaption }}
-    {{ with $media.Title }}
-    <figcaption>
-        {{ . | markdownify }}
-    </figcaption>
-    {{ end }}
-    {{ end }}
-
+        {{ if not $hidecaption }}
+            {{ with $media.Title }}
+                <figcaption>
+                    {{ . | markdownify }}
+                </figcaption>
+            {{ end }}
+        {{ end }}
     {{ end }}
 </figure>

@@ -9,14 +9,14 @@
         {{ partial "post-meta-item/translations.html" . }}
 
         {{ if ne .Site.Params.readingtime false }}
-        <span class="post-meta-item">
-            {{ partial "icon.html" "clock" }}
-            {{ $readingtime := 0 }}
-            {{ range .Data.Pages }}
-            {{ $readingtime = (add $readingtime .ReadingTime) }}
-            {{ end }}
-            {{ i18n "readingtime" $readingtime }}
-        </span>
+            <span class="post-meta-item">
+                {{ partial "icon.html" "clock" }}
+                {{ $readingtime := 0 }}
+                {{ range .Data.Pages }}
+                    {{ $readingtime = (add $readingtime .ReadingTime) }}
+                {{ end }}
+                {{ i18n "readingtime" $readingtime }}
+            </span>
         {{ end }}
 
         {{ partial "post-meta-item/viewsource.html" . }}
@@ -29,7 +29,7 @@
     <div class="series-pages">
         <ul>
             {{ range .Data.Pages.Reverse }}
-            <li>{{ .Render "summary/post" }}</li>
+                <li>{{ .Render "summary/post" }}</li>
             {{ end }}
         </ul>
     </div>

@@ -5,49 +5,46 @@
 <div class="topbar">
     <nav class="navbar">
         {{ with .Site.Home }}
-        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
+            <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
         {{ end }}
 
         {{ range .Site.Menus.main }}
-
-        {{ $isActive := false }}
-        {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
-        {{ $isActive = true }}
-        {{ end }}
-
-        <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-
+            {{ $isActive := false }}
+            {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+                {{ $isActive = true }}
+            {{ end }}
+            <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
     </nav>
 
     {{ if .Site.IsMultiLingual }}
-    <details class="langpicker">
-        <summary>
-            {{- partial "icon.html" "world" -}}
-        </summary>
-        <ul class="languages">
-            {{ range .AllTranslations }}
-            <li>
-                <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-            </li>
-            {{ end }}
+        <details class="langpicker">
+            <summary>
+                {{- partial "icon.html" "world" -}}
+            </summary>
+            <ul class="languages">
+                {{ range .AllTranslations }}
+                    <li>
+                        <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                    </li>
+                {{ end }}
 
-            {{ $site_translations := slice }}
-            {{ range .Site.Languages }}
-            {{ $site_translations = $site_translations | append .LanguageName }}
-            {{ end }}
+                {{ $site_translations := slice }}
+                {{ range .Site.Languages }}
+                    {{ $site_translations = $site_translations | append .LanguageName }}
+                {{ end }}
 
-            {{ $translation_codes := slice }}
-            {{ range .AllTranslations }}
-            {{ $translation_codes = $translation_codes | append .Language }}
-            {{ end }}
+                {{ $translation_codes := slice }}
+                {{ range .AllTranslations }}
+                    {{ $translation_codes = $translation_codes | append .Language }}
+                {{ end }}
 
-            {{ range (.Site.Languages | complement $translation_codes) }}
-            <li>
-                <a class="langpicker-item unavailable">{{ .LanguageName }}</a>
-            </li>
-            {{ end }}
-        </ul>
-    </details>
+                {{ range (.Site.Languages | complement $translation_codes) }}
+                    <li>
+                        <a class="langpicker-item unavailable">{{ .LanguageName }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </details>
     {{ end }}
 </div>

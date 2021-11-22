@@ -12,9 +12,9 @@
     <div class="taxonomy">
         <ul>
             {{ range .Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-            </li>
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+                </li>
             {{ end }}
         </ul>
     </div>

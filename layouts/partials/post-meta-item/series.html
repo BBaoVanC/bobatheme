@@ -1,12 +1,11 @@
 {{ with (.GetTerms "series") }}
+    {{ $series := slice }}
+    {{ range . }}
+        {{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
+    {{ end }}
 
-{{ $series := slice }}
-{{ range . }}
-{{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-{{ end }}
-
-<div class="series">
-    {{ partial "icon.html" "files" }}
-    {{ delimit $series ", " }}
-</div>
+    <div class="series">
+        {{ partial "icon.html" "files" }}
+        {{ delimit $series ", " }}
+    </div>
 {{ end }}

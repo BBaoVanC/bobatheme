@@ -4,26 +4,26 @@
     {{ hugo.Generator }}
 
     {{ with resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
     {{ with resources.Get "css/syntax.css" | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
     {{ with resources.Get "css/syntax-light.css" | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
 
     {{ with .Site.Params.faviconICO }}
-    <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />
+        <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />
     {{ end }}
     {{ with .Site.Params.faviconPNG }}
-    <link rel="icon" type="image/png" href="{{ . | absURL }}" />
+        <link rel="icon" type="image/png" href="{{ . | absURL }}" />
     {{ end }}
 
     {{ if .IsHome }}
-    <title>{{ .Site.Title | plainify }}</title>
+        <title>{{ .Site.Title | plainify }}</title>
     {{ else }}
-    <title>{{ (print .Title " | " .Site.Title) | plainify }}</title>
+        <title>{{ (print .Title " | " .Site.Title) | plainify }}</title>
     {{ end }}
 
     {{ partial "seo-tags/opengraph.html" . }}
