@@ -1,5 +1,5 @@
 <meta itemprop="name" content="{{ .Title | plainify }}">
-<meta itemprop="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta itemprop="description" content="{{ (partial "description-or-summary.html" .) | plainify }}">
 
 {{ $format := "2006-01-02T15:04:05-07:00" }}
 {{ with .Date }}

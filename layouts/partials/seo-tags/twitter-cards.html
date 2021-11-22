@@ -22,7 +22,7 @@
 {{ end }}
 
 <meta name="twitter:title" content="{{ .Title | plainify }}">
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta name="twitter:description" content="{{ (partial "description-or-summary.html" .) | plainify }}">
 
 {{ with .Site.Social.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
