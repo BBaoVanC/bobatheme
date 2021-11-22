@@ -14,20 +14,7 @@
     {{ with .Sections }}
     <div class="sections">
         {{ range . }}
-
-        <a class="section-anchor" href="{{ .Permalink }}">
-            <div class="section">
-                <h2 class="section-title">
-                    {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
-                    {{ .Title | markdownify }}
-                </h2>
-
-                <div class="section-description">
-                    {{ partial "description-or-summary.html" . }}
-                </div>
-            </div>
-        </a>
-
+            {{ .Render "summary/section" }}
         {{ end }}
     </div>
     {{ end }}
@@ -45,10 +32,6 @@
     </div>
 </div>
 
-{{ if gt .Paginator.TotalPages 1 }}
-<div class="pagination">
-    {{ template "_internal/pagination.html" . }}
-</div>
-{{ end }}
+{{ partial "pagination.html" . }}
 
 {{ end }}
