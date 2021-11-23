@@ -616,4 +616,8 @@ li.disabled > .page-link:hover {
   .table-of-contents.print {
     display: block;
   }
+
+  #back-to-top {
+    display: none !important;
+  }
 }
