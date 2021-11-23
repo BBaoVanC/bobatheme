@@ -5,22 +5,7 @@
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
     </h2>
 
-    <div class="post-metadata">
-        {{ partial "post-meta-item/translations.html" . }}
-
-        {{ if ne .Site.Params.readingtime false }}
-            <span class="post-meta-item">
-                {{ partial "icon.html" "clock" }}
-                {{ $readingtime := 0 }}
-                {{ range .Data.Pages }}
-                    {{ $readingtime = (add $readingtime .ReadingTime) }}
-                {{ end }}
-                {{ i18n "readingtime" $readingtime }}
-            </span>
-        {{ end }}
-
-        {{ partial "post-meta-item/viewsource.html" . }}
-    </div>
+    {{ partial "post-metadata/series.html" . }}
 
     <div class="post-description">
         {{ partial "description-or-summary.html" . }}

@@ -1,0 +1,20 @@
+<div class="post-metadata">
+    <span class="post-meta-item">
+        {{ partial "icon.html" "newspaper" }}
+        {{ i18n "post_count" (len .Data.Pages) }}
+    </span>
+
+    {{ if ne .Site.Params.readingtime false }}
+        <span class="post-meta-item">
+            {{ partial "icon.html" "clock" }}
+            {{ $readingtime := 0 }}
+            {{ range .Data.Pages }}
+                {{ $readingtime = (add $readingtime .ReadingTime) }}
+            {{ end }}
+            {{ i18n "readingtime" $readingtime }}
+        </span>
+    {{ end }}
+
+    {{ partial "post-meta-item/translations.html" . }}
+    {{ partial "post-meta-item/viewsource.html" . }}
+</div>
