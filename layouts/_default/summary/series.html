@@ -28,8 +28,13 @@
 
     <div class="series-pages">
         <ul>
+            {{ $i := 0 }}
+            {{ $total := len .Data.Pages }}
             {{ range .Data.Pages.Reverse }}
-                <li>{{ .Render "summary/post" }}</li>
+                {{ $i = add 1 $i }}
+                {{ .Scratch.Set "series_position" $i }}
+                {{ .Scratch.Set "series_total" $total }}
+                <li>{{ .Render "summary/series_post" }}</li>
             {{ end }}
         </ul>
     </div>

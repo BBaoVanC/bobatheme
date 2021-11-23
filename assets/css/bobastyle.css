@@ -78,6 +78,12 @@
   background-color: var(--background-2);
 }
 
+.post-series-position {
+  position: relative;
+  float: right;
+  opacity: .75;
+}
+
 .post-title {
   margin-bottom: 10px;
 }
