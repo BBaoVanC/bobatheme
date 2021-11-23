@@ -12,6 +12,9 @@
     {{ with resources.Get "css/syntax-light.css" | fingerprint "sha512" }}
         <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
+    {{ with resources.Get "js/back-to-top.js" | fingerprint "sha512" }}
+        <script defer src="{{ .Permalink }}" type="text/javascript" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ end }}
 
     {{ with .Site.Params.faviconICO }}
         <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />

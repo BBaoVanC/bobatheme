@@ -4,6 +4,8 @@
     {{ partial "head.html" . }}
 
     <body>
+        <a id="top"></a>
+
         <div class="top">
             {{ partial "top.html" . }}
         </div>
@@ -13,9 +15,9 @@
         {{ end }}
 
         <div class="content">
-        {{ block "main" . }}
-            {{ .Content }}
-        {{ end }}
+            {{ block "main" . }}
+                {{ .Content }}
+            {{ end }}
         </div>
 
         {{ with .Site.Copyright }}
@@ -26,6 +28,10 @@
                 </small>
             </footer>
         {{ end }}
+
+        <a id="back-to-top" href="#top">
+            {{ partial "icon.html" "chevron-up" }}
+        </a>
     </body>
 
 </html>
