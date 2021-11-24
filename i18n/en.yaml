@@ -1,6 +1,15 @@
+# Misc
 credit_comment:
   other: "<!-- bobatheme is available under the MIT license at https://github.com/BBaoVanC/bobatheme. -->"
 
+table_of_contents:
+  other: "Table of Contents"
+
+browser_no_video_support:
+  other: "Your browser does not support video."
+
+
+# Meta items
 long_date:
   other: "{{ .Date.Format `January 2, 2006` }}"
 
@@ -12,14 +21,8 @@ readingtime:
   one: "{{ . }} min"
   other: "{{ . }} mins"
 
-read_more:
-  other: "Read more"
 
-
-browser_no_video_support:
-  other: "Your browser does not support video."
-
-
+# Post count
 no_posts:
   other: "No posts here!"
 
@@ -28,8 +31,9 @@ post_count:
   other: "{{ . }} posts"
 
 
-table_of_contents:
-  other: "Table of Contents"
+# Navigation
+read_more:
+  other: "Read more"
 
 see_also:
   other: "See also"
@@ -39,6 +43,7 @@ older_post:
 
 newer_post:
   other: "Newer"
+
 
 # ARIA labels
 aria_header_link:
