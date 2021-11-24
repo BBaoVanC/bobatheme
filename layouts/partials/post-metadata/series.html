@@ -16,5 +16,7 @@
     {{ end }}
 
     {{ partial "post-meta-item/translations.html" . }}
-    {{ partial "post-meta-item/viewsource.html" . }}
+    {{ if .File }}
+        {{ partial "post-meta-item/viewsource.html" . }}
+    {{ end }}
 </div>
