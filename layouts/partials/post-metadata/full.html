@@ -1,7 +1,7 @@
 {{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime .Site.Params.gitFileURL }}
-    <div class="post-metadata">
+    <div class="post-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
         {{ if .Date }}
-            <span class="post-meta-item">
+            <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_date" }}">
                 {{ partial "icon.html" "calendar" }}
                 <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
                     {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
@@ -10,7 +10,7 @@
 
             {{/* TODO: make this be a tooltip */}}
             {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
-                <span class="post-meta-item">
+                <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_modified_date" }}">
                     {{ partial "icon.html" "pencil" }}
                     <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
                         {{ i18n "long_date" (dict "Date" .Lastmod "Data" .Site.Data) }}

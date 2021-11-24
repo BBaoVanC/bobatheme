@@ -1,7 +1,7 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="section-header">
     {{ .Text | safeHTML }}
     <a href="#{{ .Anchor | safeURL }}">
-        <span class="section-header-link">
+        <span class="section-header-link" aria-label="{{ i18n "aria_header_link" }}">
             {{ partial "icon.html" "link" }}
         </span>
     </a>

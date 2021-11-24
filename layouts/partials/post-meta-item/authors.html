@@ -1,5 +1,5 @@
 {{ with .Params.authors }}
-    <span class="post-meta-item">
+    <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_authors" }}">
         {{ partial "icon.html" "user-circle" }}
 
         {{ if index $.Site.Taxonomies "authors" }}

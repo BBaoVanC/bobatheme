@@ -1,5 +1,5 @@
 {{ if ne .Site.Params.readingtime false }}
-    <span class="post-meta-item">
+    <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_reading_time" }}">
         {{ partial "icon.html" "clock" }}
         {{ i18n "readingtime" .ReadingTime }}
     </span>

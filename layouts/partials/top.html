@@ -3,7 +3,7 @@
 </h2>
 
 <div class="topbar">
-    <nav class="navbar">
+    <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
         {{ with .Site.Home }}
             <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
         {{ end }}
@@ -18,11 +18,11 @@
     </nav>
 
     {{ if .Site.IsMultiLingual }}
-        <details class="langpicker">
+        <details class="langpicker" aria-label="{{ i18n "aria_langpicker" }}">
             <summary>
                 {{- partial "icon.html" "world" -}}
             </summary>
-            <ul class="languages">
+            <ul class="languages" aria-label="{{ i18n "aria_langpicker_list" }}">
                 {{ range .AllTranslations }}
                     <li>
                         <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
@@ -41,7 +41,7 @@
 
                 {{ range (.Site.Languages | complement $translation_codes) }}
                     <li>
-                        <a class="langpicker-item unavailable">{{ .LanguageName }}</a>
+                        <a class="langpicker-item unavailable" aria-disabled="true">{{ .LanguageName }}</a>
                     </li>
                 {{ end }}
             </ul>

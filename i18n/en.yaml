@@ -39,3 +39,67 @@ older_post:
 
 newer_post:
   other: "Newer"
+
+# ARIA labels
+aria_header_link:
+  other: "header link"
+
+aria_back_to_top_button:
+  other: "back to top button"
+
+aria_rss_link:
+  other: "RSS feed link"
+
+aria_post_meta_view_source:
+  other: "link to page source"
+
+aria_post_meta_translations:
+  other: "translations"
+
+aria_post_meta_tags:
+  other: "tags"
+
+aria_post_meta_reading_time:
+  other: "reading time"
+
+aria_post_meta_authors:
+  other: "authors"
+
+aria_post_meta_series:
+  other: "series"
+
+aria_breadcrumbnav:
+  other: "breadcrumb navigation bar"
+
+aria_post_metadata:
+  other: "post metadata"
+
+aria_author_metadata:
+  other: "author metadata"
+
+aria_post_meta_date:
+  other: "date"
+
+aria_post_meta_modified_date:
+  other: "last modified date"
+
+aria_author_post_count:
+  other: "post count"
+
+aria_author_word_count:
+  other: "word count"
+
+aria_series_metadata:
+  other: "series metadata"
+
+aria_navbar:
+  other: "navigation bar"
+
+aria_langpicker:
+  other: "language picker"
+
+aria_langpicker_list:
+  other: "language list"
+
+aria_table_of_contents:
+  other: "table of contents"

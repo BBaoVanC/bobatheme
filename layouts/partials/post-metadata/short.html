@@ -1,7 +1,7 @@
 {{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime }}
-    <div class="post-metadata">
+    <div class="post-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
         {{ if .Date }}
-            <span class="post-meta-item">
+            <span class="post-meta-item" aria-label="date">
                 {{ partial "icon.html" "calendar" }}
                 <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
                     {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}

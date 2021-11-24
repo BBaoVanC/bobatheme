@@ -4,7 +4,7 @@
     {{ partial "head.html" . }}
 
     <body>
-        <a id="top"></a>
+        <a id="top" aria-hidden="true"></a>
 
         <div class="top">
             {{ partial "top.html" . }}
@@ -29,7 +29,7 @@
             </footer>
         {{ end }}
 
-        <a id="back-to-top" href="#top">
+        <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
             {{ partial "icon.html" "chevron-up" }}
         </a>
         <noscript>
