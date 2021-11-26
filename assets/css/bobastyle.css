@@ -607,6 +607,7 @@ li.disabled > .page-link:hover {
   pre {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+    break-inside: avoid;
   }
 
   .table-of-contents {
