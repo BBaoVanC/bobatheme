@@ -5,12 +5,18 @@
     </h1>
 
     <div class="tag-list">
-        <ul>
-            {{ range .Data.Terms.Alphabetical }}
-                <a href="{{ .Page.Permalink }}">
-                    <li>{{ .Page.Title | markdownify }}</li>
-                </a>
-            {{ end }}
-        </ul>
+        {{ with .Data.Terms.Alphabetical }}
+            <ul>
+                {{ range . }}
+                    <a href="{{ .Page.Permalink }}">
+                        <li>{{ .Page.Title | markdownify }}</li>
+                    </a>
+                {{ end }}
+            </ul>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
     </div>
 {{ end }}

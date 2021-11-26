@@ -5,10 +5,16 @@
     </h1>
 
     <div class="series-taxonomy">
-        <ul>
-            {{ range .Pages }}
-                <li>{{ .Render "summary/series" }}</li>
-            {{ end }}
-        </ul>
+        {{ with .Pages }}
+            <ul>
+                {{ range . }}
+                    <li>{{ .Render "summary/series" }}</li>
+                {{ end }}
+            </ul>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
     </div>
 {{ end }}

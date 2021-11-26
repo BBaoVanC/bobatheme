@@ -10,12 +10,18 @@
     </h1>
 
     <div class="taxonomy">
-        <ul>
-            {{ range .Data.Terms.Alphabetical }}
-                <li>
-                    <a href="{{ .Page.Permalink }}">{{ .Page.Title | markdownify }}</a>
-                </li>
-            {{ end }}
-        </ul>
+        {{ with .Data.Terms.Alphabetical }}
+            <ul>
+                {{ range . }}
+                    <li>
+                        <a href="{{ .Page.Permalink }}">{{ .Page.Title | markdownify }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
     </div>
 {{ end }}

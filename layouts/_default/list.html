@@ -15,15 +15,17 @@
         {{ end }}
 
         <div class="page-list">
-            <ul>
-                {{ range .Paginator.Pages }}
-                    <li>{{ .Render "summary/post" }}</li>
-                {{ else }}
-                    <div>
-                        {{ i18n "no_posts" }}
-                    </div>
-                {{ end }}
-            </ul>
+            {{ with .Paginator.Pages }}
+                <ul>
+                    {{ range . }}
+                        <li>{{ .Render "summary/post" }}</li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+                <div>
+                    {{ i18n "no_posts" }}
+                </div>
+            {{ end }}
         </div>
     </div>
 

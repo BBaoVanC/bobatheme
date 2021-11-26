@@ -10,20 +10,22 @@
     {{ partial "description-or-summary.html" . }}
 
     <div class="page-list">
-        <ul>
-            {{ $i := 0 }}
-            {{ $total := len .Pages }}
-            {{ range .Paginator.Pages.Reverse }}
-                {{ $i = add 1 $i }}
-                {{ .Scratch.Set "series_position" $i }}
-                {{ .Scratch.Set "series_total" $total }}
-                <li>{{ .Render "summary/post" }}</li>
-            {{ else }}
-                <div>
-                    {{ i18n "no_posts" }}
-                </div>
-            {{ end }}
-        </ul>
+        {{ with .Paginator.Pages.Reverse }}
+            <ul>
+                {{ $i := 0 }}
+                {{ $total := len $.Pages }}
+                {{ range . }}
+                    {{ $i = add 1 $i }}
+                    {{ .Scratch.Set "series_position" $i }}
+                    {{ .Scratch.Set "series_total" $total }}
+                    <li>{{ .Render "summary/post" }}</li>
+                {{ end }}
+            </ul>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
     </div>
 
     {{ partial "pagination.html" . }}
