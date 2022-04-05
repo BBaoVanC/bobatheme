@@ -14,15 +14,15 @@
             {{ partial "breadcrumb.html" . }}
         {{ end }}
 
-        <div class="content">
+        <div class="main">
             {{ block "main" . }}
                 {{ .Content }}
             {{ end }}
         </div>
 
         {{ with .Site.Copyright }}
+            <hr>
             <footer>
-                <hr>
                 <small>
                     {{ . | safeHTML }}
                 </small>

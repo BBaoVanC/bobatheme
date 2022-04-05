@@ -52,6 +52,7 @@
 }
 
 
+
 /* Post layout (in list pages) */
 .list-page-content {
   display: flex;
@@ -202,10 +203,6 @@
 
 
 /* Header formatting (website title and article section headers) */
-.top {
-  margin: 20px;
-}
-
 .header a,
 .section-header a {
   color: inherit;
@@ -240,15 +237,6 @@
 .table-of-contents.print {
   display: none;
   padding: 8px 15px;
-}
-
-.content,
-footer {
-  margin: 20px;
-}
-
-footer {
-  text-align: center;
 }
 
 #back-to-top {
@@ -350,9 +338,13 @@ body {
   background-color: var(--background);
   color: var(--text-normal);
   font-family: "Open Sans", "Noto Sans", sans-serif;
-  margin: auto;
+  margin: 20px auto;
   max-width: 720px;
   overflow-wrap: break-word;
+}
+
+footer {
+  text-align: center;
 }
 
 img,
@@ -504,9 +496,7 @@ li.disabled > .page-link:hover {
 
 /* Breadcrumb navigation */
 .breadcrumb {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin: 30px 0 20px;
 }
 
 .breadcrumb ul {
