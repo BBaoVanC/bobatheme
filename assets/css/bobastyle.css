@@ -326,6 +326,7 @@
 /* Basic elements */
 html {
   scroll-behavior: smooth;
+  margin: 0 20px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -338,7 +339,7 @@ body {
   background-color: var(--background);
   color: var(--text-normal);
   font-family: "Open Sans", "Noto Sans", sans-serif;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   max-width: 720px;
   overflow-wrap: break-word;
 }
