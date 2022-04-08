@@ -37,4 +37,6 @@
 
     <meta name="language" content="{{ .Language.Lang }}">
     <meta name="description" content="{{ (partial "seo-tags/description.html" .) | plainify }}">
+
+    {{ partial "additional-head.html" . }}
 </head>
