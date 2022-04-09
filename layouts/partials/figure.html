@@ -11,7 +11,7 @@
         {{ if eq .MediaType.MainType "image" }}
             <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
         {{ else if eq .MediaType.MainType "video" }}
-            <video controls>
+            <video controls preload="metadata">
                 <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
                 {{ i18n "browser_no_video_support" }}
             </video>

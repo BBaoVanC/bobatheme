@@ -12,7 +12,7 @@
     {{ if eq $type "image" }}
         <img src="{{ $src }}" alt="{{ $alt }}" />
     {{ else if eq $type "video" }}
-        <video controls>
+        <video controls preload="metadata">
             <source src="{{ $src }}" alt="{{ $alt }}">
             {{ i18n "browser_no_video_support" }}
         </video>
