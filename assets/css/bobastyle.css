@@ -348,6 +348,10 @@ footer {
   text-align: center;
 }
 
+footer p {
+  margin: 0;
+}
+
 img,
 video {
   max-width: 100%;
