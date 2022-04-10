@@ -20,11 +20,17 @@
             {{ end }}
         </div>
 
-        {{ with .Site.Copyright }}
+        {{ if or .Site.Copyright .Site.Params.footer }}
             <hr>
             <footer>
                 <small>
-                    {{ . | safeHTML }}
+                    {{ with .Site.Copyright }}
+                        <p>{{ . | safeHTML }}</p>
+                    {{ end }}
+
+                    {{ with .Site.Params.footer }}
+                        <p>{{ . | markdownify }}</p>
+                    {{ end }}
                 </small>
             </footer>
         {{ end }}
