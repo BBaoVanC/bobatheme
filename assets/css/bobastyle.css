@@ -244,19 +244,31 @@
   padding: 8px 15px;
 }
 
+
+/* Related posts */
+.related hr {
+  margin: 25px 0px;
+}
+
+@media (min-width: 720px) {
+  .related {
+    /* this makes it full width -- 720px max-width on body */
+    margin-left: calc(-100vw / 2 + 760px / 2);
+    margin-right: calc(-100vw / 2 + 760px / 2);
+  }
+}
+
 .related-posts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 10px;
-  align-items: stretch; /* this is default anyways */
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(0, 360px));
 }
 
 .related-posts .post {
-  min-width: 10%;
-  flex: 1 1 49%;
 }
 
+
+/* Back to top */
 #back-to-top {
   position: fixed;
   float: right;

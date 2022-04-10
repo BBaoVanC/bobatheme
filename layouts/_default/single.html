@@ -50,13 +50,17 @@
         {{ .Content }}
     </div>
 
-    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ $related := .Site.RegularPages.Related . | first 10 }}
     {{ with $related }}
-        <h2>{{ i18n "related_posts" }}</h2>
-        <div class="related-posts">
-            {{ range . }}
-                {{ .Render "summary/post" }}
-            {{ end }}
+        <div class="related">
+            <hr>
+            <h2>{{ i18n "related_posts" }}</h2>
+            <div class="related-posts">
+                {{ range . }}
+                    {{ .Render "summary/post" }}
+                {{ end }}
+            </div>
+            <hr>
         </div>
     {{ end }}
 
