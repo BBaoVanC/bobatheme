@@ -35,8 +35,8 @@ post_count:
 read_more:
   other: "Read more"
 
-see_also:
-  other: "See also"
+related_posts:
+  other: "Related posts"
 
 older_post:
   other: "Older"

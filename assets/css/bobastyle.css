@@ -70,7 +70,8 @@
 }
 
 .page-list li,
-.series-taxonomy li {
+.series-taxonomy li,
+.related-posts .post {
   padding-top: 8px;
   padding-left: 24px;
   padding-right: 24px;
@@ -237,6 +238,19 @@
 .table-of-contents.print {
   display: none;
   padding: 8px 15px;
+}
+
+.related-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: stretch; /* this is default anyways */
+}
+
+.related-posts .post {
+  min-width: 10%;
+  flex: 1 1 49%;
 }
 
 #back-to-top {

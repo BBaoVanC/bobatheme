@@ -35,8 +35,8 @@ no_posts:
 read_more:
   other: "Leer más"
 
-see_also:
-  other: "Véase también"
+related_posts:
+  other: "Publicaciones similares"
 
 older_post:
   other: "Más antiguo"

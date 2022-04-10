@@ -52,17 +52,11 @@
 
     {{ $related := .Site.RegularPages.Related . | first 5 }}
     {{ with $related }}
-        <div class="see-also">
-            <h2>{{ i18n "see_also" }}</h2>
-
-            <ul>
-                {{ range . }}
-                    <li>
-                        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-                        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-                    </li>
-                {{ end }}
-            </ul>
+        <h2>{{ i18n "related_posts" }}</h2>
+        <div class="related-posts">
+            {{ range . }}
+                {{ .Render "summary/post" }}
+            {{ end }}
         </div>
     {{ end }}
 
