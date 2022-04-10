@@ -29,7 +29,7 @@
                     {{ end }}
 
                     {{ with .Site.Params.footer }}
-                        <p>{{ . | markdownify }}</p>
+                        {{ . | $.RenderString (dict "display" "block") }}
                     {{ end }}
                 </small>
             </footer>
