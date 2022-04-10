@@ -1,12 +1,12 @@
-<div class="post">
-    <h2 class="post-title">
+<div class="author">
+    <h2 class="author-name">
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
     </h2>
 
     {{ partial "post-metadata/author.html" . }}
 
-    <div class="post-description">
+    <div class="author-description">
         {{ partial "description-or-summary.html" . }}
     </div>
 

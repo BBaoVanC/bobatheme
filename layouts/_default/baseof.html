@@ -14,11 +14,11 @@
             {{ partial "breadcrumb.html" . }}
         {{ end }}
 
-        <div class="main">
+        <main>
             {{ block "main" . }}
                 {{ .Content }}
             {{ end }}
-        </div>
+        </main>
 
         {{ if or .Site.Copyright .Site.Params.footer }}
             <hr>

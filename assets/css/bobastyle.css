@@ -85,21 +85,21 @@
   opacity: .75;
 }
 
-.post-title {
+.post-title, .author-name {
   margin-bottom: 10px;
 }
 
-.post-title a {
+.post-title a, .author-name a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.post-meta-item {
+.post-meta-item, .author-meta-item {
   margin-right: 10px;
   display: inline-block;
 }
 
-.post-metadata {
+.post-metadata, .author-metadata {
   margin-bottom: 15px;
 }
 
@@ -112,7 +112,7 @@
   margin-top: 15px;
 }
 
-.post-description {
+.post-description, .author-description {
   margin-top: 10px;
 }
 
