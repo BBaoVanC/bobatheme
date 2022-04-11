@@ -28,8 +28,8 @@
                         <p>{{ . | safeHTML }}</p>
                     {{ end }}
 
-                    {{ with .Site.Params.footer }}
-                        {{ . | $.RenderString (dict "display" "block") }}
+                    {{ if .Site.Params.footer }}
+                        {{ readFile "footer.md" | .RenderString (dict "display" "inline") }}
                     {{ end }}
                 </small>
             </footer>
