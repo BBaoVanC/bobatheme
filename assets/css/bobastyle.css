@@ -247,12 +247,13 @@
 
 /* Related posts */
 .related hr {
-  margin: 25px 0px;
+  margin: 25px 0;
 }
 
 @media (min-width: 720px) {
   .related {
-    /* this makes it full width -- 720px max-width on body */
+    /* this makes it full width -- 720px max-width on body
+     * add an extra 40px to give a 20px margin on left and right */
     margin-left: calc(-100vw / 2 + 760px / 2);
     margin-right: calc(-100vw / 2 + 760px / 2);
   }
@@ -261,10 +262,9 @@
 .related-posts {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(0, 360px));
-}
-
-.related-posts .post {
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  overflow-x: auto;
 }
 
 
