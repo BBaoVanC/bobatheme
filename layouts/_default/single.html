@@ -7,25 +7,7 @@
     </div>
 
     {{ partial "post-metadata/full.html" . }}
-
-    {{ with (.GetTerms "series") }}
-        {{ $series := slice }}
-        {{ range . }}
-            {{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-        {{ end }}
-
-        <div class="series-box">
-            {{ partial "icon.html" "info" }}
-            {{ if gt (len $series) 1 }}
-                This post is part of multiple series:
-            {{ else }}
-                This post is part of a series:
-            {{ end }}
-
-            {{ delimit $series ", " }}
-        </div>
-    {{ end }}
-
+    {{ partial "series-box.html" . }}
 
     {{ if .Params.Toc }}
         <div class="table-of-contents" aria-label="{{ i18n "aria_table_of_contents" }}">
@@ -79,6 +61,8 @@
             {{ end }}
         </div>
     {{ end }}
+
+    {{ partial "series-box.html" . }}
 
     {{ $related := .Site.RegularPages.Related . | first 10 }}
     {{ with $related }}
