@@ -2,6 +2,7 @@
 
 title: {{ replace .Name "-" " " | humanize }}
 date: {{ .Date }}
+lastmod: {{ .Date }}
 toc: true
 comments: true
 draft: true
