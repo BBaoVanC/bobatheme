@@ -155,7 +155,6 @@
   gap: 10px;
   flex-flow: row wrap;
   list-style: none;
-  padding: 0;
   background-color: var(--background);
   padding: 8px;
   border-radius: 16px;
