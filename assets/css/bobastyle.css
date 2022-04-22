@@ -296,9 +296,6 @@
 
 .navbar {
   display: flex;
-}
-
-.navbar {
   flex-grow: 1;
   overflow: auto;
 }
