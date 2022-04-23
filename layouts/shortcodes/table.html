@@ -1,0 +1,10 @@
+{{/* See https://willschenk.com/articles/2020/styling_tables_with_hugo/ */}}
+
+{{ $class := "markdown" }}
+{{ with .Get "class" }}
+    {{ $class = delimit (slice $class .) " " }}
+{{ end }}
+
+{{ $htmlTable := .Inner | markdownify }}
+{{ $new := printf `<table class="%s">` $class }}
+{{ (replace $htmlTable "<table>" $new) | safeHTML }}

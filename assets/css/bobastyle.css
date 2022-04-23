@@ -436,6 +436,27 @@ hr {
   border-color: var(--background-5);
 }
 
+table.markdown {
+  border-collapse: collapse;
+  border: 2px solid var(--text-normal);
+}
+
+.markdown thead {
+  background-color: var(--background-4);
+}
+
+.markdown th,
+.markdown td {
+  padding: 8px;
+}
+
+.markdown tbody tr:nth-child(odd) {
+  background-color: var(--background);
+}
+.markdown tbody tr:nth-child(even) {
+  background-color: var(--background-2);
+}
+
 * {
   box-sizing: border-box;
 }
