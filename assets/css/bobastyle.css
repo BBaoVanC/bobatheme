@@ -90,21 +90,25 @@
   opacity: .75;
 }
 
-.post-title, .author-name {
+.post-title,
+.author-name {
   margin-bottom: 10px;
 }
 
-.post-title a, .author-name a {
+.post-title a,
+.author-name a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.post-meta-item, .author-meta-item {
+.post-meta-item,
+.author-meta-item {
   margin-right: 10px;
   display: inline-block;
 }
 
-.post-metadata, .author-metadata {
+.post-metadata,
+.author-metadata {
   margin-bottom: 15px;
 }
 
@@ -117,7 +121,8 @@
   margin-top: 15px;
 }
 
-.post-description, .author-description {
+.post-description,
+.author-description {
   margin-top: 10px;
 }
 
@@ -593,7 +598,8 @@ li.disabled > .page-link:hover {
 
 
 /* Light mode */
-@media print, (prefers-color-scheme: light) {
+@media print,
+(prefers-color-scheme: light) {
   /* Basic elements */
   .section:hover {
     color: inherit;
