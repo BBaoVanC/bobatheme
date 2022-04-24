@@ -9,6 +9,7 @@
             </span>
 
             {{/* TODO: make this be a tooltip */}}
+            {{/* DISABLED
             {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
                 <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_modified_date" }}">
                     {{ partial "icon.html" "pencil" }}
@@ -17,6 +18,7 @@
                     </time>
                     {{ end }}
                 </span>
+            */}}
         {{ end }}
 
         {{ partial "post-meta-item/authors.html" . }}
