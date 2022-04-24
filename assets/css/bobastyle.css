@@ -8,6 +8,7 @@
   --background-3: #282828;
   --background-4: #333;
   --background-5: #444;
+  --background-accent: #111d2f;
   --text-normal: #d3d3d3;
   --link-color: #4da6ff;
   --figure-border: #1b5b9b;
@@ -24,6 +25,7 @@
     --background-3: #d8d8d8;
     --background-4: #bbb;
     --background-5: #aaa;
+    --background-accent: #aec9ee;
     --text-normal: #000;
     --link-color: #0057bf;
     --figure-border: #2e7bc9;
