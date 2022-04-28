@@ -13,7 +13,9 @@
             {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
                 {{ $isActive = true }}
             {{ end }}
-            <a class="navbar-item{{ if $isActive }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="navbar-item{{ if $isActive }} active{{ end }}"
+               {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
+               href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
     </nav>
 
