@@ -31,6 +31,13 @@ params:
   # gitFileURL: https://github.com/BBaoVanC/bobatheme/blob/master
   # gitFileIcon: github-circle
 
+  # display a "Latest Posts" section on the homepage below its content
+  homepageLatestPosts: true
+
+  # footer: >-
+  #   Some example text for the footer.
+
+
 # see https://gohugo.io/about/hugo-and-gdpr/#all-privacy-settings
 # you probably want to keep this default
 privacy:

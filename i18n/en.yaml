@@ -8,6 +8,9 @@ table_of_contents:
 browser_no_video_support:
   other: "Your browser does not support video."
 
+latest_posts:
+  other: "Latest Posts"
+
 
 # Meta items
 long_date:

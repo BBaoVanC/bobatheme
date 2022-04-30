@@ -1,2 +1,29 @@
 {{ define "main" }}
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+
+    {{ if .Site.Params.homepageLatestPosts }}
+        <hr>
+        <h1>
+            {{ i18n "latest_posts" }}
+            {{ partial "rss-link.html" . }}
+        </h1>
+
+        {{ with (.Paginate .Site.RegularPages).Pages }}
+            <div class="page-list">
+                <ul>
+                    {{ range . }}
+                        <li>{{ .Render "summary/post" }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
+
+        {{ partial "pagination.html" . }}
+    {{ end }}
 {{ end }}
