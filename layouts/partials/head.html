@@ -16,11 +16,11 @@
         <script defer src="{{ .Permalink }}" type="text/javascript" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end }}
 
-    {{ with .Site.Params.faviconICO }}
-        <link rel="icon" type="image/x-icon" href="{{ . | absURL }}" />
+    {{ with .Site.Params.faviconSVG }}
+        <link rel="icon" href="{{ . | absURL }}" />
     {{ end }}
-    {{ with .Site.Params.faviconPNG }}
-        <link rel="icon" type="image/png" href="{{ . | absURL }}" />
+    {{ with .Site.Params.appleTouchPNG }}
+        <link rel="apple-touch-icon" href="{{ . | absURL }}" />
     {{ end }}
 
     {{ if .IsHome }}

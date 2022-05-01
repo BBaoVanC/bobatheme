@@ -20,9 +20,9 @@ params:
   # these are for the OpenGraph/Twitter embeds in Hugo
   description: Example website for bobatheme
 
-  # these are for favicons in bobatheme (defaults are shown here)
-  # faviconICO: favicon.ico
-  # faviconPNG: favicon.png
+  # these are for favicons in bobatheme (disabled by default)
+  # faviconSVG: favicon.svg
+  # appleTouchPNG: apple-touch-icon.png
 
   # show reading time (enabled by default)
   # readingtime: true
