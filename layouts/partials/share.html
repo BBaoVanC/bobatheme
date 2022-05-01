@@ -3,6 +3,7 @@
         <a class="twitter-share"
            target="_blank"
            rel="noopener"
+           onclick="share_event('Twitter');"
            href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=bbaovanc">
             {{- partial "icon.html" "twitter" -}}
         </a>
@@ -12,6 +13,7 @@
         <a class="facebook-share"
            target="_blank"
            rel="noopener"
+           onclick="share_event('Facebook');"
            href="https://www.facebook.com/sharer.php?u={{ .Permalink }}">
             {{- partial "icon.html" "facebook" -}}
         </a>
@@ -21,6 +23,7 @@
         <a class="linkedin-share"
            target="_blank"
            rel="noopener"
+           onclick="share_event('LinkedIn');"
            href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">
             {{- partial "icon.html" "linkedin" -}}
         </a>
@@ -30,6 +33,7 @@
         <a class="reddit-share"
            target="_blank"
            rel="noopener"
+           onclick="share_event('Reddit');"
            href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
             {{- partial "icon.html" "reddit" -}}
         </a>
@@ -42,6 +46,7 @@
         <a class="telegram-share"
            target="_blank"
            rel="noopener"
+           onclick="share_event('Telegram');"
            href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}">
             {{- partial "icon.html" "telegram" -}}
         </a>
