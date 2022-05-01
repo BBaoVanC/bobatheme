@@ -32,6 +32,8 @@
         {{ .Content }}
     </div>
 
+    {{ partial "series-box.html" . }}
+
     {{ if or .NextInSection .PrevInSection }}
         <div class="prevnext">
             {{ with .NextInSection }}
@@ -62,7 +64,9 @@
         </div>
     {{ end }}
 
-    {{ partial "series-box.html" . }}
+    {{ if .Site.Params.shareButtons }}
+        {{ partial "share.html" . }}
+    {{ end }}
 
     {{ $related := .Site.RegularPages.Related . | first 10 }}
     {{ with $related }}

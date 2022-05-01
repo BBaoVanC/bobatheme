@@ -1,0 +1,50 @@
+<div class="share-buttons">
+    {{ if .Site.Params.shareButtons.twitter }}
+        <a class="twitter-share"
+           target="_blank"
+           rel="noopener"
+           href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}&via=bbaovanc">
+            {{- partial "icon.html" "twitter" -}}
+        </a>
+    {{ end }}
+
+    {{ if .Site.Params.shareButtons.facebook }}
+        <a class="facebook-share"
+           target="_blank"
+           rel="noopener"
+           href="https://www.facebook.com/sharer.php?u={{ .Permalink }}">
+            {{- partial "icon.html" "facebook" -}}
+        </a>
+    {{ end }}
+
+    {{ if .Site.Params.shareButtons.linkedin }}
+        <a class="linkedin-share"
+           target="_blank"
+           rel="noopener"
+           href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">
+            {{- partial "icon.html" "linkedin" -}}
+        </a>
+    {{ end }}
+
+    {{ if .Site.Params.shareButtons.reddit }}
+        <a class="reddit-share"
+           target="_blank"
+           rel="noopener"
+           href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
+            {{- partial "icon.html" "reddit" -}}
+        </a>
+    {{ end }}
+
+    {{/* Telegram icon doesn't have `viewbox` set, which breaks the sizing.
+            https://stackoverflow.com/q/72073399/19003757
+            https://github.com/michaelampr/jam/issues/39
+    {{ if .Site.Params.shareButtons.telegram }}
+        <a class="telegram-share"
+           target="_blank"
+           rel="noopener"
+           href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}">
+            {{- partial "icon.html" "telegram" -}}
+        </a>
+    {{ end }}
+    */}}
+</div>
