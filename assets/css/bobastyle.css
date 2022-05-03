@@ -296,6 +296,14 @@
   height: 32px;
 }
 
+/* https://stackoverflow.com/a/72073682/19003757 */
+/*
+.telegram-share > svg {
+  transform: scale(1.5);
+  margin: 9px -9px -9px 9px;
+}
+*/
+
 
 /* Back to top */
 #back-to-top {
