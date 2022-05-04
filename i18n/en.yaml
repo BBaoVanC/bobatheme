@@ -11,6 +11,9 @@ browser_no_video_support:
 latest_posts:
   other: "Latest Posts"
 
+see_also:
+  other: "SEE ALSO:"
+
 
 # Meta items
 long_date:

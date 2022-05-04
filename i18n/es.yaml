@@ -8,6 +8,9 @@ table_of_contents:
 browser_no_video_support:
   other: "Tu navegador de internet no admite video."
 
+see_also:
+  other: "Véase también:"
+
 
 # Meta items
 long_date:
