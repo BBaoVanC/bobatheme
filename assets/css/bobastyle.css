@@ -252,25 +252,53 @@
 
 
 /* Related posts */
-.related hr {
+.related {
+  /* make left/right 0 margin so it takes up full width */
   margin: 25px 0;
+}
+
+.related > hr,
+.related > h2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.related-posts .post {
+  min-width: 300px;
+  max-width: 300px;
+
+  /* since .related and .related-posts are both full-width with no margin */
+  margin-left: 20px;
+}
+
+.related-posts .post:last-child {
+  margin-right: 20px;
+}
+
+@media (max-width: 720px) {
+  /* when the screen is smaller than max size, make sure that the .related div
+   * still reaches the screen edge. then if the posts overflow and require
+   * scrolling, you can see it cut off on the side of your phone screen
+   */
+  .related {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 @media (min-width: 720px) {
   .related {
-    /* this makes it full width -- 720px max-width on body
-     * add an extra 40px to give a 20px margin on left and right */
-    margin-left: calc(-100vw / 2 + 760px / 2);
-    margin-right: calc(-100vw / 2 + 760px / 2);
+    /* this makes it full width -- 720px max-width on body it is exactly 720px
+     * so .related takes up full width
+     */
+    margin-left: calc(-100vw / 2 + 720px / 2);
+    margin-right: calc(-100vw / 2 + 720px / 2);
   }
 }
 
 .related-posts {
-  display: grid;
-  gap: 20px;
-  grid-auto-flow: column;
-  grid-auto-columns: 300px;
-  overflow-x: auto;
+  display: flex;
+  overflow-x: scroll;
 }
 
 
@@ -403,7 +431,6 @@
 /* Basic elements */
 html {
   scroll-behavior: smooth;
-  margin: 0 20px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -416,9 +443,15 @@ body {
   background-color: var(--background);
   color: var(--text-normal);
   font-family: "Open Sans", "Noto Sans", sans-serif;
-  margin: 0 auto 20px;
+  margin: 20px;
   max-width: 720px;
   overflow-wrap: break-word;
+}
+
+@media (min-width: 760px) {
+  body {
+    margin: 20px auto;
+  }
 }
 
 footer {
