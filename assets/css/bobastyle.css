@@ -305,6 +305,19 @@
 */
 
 
+/* See also formating */
+.see-also {
+  background-color: var(--background-2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.see-also p {
+  margin: 0;
+}
+
+
 /* Back to top */
 #back-to-top {
   position: fixed;

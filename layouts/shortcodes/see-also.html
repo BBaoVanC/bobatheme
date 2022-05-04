@@ -1,0 +1,7 @@
+<div class="see-also">
+    {{ with .Site.GetPage (.Get 0) }}
+        <p>SEE ALSO: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    {{ else }}
+        {{ errorf "Page could not be found for see-also shortcode: %s" .Position }}
+    {{ end }}
+</div>
