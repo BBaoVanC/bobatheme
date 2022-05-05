@@ -76,8 +76,7 @@
 }
 
 .page-list li,
-.series-taxonomy li,
-.related-posts .post {
+.series-taxonomy li {
   padding-top: 8px;
   padding-left: 24px;
   padding-right: 24px;
@@ -252,26 +251,27 @@
 
 
 /* Related posts */
-.related {
+.full-width-page-list {
   /* make left/right 0 margin so it takes up full width */
   margin: 25px 0;
 }
 
-.related > hr,
-.related > h2 {
+.full-width-page-list > hr,
+.full-width-page-list > h1 {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-.related-posts .post {
+.full-width-page-list li {
   min-width: 300px;
   max-width: 300px;
 
-  /* since .related and .related-posts are both full-width with no margin */
-  margin-left: 20px;
 }
 
-.related-posts .post:last-child {
+.full-width-page-list li:first-child {
+  margin-left: 20px;
+}
+.full-width-page-list li:last-child {
   margin-right: 20px;
 }
 
@@ -280,14 +280,14 @@
    * still reaches the screen edge. then if the posts overflow and require
    * scrolling, you can see it cut off on the side of your phone screen
    */
-  .related {
+  .full-width-page-list {
     margin-left: -20px;
     margin-right: -20px;
   }
 }
 
 @media (min-width: 720px) {
-  .related {
+  .full-width-page-list {
     /* this makes it full width -- 720px max-width on body it is exactly 720px
      * so .related takes up full width
      */
@@ -296,8 +296,10 @@
   }
 }
 
-.related-posts {
+.full-width-page-list .page-list ul {
   display: flex;
+  flex-direction: row;
+  gap: 20px;
   overflow-x: scroll;
 }
 
