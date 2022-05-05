@@ -89,5 +89,7 @@
         </div>
     {{ end }}
 
-    {{ partialCached "latest-posts.html" . }}
+    {{ if .Site.Params.latestPostsOnContent }}
+        {{ partialCached "latest-posts.html" . }}
+    {{ end }}
 {{ end }}
