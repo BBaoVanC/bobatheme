@@ -1,11 +1,6 @@
 {{ define "main" }}
     <h1>
-        {{ if eq .Data.Singular "tag" }}
-            {{ partial "icon.html" "tag" }}
-        {{ else }}
-            {{ partial "icon.html" "filter" }}
-        {{ end }}
-
+        {{ partial "icon.html" "filter" }}
         {{ .Title | markdownify }}
         {{ partial "rss-link.html" . }}
     </h1>
