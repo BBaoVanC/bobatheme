@@ -415,6 +415,7 @@
 .navbar a {
   padding: 8px 12px;
   border-radius: 12px;
+  white-space: nowrap;
 }
 
 .navbar-item:hover,
