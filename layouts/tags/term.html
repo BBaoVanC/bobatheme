@@ -5,7 +5,10 @@
         {{ partial "rss-link.html" . }}
     </h1>
 
-    {{ partial "description-or-summary.html" . }}
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+
     <div class="page-list">
         {{ with .Paginator.Pages }}
             <ul>

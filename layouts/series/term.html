@@ -7,7 +7,9 @@
 
     {{ partial "post-metadata/series.html" . }}
 
-    {{ partial "description-or-summary.html" . }}
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
 
     <div class="page-list">
         {{ with .Paginator.Pages.Reverse }}
