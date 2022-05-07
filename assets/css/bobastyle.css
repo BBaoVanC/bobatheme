@@ -113,6 +113,7 @@
   margin-bottom: 15px;
 }
 
+.categories,
 .tags,
 .series {
   margin-top: 10px;
@@ -129,6 +130,41 @@
 
 .readmore {
   margin-top: 5px;
+}
+
+
+
+/* Category list format */
+.category-list ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+
+.category-list li {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: var(--background-2);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 360px) {
+  .category-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.category-list li > a,
+.category-list li > p {
+}
+
+.category-list p {
+  margin: 0;
 }
 
 

@@ -10,6 +10,9 @@ draft: true
 authors:
   - {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
 
+categories:
+  - archetype-stuff
+
 tags:
   - awesome
 

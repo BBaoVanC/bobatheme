@@ -1,0 +1,27 @@
+{{ define "main" }}
+    <h1>
+        {{ partial "icon.html" "folder" }}
+        {{ .Title | markdownify }}
+    </h1>
+
+    <div class="category-list">
+        {{ with .Data.Terms.Alphabetical }}
+            <ul>
+                {{ range . }}
+                    {{ with .Page }}
+                        <li>
+                            <a href="{{ .Permalink }}">
+                                <p>{{ .Title | markdownify }}</p>
+                            </a>
+                            {{ partial "description-or-summary.html" . }}
+                        </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        {{ else }}
+            <div>
+                {{ i18n "no_posts" }}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}
