@@ -14,6 +14,7 @@
                                 <p>{{ .Title | markdownify }}</p>
                             </a>
                             {{ partial "description-or-summary.html" . }}
+                            {{ partial "post-metadata/category.html" . }}
                         </li>
                     {{ end }}
                 {{ end }}

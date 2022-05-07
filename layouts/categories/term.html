@@ -5,6 +5,8 @@
         {{ partial "rss-link.html" . }}
     </h1>
 
+    {{ partial "post-metadata/category.html" . }}
+
     {{ with .Content }}
         {{ . }}
     {{ end }}

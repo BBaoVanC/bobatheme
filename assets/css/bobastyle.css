@@ -163,6 +163,10 @@
   margin: 0;
 }
 
+.category-list .category-metadata {
+  margin-left: auto;
+}
+
 
 
 /* Tags list format */
