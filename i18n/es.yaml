@@ -8,6 +8,9 @@ table_of_contents:
 browser_no_video_support:
   other: "Tu navegador de internet no admite video."
 
+latest_posts:
+  other: "Artículos recientes"
+
 see_also:
   other: "Véase también:"
 
@@ -29,9 +32,9 @@ readingtime:
 no_posts:
   other: "¡No hay contenido para mostrar!"
 
-# post_count:
-#   one: "{{ . }} post"
-#   other: "{{ . }} posts"
+post_count:
+  one: "{{ . }} publicación"
+  other: "{{ . }} publicaciones"
 
 
 # Navigation
@@ -63,6 +66,9 @@ newer_post:
 
 # aria_post_meta_translations:
 #   other: "translations"
+
+# aria_post_meta_categories:
+#   other: "categories"
 
 # aria_post_meta_tags:
 #   other: "tags"

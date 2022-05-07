@@ -67,6 +67,9 @@ aria_post_meta_view_source:
 aria_post_meta_translations:
   other: "translations"
 
+aria_post_meta_categories:
+  other: "categories"
+
 aria_post_meta_tags:
   other: "tags"
 
