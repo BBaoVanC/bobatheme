@@ -167,6 +167,11 @@
   margin-left: auto;
 }
 
+.category-list a,
+.category-list .category-metadata {
+  white-space: nowrap;
+}
+
 
 
 /* Tags list format */
