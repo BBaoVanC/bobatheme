@@ -13,19 +13,7 @@
                 {{ partial "rss-link.html" . }}
             </h1>
 
-            {{ with (.Paginate .Site.RegularPages).Pages }}
-                <div class="page-list">
-                    <ul>
-                        {{ range . }}
-                            <li>{{ .Render "summary/post" }}</li>
-                        {{ end }}
-                    </ul>
-                </div>
-            {{ else }}
-                <div>
-                    {{ i18n "no_posts" }}
-                </div>
-            {{ end }}
+            {{ partial "page-list.html" (.Paginate .Site.RegularPages).Pages }}
 
             {{ partial "pagination.html" . }}
         </div>

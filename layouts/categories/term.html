@@ -9,19 +9,7 @@
         {{ . }}
     {{ end }}
 
-    <div class="page-list">
-        {{ with .Paginator.Pages }}
-            <ul>
-                {{ range . }}
-                    <li>{{ .Render "summary/post" }}</li>
-                {{ end }}
-            </ul>
-        {{ else }}
-            <div>
-                {{ i18n "no_posts" }}
-            </div>
-        {{ end }}
-    </div>
+    {{ partial "page-list.html" .Paginator.Pages }}
 
     {{ partial "pagination.html" . }}
 {{ end }}
