@@ -557,7 +557,7 @@ blockquote {
 }
 
 hr {
-  border-color: var(--background-highlight);
+  border: 1px solid var(--background-highlight);
 }
 
 table.markdown {
