@@ -52,4 +52,11 @@
         </a>
     {{ end }}
     */}}
+
+    {{ if .Site.Params.shareButtons.print }}
+        <button class="print-share"
+           onclick="window.print(); share_event('Print');">
+            {{- partial "icon.html" "printer" -}}
+        </button>
+    {{ end }}
 </div>

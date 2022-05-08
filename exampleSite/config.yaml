@@ -41,6 +41,7 @@ params:
   #   linkedin: true
   #   reddit: true
   #   telegram: true
+  #   print: true
 
   # show "Latest Posts" section at bottom of content pages
   # latestPostsOnContent: true
