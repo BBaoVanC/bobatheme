@@ -27,6 +27,9 @@ readingtime:
   one: "{{ . }} min"
   other: "{{ . }} mins"
 
+edit_history:
+  other: "Historial de cambios"
+
 
 # Post count
 no_posts:
@@ -61,8 +64,8 @@ newer_post:
 # aria_rss_link:
 #   other: "RSS feed link"
 
-# aria_post_meta_view_source:
-#   other: "link to page source"
+# aria_post_meta_edit_history:
+#   other: "link to page edit history"
 
 # aria_post_meta_translations:
 #   other: "translations"

@@ -30,6 +30,7 @@ params:
   # used for "View source" (unset by default)
   # gitFileURL: https://github.com/BBaoVanC/bobatheme/blob/master
   # gitFileIcon: github-circle
+  # gitHistoryURL: https://github.com/BBaoVanC/bobatheme/commits/master
 
   # display a "Latest Posts" section on the homepage below its content
   homepageLatestPosts: true

@@ -1,0 +1,8 @@
+{{ if and .Site.Params.gitHistoryURL .File.Path }}
+    <span class="post-meta-item post-meta-edit-history" aria-label="{{ i18n "aria_post_meta_edit_history" }}">
+        {{ partial "icon.html" "history" }}
+        <a href="{{ printf "%s/content/%s" .Site.Params.gitHistoryURL .File.Path }}" target="_blank" rel="noopener">
+            {{- i18n "edit_history" -}}
+        </a>
+    </span>
+{{ end }}
