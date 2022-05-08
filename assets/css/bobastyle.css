@@ -760,10 +760,11 @@ li.disabled > .page-link:hover {
 /* Print compatibility */
 @media print {
   .top,
-  .breadcrumb,
   .section-header-link,
   .prevnext,
-  .comments {
+  .share-buttons,
+  .related-posts,
+  .latest-posts {
     display: none;
   }
 
