@@ -3,11 +3,11 @@
         <div class="homepage-content">
             {{ . }}
         </div>
+        <hr>
     {{ end }}
 
     {{ if .Site.Params.homepageLatestPosts }}
         <div class="homepage-latest-posts">
-            <hr>
             <h1>
                 {{ i18n "latest_posts" }}
                 {{ partial "rss-link.html" . }}
