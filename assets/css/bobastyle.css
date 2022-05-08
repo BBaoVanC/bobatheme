@@ -761,6 +761,7 @@ li.disabled > .page-link:hover {
 @media print {
   .top,
   .section-header-link,
+  .post-meta-view-source,
   .prevnext,
   .share-buttons,
   .related-posts,
