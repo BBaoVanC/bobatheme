@@ -10,11 +10,13 @@
                 {{ range . }}
                     {{ with .Page }}
                         <li>
-                            <a href="{{ .Permalink }}">
-                                <p>{{ .Title | markdownify }}</p>
-                            </a>
+                            <div class="category-list-left">
+                                <a href="{{ .Permalink }}">
+                                    <p>{{ .Title | markdownify }}</p>
+                                </a>
+                                {{ partial "post-metadata/category.html" . }}
+                            </div>
                             {{ partial "description-or-summary.html" . }}
-                            {{ partial "post-metadata/category.html" . }}
                         </li>
                     {{ end }}
                 {{ end }}

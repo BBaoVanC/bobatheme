@@ -153,19 +153,25 @@
   border-radius: 8px;
 }
 
-@media (max-width: 360px) {
+.category-list-left {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 480px) {
   .category-list li {
     flex-direction: column;
     gap: 0;
+  }
+
+  .category-list-left {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .category-list p {
   margin: 0;
-}
-
-.category-list .category-metadata {
-  margin-left: auto;
 }
 
 .category-list a,
