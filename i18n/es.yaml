@@ -94,8 +94,8 @@ newer_post:
 # aria_author_metadata:
 #   other: "author metadata"
 
-# aria_category_metadata:
-#   other: "category metadata"
+# aria_taxonomy_metadata:
+#   other: "taxonomy metadata"
 
 # aria_post_meta_date:
 #   other: "date"
@@ -109,7 +109,7 @@ newer_post:
 # aria_author_word_count:
 #   other: "word count"
 
-# aria_category_post_count:
+# aria_taxonomy_post_count:
 #   other: "post count"
 
 # aria_series_metadata:

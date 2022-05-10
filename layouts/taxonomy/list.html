@@ -1,16 +1,31 @@
 {{ define "main" }}
     <h1>
-        {{ partial "icon.html" "filter" }}
+        {{ if eq .Data.Singular "tag" }}
+            {{ partial "icon.html" "tag" }}
+        {{ else if eq .Data.Singular "category" }}
+            {{ partial "icon.html" "folder" }}
+        {{ else }}
+            {{ partial "icon.html" "filter" }}
+        {{ end }}
+
         {{ .Title | markdownify }}
     </h1>
 
-    <div class="taxonomy">
+    <div class="taxonomy-list">
         {{ with .Data.Terms.Alphabetical }}
             <ul>
                 {{ range . }}
-                    <li>
-                        <a href="{{ .Page.Permalink }}">{{ .Page.Title | markdownify }}</a>
-                    </li>
+                    {{ with .Page }}
+                        <li>
+                            <div class="taxonomy-list-left">
+                                <a href="{{ .Permalink }}">
+                                    <p>{{ .Title | markdownify }}</p>
+                                </a>
+                                {{ partial "post-metadata/taxonomy.html" . }}
+                            </div>
+                            {{ partial "description-or-summary.html" . }}
+                        </li>
+                    {{ end }}
                 {{ end }}
             </ul>
         {{ else }}
