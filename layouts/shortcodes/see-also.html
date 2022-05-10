@@ -1,6 +1,6 @@
 <div class="see-also">
     {{ with .Site.GetPage (.Get 0) }}
-        <p>{{ i18n "see_also" }} <a href="{{ .Permalink }}">{{ .Title }}</a></p>
+        <p>{{ i18n "see_also" }} <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></p>
     {{ else }}
         {{ errorf "Page could not be found for see-also shortcode: %s" .Position }}
     {{ end }}
