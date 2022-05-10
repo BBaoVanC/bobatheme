@@ -239,6 +239,10 @@
 
 
 /* Header formatting (website title and article section headers) */
+h1.header {
+  font-size: 1.5em;
+}
+
 .header a,
 .section-header a {
   color: inherit;
