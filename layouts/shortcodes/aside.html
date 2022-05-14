@@ -1,5 +1,28 @@
-<aside>
-    {{ with .Inner }}
-        {{ . | markdownify }}
-    {{ end }}
+{{ $type := "" }}
+{{ if .IsNamedParams }}
+    {{ $type = .Get "type" | default "note" }}
+{{ else }}
+    {{ $type = .Get 0 | default "note" }}
+{{ end }}
+
+{{/* This idea comes from the LoveIt theme:
+     https://github.com/dillonzq/LoveIt/blob/aa834e89af8349f6c18d4c7ad50a73fd5f1e40e0/layouts/shortcodes/admonition.html#L3-L14
+*/}}
+
+{{ $icons := dict "note" "pencil" }}
+{{ $icons  = dict "info" "info" | merge $icons }}
+{{ $icons  = dict "tip" "lightbulb" | merge $icons }}
+{{ $icons  = dict "warning" "info" | merge $icons }}
+{{ $icons  = dict "example" "flask" | merge $icons }}
+{{ $icons  = dict "quote" "quote" | merge $icons }}
+
+<aside class="{{ $type }}">
+    <div class="aside-title">
+        {{ partial "icon.html" (index $icons $type) }}
+        {{ title $type }}
+    </div>
+
+    <div class="aside-content">
+        {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    </div>
 </aside>
