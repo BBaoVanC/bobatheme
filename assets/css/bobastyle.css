@@ -765,6 +765,7 @@ h1 svg.icon {
 .page-item.active .page-link:hover {
   background-color: var(--pagination-active-hover-background);
   color: var(--pagination-active-hover-text);
+  cursor: default;
 }
 
 .page-link:hover {
