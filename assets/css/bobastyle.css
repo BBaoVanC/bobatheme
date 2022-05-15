@@ -666,7 +666,10 @@ table.markdown {
 
 :not(pre) > code {
   background-color: var(--background-2);
+  /* Disable this because it overrides inline code blocks that are
+   * also links
   color: var(--text-2);
+   */
   padding: 2px 4px;
   overflow-wrap: break-word;
 }
