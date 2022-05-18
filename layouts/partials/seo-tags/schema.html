@@ -21,6 +21,10 @@
     <meta itemprop="image" content="{{ $featured.Permalink }}">
 {{ end }}
 
-{{ with .Params.tags }}
-    <meta itemprop="keywords" content="{{ delimit . ", " }}">
+{{ with (.GetTerms "tags") }}
+    {{ $tags := slice }}
+    {{ range . }}
+        {{ $tags = $tags | append .LinkTitle }}
+    {{ end }}
+    <meta itemprop="keywords" content="{{ delimit $tags ", " }}">
 {{ end }}
