@@ -791,20 +791,45 @@ li.disabled > .page-link:hover {
 
 /* Breadcrumb navigation */
 .breadcrumb {
-  margin: 30px 0 20px;
+  margin: 16px 0;
 }
 
 .breadcrumb ul {
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .breadcrumb li {
   display: inline;
+  padding: 8px;
+  background-color: var(--background-1);
 }
 
-.breadcrumb li+li:before {
-  content: "»"
+.breadcrumb li:hover {
+  background-color: var(--background-2);
+  cursor: pointer;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: none;
+}
+
+.breadcrumb li.active:hover {
+  cursor: default;
+}
+
+.breadcrumb li:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-left: 12px;
+}
+.breadcrumb li:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-right: 12px;
 }
 
 
