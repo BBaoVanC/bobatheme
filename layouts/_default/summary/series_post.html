@@ -1,29 +1,27 @@
-<div class="post">
-    <div class="post-series-position">
-        {{ if .Scratch.Get "series_position" }}
-            ({{ .Scratch.Get "series_position" }}/{{ .Scratch.Get "series_total" }})
-        {{ end }}
-    </div>
-
-    <h2 class="post-title">
-        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-    </h2>
-
-    {{ partial "post-metadata/short.html" . }}
-
-    {{ with .Resources.GetMatch "feature" }}
-        <div class="post-media">
-            {{ partial "figure.html" (dict "src" .) }}
-        </div>
+<div class="post-series-position">
+    {{ if .Scratch.Get "series_position" }}
+        ({{ .Scratch.Get "series_position" }}/{{ .Scratch.Get "series_total" }})
     {{ end }}
+</div>
 
-    <div class="post-description">
-        {{ partial "description-or-summary.html" . }}
-    </div>
+<h2 class="post-title">
+    {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+</h2>
 
-    <div class="readmore">
-        <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
+{{ partial "post-metadata/short.html" . }}
+
+{{ with .Resources.GetMatch "feature" }}
+    <div class="post-media">
+        {{ partial "figure.html" (dict "src" .) }}
     </div>
+{{ end }}
+
+<div class="post-description">
+    {{ partial "description-or-summary.html" . }}
+</div>
+
+<div class="readmore">
+    <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
 </div>

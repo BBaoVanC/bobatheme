@@ -1,26 +1,24 @@
-<div class="post">
-    <h2 class="post-title">
-        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-    </h2>
+<h2 class="post-title">
+    {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+</h2>
 
-    {{ partial "post-metadata/series.html" . }}
+{{ partial "post-metadata/series.html" . }}
 
-    <div class="post-description">
-        {{ partial "description-or-summary.html" . }}
-    </div>
+<div class="post-description">
+    {{ partial "description-or-summary.html" . }}
+</div>
 
-    <div class="series-pages">
-        <ul>
-            {{ $i := 0 }}
-            {{ $total := len .Data.Pages }}
-            {{ range .Data.Pages.Reverse }}
-                {{ $i = add 1 $i }}
-                {{ .Scratch.Set "series_position" $i }}
-                {{ .Scratch.Set "series_total" $total }}
-                <li>{{ .Render "summary/series_post" }}</li>
-            {{ end }}
-        </ul>
-    </div>
+<div class="series-page-list">
+    {{ $i := 0 }}
+    {{ $total := len .Data.Pages }}
+    {{ range .Data.Pages.Reverse }}
+        {{ $i = add 1 $i }}
+        {{ .Scratch.Set "series_position" $i }}
+        {{ .Scratch.Set "series_total" $total }}
+        <article class="post">
+            {{ .Render "summary/series_post" }}
+        </article>
+    {{ end }}
 </div>

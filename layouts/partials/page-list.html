@@ -1,10 +1,10 @@
 <div class="page-list">
     {{ with . }}
-        <ul>
-            {{ range . }}
-                <li>{{ .Render "summary/post" }}</li>
-            {{ end }}
-        </ul>
+        {{ range . }}
+            <article class="post">
+                {{ .Render "summary/post" }}
+            </article>
+        {{ end }}
     {{ else }}
         <div>
             {{ i18n "no_posts" }}

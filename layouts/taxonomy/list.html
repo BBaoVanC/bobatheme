@@ -13,21 +13,19 @@
 
     <div class="taxonomy-list">
         {{ with .Data.Terms.Alphabetical }}
-            <ul>
-                {{ range . }}
-                    {{ with .Page }}
-                        <li>
-                            <div class="taxonomy-list-left">
-                                <a href="{{ .Permalink }}">
-                                    <p>{{ .Title | markdownify }}</p>
-                                </a>
-                                {{ partial "post-metadata/taxonomy.html" . }}
-                            </div>
-                            {{ partial "description-or-summary.html" . }}
-                        </li>
-                    {{ end }}
+            {{ range . }}
+                {{ with .Page }}
+                    <article class="taxonomy-term">
+                        <div class="taxonomy-list-left">
+                            <a href="{{ .Permalink }}">
+                                <p>{{ .Title | markdownify }}</p>
+                            </a>
+                            {{ partial "post-metadata/taxonomy.html" . }}
+                        </div>
+                        {{ partial "description-or-summary.html" . }}
+                    </article>
                 {{ end }}
-            </ul>
+            {{ end }}
         {{ else }}
             <div>
                 {{ i18n "no_posts" }}

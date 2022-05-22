@@ -6,11 +6,11 @@
 
     <div class="page-list">
         {{ with .Paginator.Pages }}
-            <ul>
-                {{ range . }}
-                    <li>{{ .Render "summary/author" }}</li>
-                {{ end }}
-            </ul>
+            {{ range . }}
+                <article class="post">
+                    {{ .Render "summary/author" }}
+                </article>
+            {{ end }}
         {{ else }}
             <div>
                 {{ i18n "no_posts" }}

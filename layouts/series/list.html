@@ -4,13 +4,13 @@
         {{ .Title | markdownify }}
     </h1>
 
-    <div class="series-taxonomy">
+    <div class="series-taxonomy-list">
         {{ with .Pages }}
-            <ul>
-                {{ range . }}
-                    <li>{{ .Render "summary/series" }}</li>
-                {{ end }}
-            </ul>
+            {{ range . }}
+                <article class="series-taxonomy">
+                    {{ .Render "summary/series" }}
+                </article>
+            {{ end }}
         {{ else }}
             <div>
                 {{ i18n "no_posts" }}

@@ -1,6 +1,10 @@
-<h1 class="header">
-    <a href="{{ .Site.Home.Permalink | absLangURL }}">{{ .Site.Title | markdownify }}</a>
-</h1>
+<header class="header">
+    <h1>
+        <a href="{{ .Site.Home.Permalink | absLangURL }}">
+            {{ .Site.Title | markdownify }}
+        </a>
+    </h1>
+</header>
 
 <div class="topbar">
     <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">

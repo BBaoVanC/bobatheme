@@ -123,8 +123,8 @@
   gap: 40px;
 }
 
-.page-list ul,
-.series-taxonomy ul {
+.page-list,
+.series-taxonomy-list {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -132,12 +132,13 @@
   gap: 40px;
 }
 
-.series-taxonomy ul {
+.series-taxonomy-list {
   gap: 80px;
 }
 
-.page-list li,
-.series-taxonomy li {
+.page-list .post,
+.series-taxonomy-list .series-taxonomy,
+.series-taxonomy .post {
   padding-top: 8px;
   padding-left: 24px;
   padding-right: 24px;
@@ -206,7 +207,7 @@
   margin: 0;
 }
 
-.taxonomy-list ul {
+.taxonomy-list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -214,7 +215,7 @@
   gap: 10px;
 }
 
-.taxonomy-list li {
+.taxonomy-list .taxonomy-term {
   background-color: var(--background-1);
   color: var(--text-1);
   padding: 8px 12px;
@@ -230,7 +231,7 @@
 }
 
 @media (max-width: 480px) {
-  .taxonomy-list li {
+  .taxonomy-list .taxonomy-term {
     flex-direction: column;
     gap: 4px;
   }
@@ -244,7 +245,7 @@
 
 
 /* Series list format */
-.series-pages ul {
+.series-page-list {
   display: flex;
   gap: 10px;
   flex-flow: row wrap;
@@ -255,7 +256,7 @@
   border-radius: 16px;
 }
 
-.series-pages li {
+.series-page-list .post {
   flex: 1;
   min-width: 49%;
 }
@@ -304,8 +305,13 @@
 
 
 /* Header formatting (website title and article section headers) */
-h1.header {
+.header {
+  margin: 16px 0;
+}
+
+.header h1 {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .header a,
@@ -347,6 +353,7 @@ h1.header {
 }
 
 
+
 /* Related posts */
 .full-width-page-list {
   /* make left/right 0 margin so it takes up full width */
@@ -359,16 +366,16 @@ h1.header {
   margin-right: 20px;
 }
 
-.full-width-page-list li {
+.full-width-page-list .post {
   min-width: 300px;
   max-width: 300px;
 
 }
 
-.full-width-page-list li:first-child {
+.full-width-page-list .post:first-child {
   margin-left: 20px;
 }
-.full-width-page-list li:last-child {
+.full-width-page-list .post:last-child {
   margin-right: 20px;
 }
 
@@ -393,12 +400,13 @@ h1.header {
   }
 }
 
-.full-width-page-list .page-list ul {
+.full-width-page-list .page-list {
   display: flex;
   flex-direction: row;
   gap: 20px;
   overflow-x: scroll;
 }
+
 
 
 /* Social media share buttons */
@@ -439,6 +447,7 @@ h1.header {
 */
 
 
+
 /* See also formating */
 .see-also {
   background-color: var(--background-1);
@@ -451,6 +460,7 @@ h1.header {
 .see-also p {
   margin: 0;
 }
+
 
 
 /* Back to top */
