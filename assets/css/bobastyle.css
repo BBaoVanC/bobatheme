@@ -648,6 +648,13 @@ table.markdown {
   color: var(--text-1);
 }
 
+:target {
+  animation: target-fade 10s ease-out;
+}
+@keyframes target-fade {
+    0% { background-color: var(--background-yellow-2); }
+}
+
 * {
   box-sizing: border-box;
 }
