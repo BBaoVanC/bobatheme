@@ -22,7 +22,7 @@
 {{ end }}
 
 <meta name="twitter:title" content="{{ .Title | plainify }}">
-<meta name="twitter:description" content="{{ (partial "seo-tags/description.html" .) | plainify }}">
+<meta name="twitter:description" content="{{ (partial "seo-description.html" .) | plainify }}">
 
 {{ with .Site.Social.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
