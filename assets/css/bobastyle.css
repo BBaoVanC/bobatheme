@@ -680,12 +680,9 @@ table.markdown {
 
 
 /* Code blocks */
-.highlight {
+.highlight > .chroma  {
+  background-color: var(--background-1) !important;
   margin: 16px 0;
-}
-
-.highlight > pre {
-  padding: 12px 8px;
   overflow: auto;
 }
 
