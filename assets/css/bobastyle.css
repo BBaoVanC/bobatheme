@@ -680,10 +680,13 @@ table.markdown {
 
 
 /* Code blocks */
-.highlight > .chroma  {
-  background-color: var(--background-1) !important;
+.highlight > .chroma {
   margin: 16px 0;
   overflow: auto;
+}
+
+.chroma {
+  background-color: var(--background-1) !important;
 }
 
 :not(pre) > code {
