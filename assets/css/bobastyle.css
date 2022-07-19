@@ -689,6 +689,14 @@ table.markdown {
   background-color: var(--background-1) !important;
 }
 
+.chroma .gp {
+  /* Generic Prompt symbol */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 :not(pre) > code {
   background-color: var(--background-2);
   /* Disable this because it overrides inline code blocks that are
