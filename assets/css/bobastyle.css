@@ -159,6 +159,11 @@
   margin-bottom: 10px;
 }
 
+.post-title h1,
+.author-name h1 {
+  margin: 0;
+}
+
 .post-title a,
 .author-name a {
   color: inherit;
@@ -173,7 +178,7 @@
 
 .post-metadata,
 .author-metadata {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 
 .categories,
@@ -823,7 +828,7 @@ li.disabled > .page-link:hover {
 
 
 /* Breadcrumb navigation */
-.breadcrumb {
+.breadcrumb ul {
   margin: 30px 0 20px;
 }
 
