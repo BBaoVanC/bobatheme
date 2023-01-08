@@ -1,9 +1,7 @@
 <header class="header">
-    <h1>
-        <a href="{{ .Site.Home.Permalink | absLangURL }}">
-            {{ .Site.Title | markdownify }}
-        </a>
-    </h1>
+    <a href="{{ .Site.Home.Permalink | absLangURL }}">
+        {{ .Site.Title | markdownify }}
+    </a>
 </header>
 
 <div class="topbar">

@@ -314,14 +314,11 @@
   margin: 16px 0;
 }
 
-.header h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
 .header a,
 .section-header a {
   color: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .section-header-link svg {
