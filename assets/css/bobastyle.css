@@ -689,12 +689,23 @@ table.markdown {
   background-color: var(--background-1);
   border-radius: 8px;
 }
-.code-block > .code-type {
+.code-block > .code-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: var(--background-2);
   padding: 4px 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+.code-block > .code-header > .code-type {
+  border-top-left-radius: 8px;
   font-family: monospace;
+  margin: auto 0;
+}
+/* TODO: make the code copy button prettier */
+.code-block > .code-header > .code-copy-button:hover {
+  cursor: pointer;
 }
 .code-block > .highlight {
   margin: 8px 4px;
