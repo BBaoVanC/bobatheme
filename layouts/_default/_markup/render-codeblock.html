@@ -1,0 +1,5 @@
+<div class="code-block">
+    <div class="code-type">{{ .Type }}</div>
+    {{/* a div.highlight is already created by highlight function */}}
+    {{ highlight .Inner .Type }}
+</div>

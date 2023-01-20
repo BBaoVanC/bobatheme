@@ -682,13 +682,31 @@ table.markdown {
 
 
 /* Code blocks */
-.highlight > .chroma {
+.code-block {
+  display: flex;
+  flex-direction: column;
   margin: 16px 0;
-  overflow: auto;
+  background-color: var(--background-1);
+  border-radius: 8px;
+}
+.code-block > .code-type {
+  background-color: var(--background-2);
+  padding: 4px 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-family: monospace;
+}
+.code-block > .highlight {
+  margin: 8px 4px;
 }
 
+.highlight > .chroma {
+  overflow: auto;
+}
 .chroma {
-  background-color: var(--background-1) !important;
+  /* the syntax highlight CSS adds a border */
+  background-color: transparent !important;
+  margin: 0;
 }
 
 .chroma .gp {
