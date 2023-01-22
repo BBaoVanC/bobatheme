@@ -424,16 +424,15 @@
   justify-content: center;
 }
 
-.share-buttons button,
 .share-buttons a {
   background-color: var(--background-2);
   color: var(--text-2);
   padding: 4px;
   border-radius: 8px;
 }
-
-.share-buttons button {
-  border: none;
+.share-buttons a:hover {
+  background-color: var(--background-3);
+  color: var(--text-3);
 }
 
 .share-buttons svg {
