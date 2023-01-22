@@ -117,6 +117,23 @@
 
 
 
+/* Fonts */
+@font-face {
+  /*font-family: Jost;*/
+  font-family: sans-serif;
+  font-display: swap;
+  font-style: normal;
+  src: url("/font/jost/Jost-VariableFont_wght.woff2") format("woff2");
+}
+@font-face {
+  /*font-family: JetBrainsMono;*/
+  font-family: monospace;
+  font-display: swap;
+  src: url("/font/jetbrainsmono/JetBrainsMono_wght.woff2") format("woff2");
+}
+
+
+
 /* Post layout (in list pages) */
 .list-page-content {
   display: flex;
@@ -570,7 +587,9 @@ html {
 body {
   background-color: var(--background-0);
   color: var(--text-0);
-  font-family: "Open Sans", "Noto Sans", sans-serif;
+  /*font-family: "Jost", "Open Sans", "Noto Sans", sans-serif;*/
+  font-family: sans-serif;
+  font-size: 16px;
   margin: 20px;
   max-width: 720px;
   overflow-wrap: break-word;
@@ -702,7 +721,6 @@ table.markdown {
 }
 .code-block > .code-header > .code-type {
   border-top-left-radius: 8px;
-  font-family: monospace;
   margin: auto 0;
 }
 /* TODO: make the code copy button prettier */
@@ -743,6 +761,12 @@ table.markdown {
   overflow-wrap: break-word;
 }
 
+.code-block > .code-header > .code-type,
+pre,
+code {
+  /*font-family: JetBrainsMono;*/
+  font-size: 12px;
+}
 code {
   border-radius: 5px;
 }
