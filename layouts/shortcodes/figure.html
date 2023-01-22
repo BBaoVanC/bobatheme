@@ -1,9 +1,4 @@
-{{ $resource := "" }}
-{{ if .IsNamedParams }}
-    {{ $resource = $.Page.Resources.GetMatch (.Get "src") }}
-{{ else }}
-    {{ $resource = $.Page.Resources.GetMatch (.Get 0) }}
-{{ end }}
+{{ $resource := .Page.Resources.GetMatch (.Get "src") }}
 
 {{ $noborder := false }}
 {{ if .Get "noborder" }}
