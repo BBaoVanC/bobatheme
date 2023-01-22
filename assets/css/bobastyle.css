@@ -632,6 +632,7 @@ a:hover {
 blockquote {
   border-left: 5px solid var(--background-2);
   padding-left: 15px;
+  margin-left: 0;
 }
 
 hr {
