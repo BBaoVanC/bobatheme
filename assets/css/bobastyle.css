@@ -46,6 +46,7 @@
   --text-gray-1: #919191; /* lch(60, 0, X) */
 
   --link-0: #3a94fb; /* lch(60, 60, 270) */
+  --link-1: #4ea1ff; /* lch(65, 60, 270) -- out of sRGB */
 
   --figure-border: #1f5593; /* lch(35, 40, 270) */
 
@@ -705,6 +706,9 @@ table.markdown {
   margin: auto 0;
 }
 /* TODO: make the code copy button prettier */
+.code-block > .code-header > .code-copy-button {
+  color: var(--link-1);
+}
 .code-block > .code-header > .code-copy-button:hover {
   cursor: pointer;
 }
