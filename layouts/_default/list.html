@@ -5,6 +5,10 @@
         {{ partial "rss-link.html" . }}
     </h1>
 
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+
     <div class="list-page-content">
         {{ with .Sections }}
             <div class="sections">

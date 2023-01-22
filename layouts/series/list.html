@@ -4,6 +4,10 @@
         {{ .Title | markdownify }}
     </h1>
 
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+
     <div class="series-taxonomy-list">
         {{ with .Pages }}
             {{ range . }}
