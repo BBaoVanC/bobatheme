@@ -117,6 +117,37 @@
 
 
 
+/* Fonts */
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap;
+  font-style: normal;
+  src: url("/font/opensans/OpenSans-VariableFont_wdth,wght-9f637b868d10819aa0085e6cf7f70953411c8905c4055c069adbe8acc708feef.woff2") format("woff2");
+}
+@font-face {
+  font-family: JetBrainsMono;
+  font-display: swap;
+  src: url("/font/jetbrainsmono/JetBrainsMono_wght-e190ee6595a3b9bd25278613a6f5d3766ee1a708f300ed44fa63dbe84051498f.woff2") format("woff2");
+}
+:root {
+  --font-sans: "Open Sans", "Noto Sans", sans-serif;
+  --font-mono: JetBrainsMono, monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+pre, code, kbd, samp, textarea {
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+}
+pre > code {
+  /* otherwise it ends up being 0.75^2 em */
+  font-size: unset;
+}
+
+
+
 /* Post layout (in list pages) */
 .list-page-content {
   display: flex;
@@ -570,7 +601,6 @@ html {
 body {
   background-color: var(--background-0);
   color: var(--text-0);
-  font-family: "Open Sans", "Noto Sans", sans-serif;
   margin: 20px;
   max-width: 720px;
   overflow-wrap: break-word;
@@ -702,7 +732,6 @@ table.markdown {
 }
 .code-block > .code-header > .code-type {
   border-top-left-radius: 8px;
-  font-family: monospace;
   margin: auto 0;
 }
 /* TODO: make the code copy button prettier */
@@ -743,6 +772,7 @@ table.markdown {
   overflow-wrap: break-word;
 }
 
+.code-block > .code-header > .code-type,
 code {
   border-radius: 5px;
 }
