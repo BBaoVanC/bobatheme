@@ -1,0 +1,17 @@
+{{ $path := "" }}
+{{ $markdown := false }}
+{{ if .IsNamedParams }}
+    {{ $path = .Get "path" }}
+    {{ with .Get "markdown" }}
+        {{ $markdown = . }}
+    {{ end }}
+{{ else }}
+    {{ $path = .Get 0 }}
+{{ end }}
+
+
+{{ if $markdown }}
+    {{ $path | readFile | markdownify }}
+{{ else }}
+    {{ $path | readFile }}
+{{ end }}
