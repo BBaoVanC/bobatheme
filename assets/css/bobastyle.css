@@ -136,6 +136,8 @@
 
 html {
   font-family: var(--font-sans);
+  /* otherwise code block lines have random text sizes on mobile safari */
+  -webkit-text-size-adjust: none;
 }
 pre, code, kbd, samp, textarea {
   font-family: var(--font-mono);
