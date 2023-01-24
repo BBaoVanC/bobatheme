@@ -684,11 +684,17 @@ table.markdown {
 .markdown thead {
   background-color: var(--background-2);
   color: var(--text-2);
+  border-bottom: 2px solid var(--text-1);
 }
 
 .markdown th,
 .markdown td {
   padding: 8px;
+}
+
+.markdown th + th,
+.markdown td + td {
+  border-left: 2px solid var(--text-1);
 }
 
 .markdown tbody tr:nth-child(odd) {
