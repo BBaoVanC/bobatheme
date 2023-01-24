@@ -681,27 +681,27 @@ table.markdown {
   border: 2px solid var(--text-1);
 }
 
-.markdown thead {
+table.markdown thead {
   background-color: var(--background-2);
   color: var(--text-2);
   border-bottom: 2px solid var(--text-1);
 }
 
-.markdown th,
-.markdown td {
+table.markdown th,
+table.markdown td {
   padding: 8px;
 }
 
-.markdown th + th,
-.markdown td + td {
+table.markdown th + th,
+table.markdown td + td {
   border-left: 2px solid var(--text-1);
 }
 
-.markdown tbody tr:nth-child(odd) {
+table.markdown tbody tr:nth-child(odd) {
   background-color: var(--background-0);
   color: var(--text-0);
 }
-.markdown tbody tr:nth-child(even) {
+table.markdown tbody tr:nth-child(even) {
   background-color: var(--background-1);
   color: var(--text-1);
 }
