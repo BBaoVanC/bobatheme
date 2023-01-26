@@ -694,8 +694,7 @@ table.markdown td {
   padding: 8px;
 }
 
-table.markdown th + th,
-table.markdown td + td {
+table.markdown :is(th, td) + :is(th, td) {
   border-left: 2px solid var(--text-1);
 }
 
