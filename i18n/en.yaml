@@ -129,3 +129,21 @@ aria_langpicker_list:
 
 aria_table_of_contents:
   other: "table of contents"
+
+aria_share_twitter:
+  other: "share to twitter button"
+
+aria_share_facebook:
+  other: "share to facebook button"
+
+aria_share_linkedin:
+  other: "share to linkedin button"
+
+aria_share_reddit:
+  other: "share to reddit button"
+
+aria_share_telegram:
+  other: "share to telegram button"
+
+aria_share_print:
+  other: "print article button"
