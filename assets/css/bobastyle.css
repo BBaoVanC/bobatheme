@@ -113,6 +113,7 @@
 @media print {
   :root {
     --background-0: #fff;
+    --text-0: #000;
   }
 }
 
@@ -996,9 +997,9 @@ li.disabled > .page-link:hover {
     max-width: 100%;
   }
 
-  pre {
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+  table,
+  aside,
+  .code-block {
     break-inside: avoid;
   }
 
