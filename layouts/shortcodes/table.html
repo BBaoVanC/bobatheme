@@ -5,6 +5,6 @@
     {{ $class = delimit (slice $class .) " " }}
 {{ end }}
 
-{{ $htmlTable := .Inner | markdownify }}
+{{ $htmlTable := .Inner | .Page.RenderString (dict "display" "block") }}
 {{ $new := printf `<table class="%s">` $class }}
 {{ (replace $htmlTable "<table>" $new) | safeHTML }}

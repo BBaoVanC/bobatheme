@@ -11,7 +11,7 @@
 
 
 {{ if $markdown }}
-    {{ $path | readFile | markdownify }}
+    {{ $path | readFile | .Page.RenderString (dict "display" "block") }}
 {{ else }}
     {{ $path | readFile }}
 {{ end }}
