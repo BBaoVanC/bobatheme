@@ -2,7 +2,7 @@
     {{ with . }}
         {{ range . }}
             <article class="post">
-                {{ .Render "summary/post" }}
+                {{ .Render "summary" }}
             </article>
         {{ end }}
     {{ else }}

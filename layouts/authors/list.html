@@ -12,7 +12,7 @@
         {{ with .Paginator.Pages }}
             {{ range . }}
                 <article class="post">
-                    {{ .Render "summary/author" }}
+                    {{ .Render "summary" }}
                 </article>
             {{ end }}
         {{ else }}

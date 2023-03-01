@@ -175,13 +175,16 @@ pre > code {
 .page-list .post,
 .series-taxonomy-list .series-taxonomy,
 .series-taxonomy .post {
-  padding-top: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
+  padding: 24px;
   border-radius: 12px;
   background-color: var(--background-1);
   color: var(--text-1);
+}
+
+.post > .post-title,
+.series-taxonomy > .post-title,
+.author > .author-name {
+  margin-top: 0;
 }
 
 .post-series-position {

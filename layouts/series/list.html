@@ -12,7 +12,7 @@
         {{ with .Pages }}
             {{ range . }}
                 <article class="series-taxonomy">
-                    {{ .Render "summary/series" }}
+                    {{ .Render "summary" }}
                 </article>
             {{ end }}
         {{ else }}
