@@ -187,11 +187,13 @@ pre > code {
   margin-top: 0;
 }
 
+/* hugo just can't handle this feature
 .post-series-position {
   position: relative;
   float: right;
   opacity: .75;
 }
+*/
 
 .post-title,
 .author-name {

@@ -11,12 +11,7 @@
 </div>
 
 <div class="series-page-list">
-    {{ $i := 0 }}
-    {{ $total := len .Data.Pages }}
     {{ range .Data.Pages.Reverse }}
-        {{ $i = add 1 $i }}
-        {{ .Scratch.Set "series_position" $i }}
-        {{ .Scratch.Set "series_total" $total }}
         <article class="post">
             {{ .Render "summary" }}
         </article>
