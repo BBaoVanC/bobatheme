@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="post-title">
+    <div class="page-title">
         <h1>
             {{ if eq .Data.Singular "tag" }}
                 {{ partial "icon.html" "tag" }}
@@ -26,7 +26,7 @@
                             <a href="{{ .Permalink }}">
                                 <p>{{ .Title | markdownify }}</p>
                             </a>
-                            {{ partial "post-metadata/taxonomy.html" . }}
+                            {{ partial "page-metadata/taxonomy.html" . }}
                         </div>
                         {{ partial "description-or-summary.html" . }}
                     </article>

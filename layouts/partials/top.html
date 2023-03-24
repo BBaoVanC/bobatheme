@@ -1,54 +1,21 @@
 <header class="header">
-    <a href="{{ .Site.Home.Permalink | absLangURL }}">
+    <a class="heading-link" href="{{ .Site.Home.Permalink | absLangURL }}">
         {{ .Site.Title | markdownify }}
     </a>
 </header>
 
-<div class="topbar">
-    <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
-        {{ with .Site.Home }}
-            <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
-        {{ end }}
-
-        {{ range .Site.Menus.main }}
-            {{ $isActive := false }}
-            {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
-                {{ $isActive = true }}
-            {{ end }}
-            <a class="navbar-item{{ if $isActive }} active{{ end }}"
-               {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
-               href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
-    </nav>
-
-    {{ if .Site.IsMultiLingual }}
-        <details class="langpicker" aria-label="{{ i18n "aria_langpicker" }}">
-            <summary>
-                {{- partial "icon.html" "world" -}}
-            </summary>
-            <ul class="languages" aria-label="{{ i18n "aria_langpicker_list" }}">
-                {{ range .AllTranslations }}
-                    <li>
-                        <a class="langpicker-item{{ if eq .Language $.Site.Language }} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-                    </li>
-                {{ end }}
-
-                {{ $site_translations := slice }}
-                {{ range .Site.Languages }}
-                    {{ $site_translations = $site_translations | append .LanguageName }}
-                {{ end }}
-
-                {{ $translation_codes := slice }}
-                {{ range .AllTranslations }}
-                    {{ $translation_codes = $translation_codes | append .Language }}
-                {{ end }}
-
-                {{ range (.Site.Languages | complement $translation_codes) }}
-                    <li>
-                        <a class="langpicker-item unavailable" aria-disabled="true">{{ .LanguageName }}</a>
-                    </li>
-                {{ end }}
-            </ul>
-        </details>
+<nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
+    {{ with .Site.Home }}
+        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
     {{ end }}
-</div>
+
+    {{ range .Site.Menus.main }}
+        {{ $isActive := false }}
+        {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+            {{ $isActive = true }}
+        {{ end }}
+        <a class="navbar-item{{ if $isActive }} active{{ end }}"
+           {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
+           href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+</nav>

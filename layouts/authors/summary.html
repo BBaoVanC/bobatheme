@@ -1,16 +1,14 @@
-<div class="author">
-    <h2 class="author-name">
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-    </h2>
+<h2 class="page-title">
+    <a class="heading-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+</h2>
 
-    {{ partial "post-metadata/author.html" . }}
+{{ partial "page-metadata/author.html" . }}
 
-    <div class="author-description">
-        {{ partial "description-or-summary.html" . }}
-    </div>
+<div class="page-description">
+    {{ partial "description-or-summary.html" . }}
+</div>
 
-    <div class="readmore">
-        <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
-    </div>
+<div class="readmore">
+    <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
 </div>

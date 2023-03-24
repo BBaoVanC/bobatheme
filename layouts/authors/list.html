@@ -11,7 +11,7 @@
     <div class="page-list">
         {{ with .Paginator.Pages }}
             {{ range . }}
-                <article class="post">
+                <article class="page">
                     {{ .Render "summary" }}
                 </article>
             {{ end }}

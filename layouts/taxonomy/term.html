@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="post-title">
+    <div class="page-title">
         <h1>
             {{ if eq .Data.Singular "tag" }}
                 {{ partial "icon.html" "tag" }}
@@ -14,7 +14,7 @@
         </h1>
     </div>
 
-    {{ partial "post-metadata/taxonomy.html" . }}
+    {{ partial "page-metadata/taxonomy.html" . }}
 
     {{ with .Content }}
         {{ . }}

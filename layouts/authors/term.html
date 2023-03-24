@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="author-name">
+    <div class="page-title">
         <h1>
             {{ partial "icon.html" "user-circle" }}
             {{ .Title | markdownify }}
@@ -7,7 +7,7 @@
         </h1>
     </div>
 
-    {{ partial "post-metadata/author.html" . }}
+    {{ partial "page-metadata/author.html" . }}
 
     {{ with .Content }}
         {{ . }}

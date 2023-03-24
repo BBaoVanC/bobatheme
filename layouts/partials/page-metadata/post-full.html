@@ -1,7 +1,7 @@
-{{ if or .Date .Params.authors .IsTranslated .Site.Params.readingtime .Site.Params.gitFileURL }}
-    <div class="post-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
+{{ if or .Date .Params.authors .Site.Params.readingtime .Site.Params.gitFileURL }}
+    <div class="page-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
         {{ if .Date }}
-            <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_date" }}">
+            <span class="page-metadata-item" aria-label="{{ i18n "aria_post_meta_date" }}">
                 {{ partial "icon.html" "calendar" }}
                 <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
                     {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
@@ -11,7 +11,7 @@
             {{/* TODO: make this be a tooltip */}}
             {{/* DISABLED
             {{ if ne (time.Format "2006-01-02" .Lastmod) (time.Format "2006-01-02" .Date) }}
-                <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_modified_date" }}">
+                <span class="page-metadata-item" aria-label="{{ i18n "aria_post_meta_modified_date" }}">
                     {{ partial "icon.html" "pencil" }}
                     <time datetime="{{ .Lastmod.Format "2006-01-02" }}" pubdate>
                         {{ i18n "long_date" (dict "Date" .Lastmod "Data" .Site.Data) }}
@@ -21,11 +21,10 @@
             */}}
         {{ end }}
 
-        {{ partial "post-meta-item/authors.html" . }}
-        {{ partial "post-meta-item/translations.html" . }}
-        {{ partial "post-meta-item/readingtime.html" . }}
-        {{ partial "post-meta-item/edithistory.html" . }}
-        {{ partial "post-meta-item/categories.html" . }}
-        {{ partial "post-meta-item/tags.html" . }}
+        {{ partial "page-metadata/item/authors.html" . }}
+        {{ partial "page-metadata/item/readingtime.html" . }}
+        {{ partial "page-metadata/item/edithistory.html" . }}
+        {{ partial "page-metadata/item/categories.html" . }}
+        {{ partial "page-metadata/item/tags.html" . }}
     </div>
 {{ end }}

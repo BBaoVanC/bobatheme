@@ -1,8 +1,0 @@
-{{ if .IsTranslated }}
-    <span class="post-meta-item" aria-label="{{ i18n "aria_post_meta_translations" }}">
-        {{ partial "icon.html" "world" }}
-        {{ range .Translations }}
-            <a href="{{ .Permalink }}">{{ .Language }}</a>
-        {{ end }}
-    </span>
-{{ end }}

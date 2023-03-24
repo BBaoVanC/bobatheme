@@ -1,12 +1,12 @@
 {{ define "main" }}
-    <div class="post-title">
+    <div class="page-title">
         <h1>
             {{ .Title | markdownify }}
             {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
         </h1>
     </div>
 
-    {{ partial "post-metadata/full.html" . }}
+    {{ partial "page-metadata/post-full.html" . }}
     {{ partial "series-box.html" . }}
 
     {{ if .Params.Toc }}

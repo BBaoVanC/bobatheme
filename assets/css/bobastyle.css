@@ -1,6 +1,10 @@
 /* bobatheme is available under the MIT license at
  * https://github.com/BBaoVanC/bobatheme.
+ *
+ * vim: foldmethod=marker
  */
+
+/* Color palette {{{ */
 
 :root {
   --background-0: #111111;  /* lch(5, 0, X) */
@@ -117,9 +121,10 @@
   }
 }
 
+/* }}} */
 
+/* Fonts {{{ */
 
-/* Fonts */
 @font-face {
   font-family: "Open Sans";
   font-display: swap;
@@ -131,6 +136,7 @@
   font-display: swap;
   src: url("../font/jetbrainsmono/JetBrainsMono_wght-e190ee6595a3b9bd25278613a6f5d3766ee1a708f300ed44fa63dbe84051498f.woff2") format("woff2");
 }
+
 :root {
   --font-sans: "Open Sans", "Noto Sans", sans-serif;
   --font-mono: JetBrainsMono, monospace;
@@ -150,453 +156,10 @@ pre > code {
   font-size: unset;
 }
 
+/* }}} */
 
+/* Basic elements {{{ */
 
-/* Post layout (in list pages) */
-.list-page-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.page-list,
-.series-taxonomy-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  gap: 40px;
-}
-
-.series-taxonomy-list {
-  gap: 80px;
-}
-
-.page-list .post,
-.series-taxonomy-list .series-taxonomy,
-.series-taxonomy .post {
-  padding: 24px;
-  border-radius: 12px;
-  background-color: var(--background-1);
-  color: var(--text-1);
-}
-
-.post > .post-title,
-.series-taxonomy > .post-title,
-.author > .author-name {
-  margin-top: 0;
-}
-
-/* hugo just can't handle this feature
-.post-series-position {
-  position: relative;
-  float: right;
-  opacity: .75;
-}
-*/
-
-.post-title,
-.author-name {
-  margin-bottom: 10px;
-}
-
-.post-title h1,
-.author-name h1 {
-  margin: 0;
-}
-
-.post-title a,
-.author-name a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.post-meta-item,
-.author-meta-item {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.post-metadata,
-.author-metadata {
-  margin-bottom: 24px;
-}
-
-.categories,
-.tags,
-.series {
-  margin-top: 10px;
-}
-
-.post-media {
-  margin-top: 15px;
-}
-
-.post-description,
-.author-description {
-  margin-top: 10px;
-}
-
-.readmore {
-  margin-top: 5px;
-}
-
-
-
-/* Taxonomy list format */
-.taxonomy-list a,
-.taxonomy-list .taxonomy-metadata {
-  white-space: nowrap;
-}
-
-.taxonomy-list p {
-  margin: 0;
-}
-
-.taxonomy-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.taxonomy-list .taxonomy-term {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 12px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.taxonomy-list-left {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 480px) {
-  .taxonomy-list .taxonomy-term {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .taxonomy-list-left {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-
-
-/* Series list format */
-.series-page-list {
-  display: flex;
-  gap: 10px;
-  flex-flow: row wrap;
-  list-style: none;
-  background-color: var(--background-0);
-  color: var(--text-0);
-  padding: 8px;
-  border-radius: 16px;
-}
-
-.series-page-list .post {
-  flex: 1;
-  min-width: 49%;
-}
-
-
-
-/* Subsection formatting */
-.sections {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.section {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  border-radius: 12px;
-  padding: 1px 25px;
-}
-
-.section:hover {
-  background-color: var(--background-2);
-  color: var(--text-2);
-}
-
-.section-title {
-  margin: 10px 0;
-}
-
-.section-anchor {
-  color: inherit;
-}
-
-.section-anchor:hover {
-  text-decoration: none;
-}
-
-.section-description {
-  margin-bottom: 5px;
-}
-
-.view-section {
-  margin-top: 5px;
-}
-
-
-
-/* Header formatting (website title and article section headers) */
-.header {
-  margin: 16px 0;
-}
-
-.header a,
-.section-header a {
-  color: inherit;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.section-header-link svg {
-  width: 15px;
-  height: 15px;
-}
-
-
-
-/* Content formatting */
-.series-box {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 16px;
-  border-radius: 8px;
-  margin: 15px 0;
-}
-
-.table-of-contents {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 20px;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.table-of-contents summary {
-  cursor: pointer;
-}
-
-.table-of-contents.print {
-  display: none;
-  padding: 8px 15px;
-}
-
-
-
-/* Related posts */
-.full-width-page-list {
-  /* make left/right 0 margin so it takes up full width */
-  margin: 25px 0;
-}
-
-.full-width-page-list > hr,
-.full-width-page-list > h1 {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.full-width-page-list .post {
-  min-width: 300px;
-  max-width: 300px;
-
-}
-
-.full-width-page-list .post:first-child {
-  margin-left: 20px;
-}
-.full-width-page-list .post:last-child {
-  margin-right: 20px;
-}
-
-@media (max-width: 720px) {
-  /* when the screen is smaller than max size, make sure that the .related div
-   * still reaches the screen edge. then if the posts overflow and require
-   * scrolling, you can see it cut off on the side of your phone screen
-   */
-  .full-width-page-list {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-}
-
-@media (min-width: 720px) {
-  .full-width-page-list {
-    /* this makes it full width -- 720px max-width on body it is exactly 720px
-     * so .related takes up full width
-     */
-    margin-left: calc(-100vw / 2 + 720px / 2);
-    margin-right: calc(-100vw / 2 + 720px / 2);
-  }
-}
-
-.full-width-page-list .page-list {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: scroll;
-}
-
-
-
-/* Social media share buttons */
-.share-buttons {
-  background: var(--background-1);
-  color: var(--text-1);
-  margin: 25px 0;
-  padding: 8px 0;
-  border-radius: 8px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-
-.share-buttons a {
-  background-color: var(--background-2);
-  color: var(--text-2);
-  padding: 4px;
-  border-radius: 8px;
-}
-.share-buttons a:hover {
-  background-color: var(--background-3);
-  color: var(--text-3);
-}
-
-.share-buttons svg {
-  width: 32px;
-  height: 32px;
-}
-
-/* https://stackoverflow.com/a/72073682/19003757 */
-/*
-.telegram-share > svg {
-  transform: scale(1.5);
-  margin: 9px -9px -9px 9px;
-}
-*/
-
-
-
-/* See also formating */
-.see-also {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.see-also p {
-  margin: 0;
-}
-
-
-
-/* Back to top */
-#back-to-top {
-  position: fixed;
-  float: right;
-  bottom: 25px;
-  right: 25px;
-  background-color: var(--background-1);
-  color: var(--text-1);
-  border-radius: 100%;
-  padding: 12px;
-  display: none;
-}
-
-
-
-/* Navbar formatting */
-.topbar {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  background-color: var(--background-1);
-  color: var(--text-1);
-  border-radius: 8px;
-  margin-top: 5px;
-  padding: 4px;
-  align-items: flex-start;
-}
-
-.navbar {
-  display: flex;
-  flex-grow: 1;
-  overflow: auto;
-}
-
-.navbar a {
-  padding: 8px 12px;
-  border-radius: 12px;
-  white-space: nowrap;
-}
-
-.navbar-item:hover,
-.langpicker summary:hover,
-.langpicker[open] summary {
-  background-color: var(--background-3);
-  text-decoration: none;
-}
-
-.langpicker summary:hover,
-.langpicker[open] summary {
-  color: var(--text-3);
-}
-
-.topbar .active {
-  font-weight: bold;
-}
-
-.langpicker {
-  position: relative;
-  white-space: nowrap;
-}
-
-.langpicker summary {
-  cursor: pointer;
-  margin-left: 24px;
-  padding: 8px 12px;
-  border-radius: 12px;
-}
-
-.langpicker .languages {
-  position: absolute;
-  margin-top: 8px;
-  right: 0;
-  background-color: var(--background-1);
-  color: var(--text-1);
-  border: 2px solid var(--background-2);
-  padding: 8px 12px;
-  border-radius: 8px;
-  list-style: none;
-}
-
-.langpicker .unavailable {
-  color: inherit;
-}
-
-.langpicker .unavailable:hover {
-  cursor: not-allowed;
-  text-decoration: none;
-}
-
-
-
-/* Basic elements */
 html {
   scroll-behavior: smooth;
 }
@@ -726,8 +289,532 @@ table.markdown tbody tr:nth-child(even) {
 }
 
 
+/* Icons */
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-1);
+  text-align: center;
+  display: inline;
+  vertical-align: middle;
+}
 
-/* Code blocks */
+h1 svg.icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* }}} */
+
+/* @media specializations {{{ */
+
+/* Light mode */
+@media print,
+(prefers-color-scheme: light) {
+  li.disabled {
+    opacity: .25;
+  }
+}
+
+/* Print compatibility {{{ */
+@media print {
+  .top,
+  .section-header-link,
+  .post-meta-edit-history,
+  .prevnext,
+  .share-buttons,
+  .related-posts,
+  .latest-posts {
+    display: none;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    max-width: 100%;
+  }
+
+  table,
+  aside,
+  .code-block {
+    break-inside: avoid;
+  }
+
+  .table-of-contents {
+    display: none;
+  }
+
+  .table-of-contents.print {
+    display: block;
+  }
+
+  #back-to-top {
+    display: none !important;
+  }
+}
+
+/* }}} */
+
+/* }}} */
+
+
+/* Heading formatting (website title and article section headers) {{{ */
+
+.header {
+  margin: 16px 0;
+  font-size: 1.5em;
+}
+
+/* this is also used i.e. in page-title */
+.heading-link {
+  color: inherit;
+  font-weight: bold;
+}
+
+.heading-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* }}} */
+
+/* Navbar formatting {{{ */
+
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  overflow: auto;
+  background-color: var(--background-1);
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 4px;
+}
+
+.navbar-item {
+  padding: 8px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.navbar-item:hover {
+  background-color: var(--background-3);
+  text-decoration: none;
+}
+
+.navbar-item.active {
+  font-weight: bold;
+}
+
+/* }}} */
+
+/* Back to top {{{ */
+#top {
+  font-size: 0;
+}
+#back-to-top {
+  position: fixed;
+  float: right;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--background-1);
+  color: var(--text-1);
+  border-radius: 100%;
+  padding: 12px;
+  display: none;
+}
+/* }}} */
+
+/* Breadcrumb navigation {{{ */
+
+.breadcrumb {
+  margin: 20px 0;
+}
+
+.breadcrumb ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li+li:before {
+  content: "»"
+}
+
+/* }}} */
+
+
+/* Pagination {{{ */
+
+.pagination {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.pagination .page-item {
+  display: inline;
+}
+
+.pagination .page-link {
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: var(--text-1);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--pagination-active-background);
+  color: inherit;
+}
+
+.pagination .page-item.active .page-link:hover {
+  background-color: var(--pagination-active-hover-background);
+  color: var(--pagination-active-hover-text);
+  cursor: default;
+}
+
+.pagination .page-link:hover {
+  text-decoration: none;
+}
+
+.pagination :not(li.disabled) > .page-link:hover {
+  background-color: var(--background-3);
+}
+
+.pagination li.disabled {
+  opacity: .5;
+}
+
+.pagination li.disabled > .page-link:hover {
+  cursor: not-allowed;
+}
+
+/* }}} */
+
+/* List layout {{{ */
+
+/* flexbox container for sections and main page list */
+.list-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  gap: 40px;
+}
+
+.page-list > .page {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: var(--background-1);
+  color: var(--text-1);
+}
+
+.page > .page-title {
+  margin-top: 0;
+}
+
+/* hugo just can't handle this feature
+.post-series-position {
+  position: relative;
+  float: right;
+  opacity: .75;
+}
+*/
+
+.page-title {
+  margin-bottom: 10px;
+}
+
+.page-title h1 {
+  margin: 0;
+}
+
+.page-metadata {
+  margin-bottom: 24px;
+}
+
+.page-metadata-item {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.page-metadata-section {
+  margin-top: 10px;
+}
+
+.post-media {
+  margin-top: 15px;
+}
+
+.page-description {
+  margin-top: 10px;
+}
+
+.readmore {
+  margin-top: 5px;
+}
+
+/* }}} */
+
+/* Taxonomy list layout {{{ */
+
+.taxonomy-list a,
+.taxonomy-list .taxonomy-metadata {
+  white-space: nowrap;
+}
+
+.taxonomy-list p {
+  margin: 0;
+}
+
+.taxonomy-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.taxonomy-list .taxonomy-term {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.taxonomy-list-left {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  .taxonomy-list .taxonomy-term {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .taxonomy-list-left {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* }}} */
+
+/* Series list layout {{{ */
+
+.page-list.series {
+  display: flex;
+  gap: 80px;
+  flex-flow: row wrap;
+  list-style: none;
+  color: var(--text-0);
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.page-list.series-inner {
+  gap: 10px;
+  flex-direction: row;
+  flex-flow: row wrap;
+  background-color: var(--background-0);
+  /*color: var(--text-0);*/
+  padding: 8px;
+  border-radius: 16px;
+}
+.page-list.series-inner > .page {
+  flex: 1;
+  min-width: 49%;
+}
+
+/* }}} */
+
+/* Subsections on list pages {{{ */
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  border-radius: 12px;
+  padding: 1px 25px;
+}
+
+.section:hover {
+  background-color: var(--background-2);
+  color: var(--text-2);
+}
+
+.section-title {
+  margin: 10px 0;
+}
+
+.section-anchor {
+  color: inherit;
+}
+
+.section-anchor:hover {
+  text-decoration: none;
+}
+
+.section-description {
+  margin-bottom: 5px;
+}
+
+.view-section {
+  margin-top: 5px;
+}
+
+/* }}} */
+
+
+/* Content (single) formatting {{{ */
+
+.series-box {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.table-of-contents {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.table-of-contents summary {
+  cursor: pointer;
+}
+
+.table-of-contents.print {
+  display: none;
+  padding: 8px 15px;
+}
+
+/* Social media share buttons */
+
+.share-buttons {
+  background: var(--background-1);
+  color: var(--text-1);
+  margin: 25px 0;
+  padding: 8px 0;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.share-buttons a {
+  background-color: var(--background-2);
+  color: var(--text-2);
+  padding: 4px;
+  border-radius: 8px;
+}
+.share-buttons a:hover {
+  background-color: var(--background-3);
+  color: var(--text-3);
+}
+
+.share-buttons svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* https://stackoverflow.com/a/72073682/19003757 */
+/*
+.telegram-share > svg {
+  transform: scale(1.5);
+  margin: 9px -9px -9px 9px;
+}
+*/
+
+/* See also formating */
+.see-also {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.see-also p {
+  margin: 0;
+}
+
+/* Previous and next page buttons {{{ */
+
+.prevnext {
+  display: flex;
+  margin: 20px 0;
+}
+
+.prevnext > * {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 16px;
+}
+
+.prevnext > a:hover {
+  background-color: var(--background-2);
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.prevnext > .prev {
+  text-align: left;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.prevnext > .next {
+  text-align: right;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.prevnext .prev-caption,
+.prevnext .next-caption {
+  opacity: 65%;
+}
+
+.prevnext .prev-post,
+.prevnext .next-post {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* }}} */
+
+/* Code & code blocks {{{ */
 .code-block {
   display: flex;
   flex-direction: column;
@@ -795,9 +882,10 @@ code {
   display: block;
 } /* fixes line numbers on firefox when there's only one line */
 
+/* }}} */
 
+/* Asides {{{ */
 
-/* Asides */
 aside {
   padding: 8px 16px;
   margin: 16px 0;
@@ -837,186 +925,62 @@ aside.quote {
   background-color: var(--background-1);
 }
 
+/* }}} */
 
+/* }}} */
 
-/* Icons */
-.icon {
-  width: 20px;
-  height: 20px;
-  color: var(--text-1);
-  text-align: center;
-  display: inline;
-  vertical-align: middle;
+/* Related posts section {{{ */
+
+.full-width-page-list {
+  /* make left/right 0 margin so it takes up full width */
+  margin: 25px 0;
 }
 
-h1 svg.icon {
-  width: 30px;
-  height: 30px;
+.full-width-page-list > hr,
+.full-width-page-list > h1 {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
+.full-width-page-list .page {
+  min-width: 300px;
+  max-width: 300px;
 
-
-/* Pagination */
-.pagination {
-  list-style: none;
-  text-align: center;
-  padding: 0;
 }
 
-.page-item {
-  display: inline;
+.full-width-page-list .page:first-child {
+  margin-left: 20px;
+}
+.full-width-page-list .page:last-child {
+  margin-right: 20px;
 }
 
-.page-link {
-  padding: 8px 16px;
-  border-radius: 5px;
-  color: var(--text-1);
+@media (max-width: 720px) {
+  /* when the screen is smaller than max size, make sure that the .related div
+   * still reaches the screen edge. then if the posts overflow and require
+   * scrolling, you can see it cut off on the side of your phone screen
+   */
+  .full-width-page-list {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
-.page-item.active .page-link {
-  background-color: var(--pagination-active-background);
-  color: inherit;
+@media (min-width: 720px) {
+  .full-width-page-list {
+    /* this makes it full width -- 720px max-width on body it is exactly 720px
+     * so .related takes up full width
+     */
+    margin-left: calc(-100vw / 2 + 720px / 2);
+    margin-right: calc(-100vw / 2 + 720px / 2);
+  }
 }
 
-.page-item.active .page-link:hover {
-  background-color: var(--pagination-active-hover-background);
-  color: var(--pagination-active-hover-text);
-  cursor: default;
-}
-
-.page-link:hover {
-  text-decoration: none;
-}
-
-:not(li.disabled) > .page-link:hover {
-  background-color: var(--background-3);
-}
-
-li.disabled {
-  opacity: .5;
-}
-
-li.disabled > .page-link:hover {
-  cursor: not-allowed;
-}
-
-
-
-/* Breadcrumb navigation */
-.breadcrumb ul {
-  margin: 30px 0 20px;
-}
-
-.breadcrumb ul {
-  padding: 0;
-  list-style: none;
-}
-
-.breadcrumb li {
-  display: inline;
-}
-
-.breadcrumb li+li:before {
-  content: "»"
-}
-
-
-
-/* Previous and next page */
-.prevnext {
+.full-width-page-list .page-list {
   display: flex;
-  margin: 20px 0;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: scroll;
 }
 
-.prevnext > * {
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  color: inherit;
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 16px;
-}
-
-.prevnext > a:hover {
-  background-color: var(--background-2);
-  color: var(--text-2);
-  text-decoration: none;
-}
-
-.prevnext > .prev {
-  text-align: left;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-.prevnext > .next {
-  text-align: right;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.prevnext .prev-caption,
-.prevnext .next-caption {
-  opacity: 65%;
-}
-
-.prevnext .prev-post,
-.prevnext .next-post {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-
-/* Light mode */
-@media print,
-(prefers-color-scheme: light) {
-  li.disabled {
-    opacity: .25;
-  }
-}
-
-
-
-/* Print compatibility */
-@media print {
-  .top,
-  .section-header-link,
-  .post-meta-edit-history,
-  .prevnext,
-  .share-buttons,
-  .related-posts,
-  .latest-posts {
-    display: none;
-  }
-
-  * {
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
-
-  body {
-    max-width: 100%;
-  }
-
-  table,
-  aside,
-  .code-block {
-    break-inside: avoid;
-  }
-
-  .table-of-contents {
-    display: none;
-  }
-
-  .table-of-contents.print {
-    display: block;
-  }
-
-  #back-to-top {
-    display: none !important;
-  }
-}
+/* }}} */

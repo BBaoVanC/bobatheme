@@ -8,12 +8,12 @@
         {{ . }}
     {{ end }}
 
-    <div class="series-taxonomy-list">
-        {{ with .Pages }}
+    <div class="page-list series">
+        {{ with .Paginator.Pages }}
             {{ range . }}
-                <article class="series-taxonomy">
+                <div class="page series">
                     {{ .Render "summary" }}
-                </article>
+                </div>
             {{ end }}
         {{ else }}
             <div>

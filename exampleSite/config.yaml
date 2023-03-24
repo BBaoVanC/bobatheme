@@ -61,10 +61,3 @@ languages:
     languageName: English
     title: Example Website
     weight: 1
-
-  es:
-    languageName: Español
-    title: Sitio web ejemplo
-    weight: 2
-    params:
-      description: Sitio web ejemplo para bobatheme

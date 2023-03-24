@@ -4,7 +4,7 @@
         {{ $categories = $categories | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
     {{ end }}
 
-    <div class="categories" aria-label="{{ i18n "aria_post_meta_categories" }}">
+    <div class="page-metadata-section categories" aria-label="{{ i18n "aria_post_meta_categories" }}">
         {{ partial "icon.html" "folder" }}
         {{ delimit $categories ", " }}
     </div>

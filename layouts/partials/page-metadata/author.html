@@ -1,16 +1,16 @@
-<div class="author-metadata" aria-label="{{ i18n "aria_author_metadata" }}">
+<div class="page-metadata" aria-label="{{ i18n "aria_author_metadata" }}">
     {{/* Calculate the total word count */}}
     {{ $total_words := 0 }}
     {{ range .Data.Pages }}
         {{ $total_words = add $total_words .WordCount }}
     {{ end }}
 
-    <span class="author-meta-item" aria-label="{{ i18n "aria_author_post_count" }}">
+    <span class="page-metadata-item" aria-label="{{ i18n "aria_author_post_count" }}">
         {{ partial "icon.html" "newspaper" }}
         {{ i18n "post_count" (len .Data.Pages) }}
     </span>
 
-    <span class="author-meta-item" aria-label="{{ i18n "aria_author_word_count" }}">
+    <span class="page-metadata-item" aria-label="{{ i18n "aria_author_word_count" }}">
         {{ partial "icon.html" "align-left" }}
         {{ i18n "wordcount" $total_words }}
     </span>

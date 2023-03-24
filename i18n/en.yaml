@@ -58,8 +58,8 @@ newer_post:
 
 
 # ARIA labels
-aria_header_link:
-  other: "header link"
+aria_heading_link:
+  other: "heading link"
 
 aria_back_to_top_button:
   other: "back to top button"
@@ -69,9 +69,6 @@ aria_rss_link:
 
 aria_post_meta_edit_history:
   other: "link to page edit history"
-
-aria_post_meta_translations:
-  other: "translations"
 
 aria_post_meta_categories:
   other: "categories"
@@ -120,12 +117,6 @@ aria_series_metadata:
 
 aria_navbar:
   other: "navigation bar"
-
-aria_langpicker:
-  other: "language picker"
-
-aria_langpicker_list:
-  other: "language list"
 
 aria_table_of_contents:
   other: "table of contents"
