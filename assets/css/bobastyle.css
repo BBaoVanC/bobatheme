@@ -709,9 +709,11 @@ h1 svg.icon {
   cursor: pointer;
 }
 
-.table-of-contents.print {
-  display: none;
-  padding: 8px 15px;
+@media not print {
+  .table-of-contents.print {
+    display: none;
+    padding: 8px 15px;
+  }
 }
 
 /* Social media share buttons */
