@@ -19,9 +19,6 @@ copy_to_clipboard:
 
 
 # Meta items
-long_date:
-  other: "{{ .Date.Format `January 2, 2006` }}"
-
 wordcount:
   one: "{{ . }} word"
   other: "{{ . }} words"

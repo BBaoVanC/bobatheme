@@ -3,9 +3,7 @@
         {{ if .Date }}
             <span class="page-metadata-item" aria-label="date">
                 {{ partial "icon.html" "calendar" }}
-                <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-                    {{ i18n "long_date" (dict "Date" .Date "Data" .Site.Data) }}
-                </time>
+                {{ partial "time-element.html" .Date }}
             </span>
         {{ end }}
 
