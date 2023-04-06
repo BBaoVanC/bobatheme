@@ -14,10 +14,10 @@
     {{ end }}
 
     {{ with resources.Get "js/bobatheme.js" | fingerprint "sha512" }}
-        <script defer src="{{ .Permalink }}" type="text/javascript" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+        <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end }}
     {{ with resources.Get "js/share-event.js" | fingerprint "sha512" }}
-        <script defer src="{{ .Permalink }}" type="text/javascript" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+        <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end }}
 
     {{ with .Site.Params.faviconSVG }}
