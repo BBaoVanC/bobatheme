@@ -11,7 +11,8 @@
 
     {{ range .Site.Menus.main }}
         {{ $isActive := false }}
-        {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+        {{/* https://discourse.gohugo.io/t/ismenucurrent-not-working-with-using-sectionpagesmenu/46687/2?u=bbaovanc */}}
+        {{ if or ($.HasMenuCurrent .Menu .) (eq .Page $) }}
             {{ $isActive = true }}
         {{ end }}
         <a class="navbar-item{{ if $isActive }} active{{ end }}"
