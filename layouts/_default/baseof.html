@@ -8,38 +8,42 @@
 
         {{ partial "top.html" . }}
 
-        {{ if not .IsHome }}
-            {{ partial "breadcrumb.html" . }}
-        {{ end }}
+        <div class="center-body">
 
-        <main>
-            {{ block "main" . }}
-                THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
+            {{ if not .IsHome }}
+                {{ partial "breadcrumb.html" . }}
             {{ end }}
-        </main>
 
-        {{ if or .Site.Copyright .Site.Params.footer }}
-            <footer>
-                {{ with .Site.Copyright }}
-                    <p>{{ . | safeHTML }}</p>
+            <main>
+                {{ block "main" . }}
+                    THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
                 {{ end }}
+            </main>
 
-                {{ with .Site.Params.footer }}
-                    {{ . | $.RenderString (dict "display" "block") }}
-                {{ end }}
-            </footer>
-        {{ end }}
+            {{ if or .Site.Copyright .Site.Params.footer }}
+                <footer>
+                    {{ with .Site.Copyright }}
+                        <p>{{ . | safeHTML }}</p>
+                    {{ end }}
 
-        <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
-            {{ partial "icon.html" "chevron-up" }}
-        </a>
-        <noscript>
-            <style>
-                #back-to-top {
-                    display: block;
-                }
-            </style>
-        </noscript>
+                    {{ with .Site.Params.footer }}
+                        {{ . | $.RenderString (dict "display" "block") }}
+                    {{ end }}
+                </footer>
+            {{ end }}
+
+            <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
+                {{ partial "icon.html" "chevron-up" }}
+            </a>
+            <noscript>
+                <style>
+                    #back-to-top {
+                        display: block;
+                    }
+                </style>
+            </noscript>
+
+        </div>
     </body>
 
 </html>

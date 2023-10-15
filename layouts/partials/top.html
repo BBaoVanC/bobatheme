@@ -1,22 +1,24 @@
-<header class="header">
-    <a class="heading-link" href="{{ .Site.Home.Permalink | absLangURL }}">
-        {{ .Site.Title | markdownify }}
-    </a>
-</header>
+<div class="top">
+    <header class="header">
+        <a class="heading-link" href="{{ .Site.Home.Permalink | absLangURL }}">
+            {{ .Site.Title | markdownify }}
+        </a>
+    </header>
 
-<nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
-    {{ with .Site.Home }}
-        <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
-    {{ end }}
-
-    {{ range .Site.Menus.main }}
-        {{ $isActive := false }}
-        {{/* https://discourse.gohugo.io/t/ismenucurrent-not-working-with-using-sectionpagesmenu/46687/2?u=bbaovanc */}}
-        {{ if or ($.HasMenuCurrent .Menu .) (eq .Page $) }}
-            {{ $isActive = true }}
+    <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
+        {{ with .Site.Home }}
+            <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
         {{ end }}
-        <a class="navbar-item{{ if $isActive }} active{{ end }}"
-           {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
-           href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-</nav>
+
+        {{ range .Site.Menus.main }}
+            {{ $isActive := false }}
+            {{/* https://discourse.gohugo.io/t/ismenucurrent-not-working-with-using-sectionpagesmenu/46687/2?u=bbaovanc */}}
+            {{ if or ($.HasMenuCurrent .Menu .) (eq .Page $) }}
+                {{ $isActive = true }}
+            {{ end }}
+            <a class="navbar-item{{ if $isActive }} active{{ end }}"
+               {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
+               href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+</div>

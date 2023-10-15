@@ -173,13 +173,17 @@ html {
 body {
   background-color: var(--background-0);
   color: var(--text-0);
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.center-body {
   margin: 20px;
   max-width: 720px;
-  overflow-wrap: break-word;
 }
 
 @media (min-width: 760px) {
-  body {
+  .center-body {
     margin: 20px auto;
   }
 }
@@ -308,12 +312,7 @@ h1 svg.icon {
 /* }}} */
 
 
-/* Heading formatting (website title and article section headers) {{{ */
-
-.header {
-  margin: 16px 0;
-  font-size: 1.5em;
-}
+/* Heading formatting (article section titles) {{{ */
 
 /* this is also used i.e. in page-title */
 .heading-link {
@@ -328,26 +327,36 @@ h1 svg.icon {
 
 /* }}} */
 
-/* Navbar formatting {{{ */
+/* Top bar formatting {{{ */
+
+.top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--background-1);
+}
+
+.header {
+  flex-grow: 1;
+  margin: 8px 16px;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+}
 
 .navbar {
   display: flex;
-  flex-grow: 1;
-  overflow: auto;
-  background-color: var(--background-1);
-  border-radius: 8px;
-  margin-top: 5px;
-  padding: 4px;
+  flex-wrap: wrap;
 }
 
 .navbar-item {
-  padding: 8px 12px;
-  border-radius: 12px;
+  padding: 12px 16px;
   white-space: nowrap;
 }
 
 .navbar-item:hover {
-  background-color: var(--background-3);
+  background-color: var(--background-teal-2);
   text-decoration: none;
 }
 
@@ -946,7 +955,7 @@ aside.quote {
 
 /* Print compatibility {{{ */
 @media print {
-  .top,
+  .top > .navbar,
   .section-header-link,
   .post-meta-edit-history,
   .prevnext,
