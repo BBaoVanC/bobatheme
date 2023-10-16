@@ -970,8 +970,20 @@ aside.quote {
     color-adjust: exact !important;
   }
 
-  body {
+  .top {
+    background-color: unset;
+  }
+  .top > .header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .center-body {
     max-width: 100%;
+    margin: 8px 0;
+  }
+
+  .breadcrumb {
+    margin: 8px 0;
   }
 
   table,
