@@ -356,7 +356,7 @@ h1 svg.icon {
 }
 
 .navbar-item:hover {
-  background-color: var(--background-teal-2);
+  background-color: var(--background-2);
   text-decoration: none;
 }
 
