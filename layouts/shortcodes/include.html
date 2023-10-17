@@ -9,9 +9,12 @@
     {{ $path = .Get 0 }}
 {{ end }}
 
-
-{{ if $markdown }}
-    {{ $path | readFile | .Page.RenderString (dict "display" "block") }}
+{{ with ($path | readFile) }}
+    {{ if $markdown }}
+        {{ $path | readFile | $.Page.RenderString (dict "display" "block") }}
+    {{ else }}
+        {{ $path | readFile }}
+    {{ end }}
 {{ else }}
-    {{ $path | readFile }}
+    {{ errorf "file not found: %s" $path }}
 {{ end }}
