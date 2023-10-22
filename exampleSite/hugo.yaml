@@ -15,6 +15,9 @@ taxonomies:
 markup: # this just keeps the bobatheme markup styling
   _merge: deep
 
+outputs:
+  _merge: deep
+
 params:
   author:
     name: bbaovanc
