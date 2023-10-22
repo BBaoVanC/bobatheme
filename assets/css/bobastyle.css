@@ -969,6 +969,7 @@ aside.quote {
   .main-container {
     max-width: 100%;
     margin: 8px 0;
+    padding: 0;
   }
 
   .breadcrumb {
@@ -981,12 +982,17 @@ aside.quote {
     break-inside: avoid;
   }
 
-  .table-of-contents {
+  .table-of-contents:not(.print) {
     display: none;
   }
 
   .table-of-contents.print {
     display: block;
+    background-color: unset;
+    padding: 0;
+  }
+  .table-of-contents.print ul {
+    margin: 0;
   }
 
   #back-to-top {
