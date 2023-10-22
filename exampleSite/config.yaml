@@ -32,9 +32,6 @@ params:
   # gitFileIcon: github-circle
   # gitHistoryURL: https://github.com/BBaoVanC/bobatheme/commits/master
 
-  # display a "Latest Posts" section on the homepage below its content
-  homepageLatestPosts: true
-
   # social media share icons
   # shareButtons:
   #   twitter: true

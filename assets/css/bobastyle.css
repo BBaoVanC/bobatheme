@@ -177,19 +177,14 @@ body {
   margin: 0;
 }
 
-.center-body {
-  margin: 20px;
-  max-width: 720px;
-}
-
-@media (min-width: 760px) {
-  .center-body {
-    margin: 20px auto;
-  }
+.main-container {
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 760px; /* 720px + 20px for left & right padding */
 }
 
 footer {
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: center;
   font-size: smaller;
 }
@@ -893,47 +888,26 @@ aside.quote {
   margin: 25px 0;
 }
 
-.full-width-page-list > hr,
-.full-width-page-list > h1 {
+.related-posts > hr,
+.related-posts > h1 {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-.full-width-page-list .page {
+.related-posts .page {
   min-width: 300px;
   max-width: 300px;
 
 }
 
-.full-width-page-list .page:first-child {
+.related-posts .page:first-child {
   margin-left: 20px;
 }
-.full-width-page-list .page:last-child {
+.related-posts .page:last-child {
   margin-right: 20px;
 }
 
-@media (max-width: 720px) {
-  /* when the screen is smaller than max size, make sure that the .related div
-   * still reaches the screen edge. then if the posts overflow and require
-   * scrolling, you can see it cut off on the side of your phone screen
-   */
-  .full-width-page-list {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-}
-
-@media (min-width: 720px) {
-  .full-width-page-list {
-    /* this makes it full width -- 720px max-width on body it is exactly 720px
-     * so .related takes up full width
-     */
-    margin-left: calc(-100vw / 2 + 720px / 2);
-    margin-right: calc(-100vw / 2 + 720px / 2);
-  }
-}
-
-.full-width-page-list .page-list {
+.related-posts .page-list {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -960,8 +934,7 @@ aside.quote {
   .post-meta-edit-history,
   .prevnext,
   .share-buttons,
-  .related-posts,
-  .latest-posts {
+  .related-posts {
     display: none;
   }
 
@@ -977,7 +950,7 @@ aside.quote {
     margin-left: 0;
     margin-right: 0;
   }
-  .center-body {
+  .main-container {
     max-width: 100%;
     margin: 8px 0;
   }

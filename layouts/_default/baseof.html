@@ -6,10 +6,20 @@
     <body>
         <a id="top" aria-hidden="true"></a>
 
+        <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
+            {{ partial "icon.html" "chevron-up" }}
+        </a>
+        <noscript>
+            <style>
+                #back-to-top {
+                    display: block;
+                }
+            </style>
+        </noscript>
+
         {{ partial "top.html" . }}
 
-        <div class="center-body">
-
+        <div class="main-container">
             {{ if not .IsHome }}
                 {{ partial "breadcrumb.html" . }}
             {{ end }}
@@ -19,31 +29,23 @@
                     THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
                 {{ end }}
             </main>
-
-            {{ if or .Site.Copyright .Site.Params.footer }}
-                <footer>
-                    {{ with .Site.Copyright }}
-                        <p>{{ . | safeHTML }}</p>
-                    {{ end }}
-
-                    {{ with .Site.Params.footer }}
-                        {{ . | $.RenderString (dict "display" "block") }}
-                    {{ end }}
-                </footer>
-            {{ end }}
-
-            <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
-                {{ partial "icon.html" "chevron-up" }}
-            </a>
-            <noscript>
-                <style>
-                    #back-to-top {
-                        display: block;
-                    }
-                </style>
-            </noscript>
-
         </div>
+
+        {{ block "post-body" . }}
+            {{/* currently this is only used for related posts */}}
+        {{ end }}
+
+        {{ if or .Site.Copyright .Site.Params.footer }}
+            <footer>
+                {{ with .Site.Copyright }}
+                    <p>{{ . | safeHTML }}</p>
+                {{ end }}
+
+                {{ with .Site.Params.footer }}
+                    {{ . | $.RenderString (dict "display" "block") }}
+                {{ end }}
+            </footer>
+        {{ end }}
     </body>
 
 </html>

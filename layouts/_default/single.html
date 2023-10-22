@@ -73,17 +73,16 @@
             {{ partial "comments.html" . }}
         </div>
     {{ end }}
+{{ end }}
 
+
+{{ define "post-body" }}
     {{ $related := .Site.RegularPages.Related . | first 10 }}
     {{ with $related }}
-        <div class="related-posts full-width-page-list">
+        <div class="related-posts">
             <hr>
             <h1>{{ i18n "related_posts" }}</h1>
             {{ partial "page-list.html" . }}
         </div>
-    {{ end }}
-
-    {{ if .Site.Params.latestPostsOnContent }}
-        {{ partialCached "latest-posts.html" . }}
     {{ end }}
 {{ end }}
