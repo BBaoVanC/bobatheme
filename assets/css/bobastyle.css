@@ -378,6 +378,22 @@ h1 svg.icon {
 }
 /* }}} */
 
+/* Skip to main content {{{ */
+#skip-to-main {
+  position: absolute;
+  padding: 8px;
+  background-color: var(--text-0);
+  color: var(--background-0);
+  transform: translateY(-100%);
+}
+#skip-to-main:focus {
+  transform: translateY(0%);
+}
+#main-content:target {
+  animation: none; /* prevent it from turning yellow */
+}
+/* }}} */
+
 /* Breadcrumb navigation {{{ */
 
 .breadcrumb {

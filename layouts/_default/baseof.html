@@ -5,6 +5,7 @@
 
     <body>
         <a id="top" aria-hidden="true"></a>
+        <a id="skip-to-main" href="#main-content">Skip to main content</a>
 
         <a id="back-to-top" href="#top" aria-label="{{ i18n "aria_back_to_top_button" }}">
             {{ partial "icon.html" "chevron-up" }}
@@ -24,7 +25,7 @@
                 {{ partial "breadcrumb.html" . }}
             {{ end }}
 
-            <main>
+            <main id="main-content">
                 {{ block "main" . }}
                     THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
                 {{ end }}
