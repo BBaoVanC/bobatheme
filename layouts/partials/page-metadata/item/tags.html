@@ -6,6 +6,6 @@
 
     <div class="page-metadata-section tags" aria-label="{{ i18n "aria_post_meta_tags" }}">
         {{ partial "icon.html" "tag" }}
-        {{ delimit $tags ", " }}
+        {{ delimit $tags ", " | safeHTML }}
     </div>
 {{ end }}

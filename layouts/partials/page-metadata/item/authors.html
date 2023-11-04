@@ -6,9 +6,9 @@
             {{ $authors := slice }}
             {{ range . }}
                 {{ $url := (printf "authors/%s" (. | anchorize)) | absLangURL }}
-                {{ $authors = $authors | append (printf `<a href="%s">%s</a>` $url . | safeHTML) }}
+                {{ $authors = $authors | append (printf `<a href="%s">%s</a>` $url .) }}
             {{ end }}
-            {{ delimit $authors ", " }}
+            {{ delimit $authors ", " | safeHTML }}
         {{ else }}
             {{ delimit . ", " }}
         {{ end }}

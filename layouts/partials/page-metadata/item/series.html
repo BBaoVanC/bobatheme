@@ -6,6 +6,6 @@
 
     <div class="page-metadata-section series" aria-label="{{ i18n "aria_post_meta_series" }}">
         {{ partial "icon.html" "files" }}
-        {{ delimit $series ", " }}
+        {{ delimit $series ", " | safeHTML }}
     </div>
 {{ end }}

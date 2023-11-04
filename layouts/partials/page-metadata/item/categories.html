@@ -6,6 +6,6 @@
 
     <div class="page-metadata-section categories" aria-label="{{ i18n "aria_post_meta_categories" }}">
         {{ partial "icon.html" "folder" }}
-        {{ delimit $categories ", " }}
+        {{ delimit $categories ", " | safeHTML }}
     </div>
 {{ end }}
