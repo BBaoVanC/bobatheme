@@ -6,7 +6,7 @@ toc: true
 comments: false
 
 authors:
-  - {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
+  - {{ with .Site.params.author.name }}{{ . }}{{ else }}John Doe{{ end }}
 
 ---
 

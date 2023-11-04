@@ -8,7 +8,7 @@ comments: true
 draft: true
 
 authors:
-  - {{ with .Site.Author.name }}{{ . }}{{ else }}John Doe{{ end }}
+  - {{ with .Site.Params.author.name }}{{ . }}{{ else }}John Doe{{ end }}
 
 categories:
   - archetype-stuff

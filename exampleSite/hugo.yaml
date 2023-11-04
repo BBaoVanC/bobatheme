@@ -10,13 +10,13 @@ enableGitInfo: true
 taxonomies:
   _merge: deep
 
-author:
-  name: bbaovanc
-
 markup: # this just keeps the bobatheme markup styling
   _merge: deep
 
 params:
+  author:
+    name: bbaovanc
+
   # these are for the OpenGraph/Twitter embeds in Hugo
   description: Example website for bobatheme
 
