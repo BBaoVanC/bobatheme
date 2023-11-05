@@ -858,22 +858,22 @@ aside {
 }
 
 aside.note {
-  background-color: var(--background-blue-1);
+  background-color: var(--accent-blue-1);
 }
 aside.info {
-  background-color: var(--background-green-1);
+  background-color: var(--accent-green-1);
 }
 aside.tip {
-  background-color: var(--background-teal-1);
+  background-color: var(--accent-teal-1);
 }
 aside.warning {
-  background-color: var(--background-yellow-1);
+  background-color: var(--accent-yellow-1);
 }
 aside.example {
-  background-color: var(--background-purple-1);
+  background-color: var(--accent-purple-1);
 }
 aside.quote {
-  background-color: var(--background-1);
+  background-color: var(--accent-1);
 }
 
 /* }}} */
@@ -971,6 +971,34 @@ aside.quote {
 
   .table-of-contents.print {
     display: block;
+  }
+
+  /*
+   * reduce usage of background colors
+   */
+
+  aside {
+    background-color: unset !important;
+    border: 4px solid;
+  }
+
+  aside.note {
+    border-color: var(--background-blue-1);
+  }
+  aside.info {
+    border-color: var(--background-green-1);
+  }
+  aside.tip {
+    border-color: var(--background-teal-1);
+  }
+  aside.warning {
+    border-color: var(--background-yellow-1);
+  }
+  aside.example {
+    border-color: var(--background-purple-1);
+  }
+  aside.quote {
+    border-color: var(--background-1);
   }
 }
 
