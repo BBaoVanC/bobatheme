@@ -10,7 +10,7 @@
 {{ end }}
 
     {{ if eq $type "image" }}
-        <img src="{{ $src }}" alt="{{ $alt }}" />
+        <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" />
     {{ else if eq $type "video" }}
         <video controls preload="metadata">
             <source src="{{ $src }}" alt="{{ $alt }}">

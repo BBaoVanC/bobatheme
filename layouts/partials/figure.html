@@ -9,7 +9,7 @@
     {{ with index . "src" }}
         {{ $media := . }}
         {{ if eq .MediaType.MainType "image" }}
-            <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" />
+            <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" loading="lazy" />
         {{ else if eq .MediaType.MainType "video" }}
             <video controls preload="metadata">
                 <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
