@@ -14,9 +14,7 @@ markup: # this just keeps the bobatheme markup styling
   _merge: deep
 
 outputs:
-  page:
-    - html
-    - markdown
+  _merge: deep
 
 params:
   author:
