@@ -361,23 +361,6 @@ h1 svg.icon {
 
 /* }}} */
 
-/* Back to top {{{ */
-#top {
-  font-size: 0;
-}
-#back-to-top {
-  position: fixed;
-  float: right;
-  bottom: 25px;
-  right: 25px;
-  background-color: var(--background-1);
-  color: var(--text-1);
-  border-radius: 100%;
-  padding: 12px;
-  display: none;
-}
-/* }}} */
-
 /* Skip to main content {{{ */
 #skip-to-main {
   position: absolute;
@@ -988,10 +971,6 @@ aside.quote {
 
   .table-of-contents.print {
     display: block;
-  }
-
-  #back-to-top {
-    display: none !important;
   }
 }
 

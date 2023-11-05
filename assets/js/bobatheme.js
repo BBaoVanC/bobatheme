@@ -1,13 +1,3 @@
-// back to top
-const backToTop = document.getElementById("back-to-top");
-window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTop.style.display = "block";
-    } else {
-        backToTop.style.display = "none";
-    }
-}
-
 // code block copy to clipboard
 window.onload = () => {
     document.querySelectorAll(".code-block").forEach(codeBlock => {
