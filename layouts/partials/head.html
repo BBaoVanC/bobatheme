@@ -7,10 +7,10 @@
         <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
     {{ with resources.Get "css/syntax.css" | fingerprint "sha512" }}
-        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="print" onload="this.media='all'">
     {{ end }}
     {{ with resources.Get "css/syntax-light.css" | fingerprint "sha512" }}
-        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="print" onload="this.media='all'">
     {{ end }}
 
     {{ with resources.Get "js/bobatheme.js" | fingerprint "sha512" }}
