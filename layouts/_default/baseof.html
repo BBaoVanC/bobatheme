@@ -27,7 +27,7 @@
         {{ if or .Site.Copyright .Site.Params.footer }}
             <footer>
                 {{ with .Site.Copyright }}
-                    <p>{{ . | safeHTML }}</p>
+                    {{ . | safeHTML }}
                 {{ end }}
 
                 {{ with .Site.Params.footer }}
