@@ -833,15 +833,6 @@ code {
   display: block;
 } /* fixes line numbers on firefox when there's only one line */
 
-.chroma .lnt,
-.chroma .ln {
-  /* chroma sets the non-prefixed one only */
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
 /* }}} */
 
 /* Asides {{{ */
