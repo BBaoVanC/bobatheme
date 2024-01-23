@@ -21,10 +21,14 @@
     <meta itemprop="image" content="{{ $featured.Permalink }}">
 {{ end }}
 
-{{ with (.GetTerms "tags") }}
-    {{ $tags := slice }}
-    {{ range . }}
-        {{ $tags = $tags | append .LinkTitle }}
+{{ with .Keywords }}
+    <meta itemprop="keywords" content="{{ delimit . ", " }}">
+{{ else }}
+    {{ with (.GetTerms "tags") }}
+        {{ $tags := slice }}
+        {{ range . }}
+            {{ $tags = $tags | append .LinkTitle }}
+        {{ end }}
+        <meta itemprop="keywords" content="{{ delimit $tags ", " }}">
     {{ end }}
-    <meta itemprop="keywords" content="{{ delimit $tags ", " }}">
 {{ end }}
