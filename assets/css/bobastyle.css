@@ -641,7 +641,7 @@ h1 svg.icon {
 /* Content (single) formatting {{{ */
 
 .series-box {
-  background-color: var(--background-1);
+  background-color: var(--background-1); /* remember to update print styling */
   color: var(--text-1);
   padding: 8px 16px;
   border-radius: 8px;
@@ -649,7 +649,7 @@ h1 svg.icon {
 }
 
 .table-of-contents {
-  background-color: var(--background-1);
+  background-color: var(--background-1); /* remember to update print styling */
   color: var(--text-1);
   padding: 8px 20px;
   border-radius: 8px;
@@ -704,7 +704,7 @@ h1 svg.icon {
 
 /* See also formating */
 .see-also {
-  background-color: var(--background-1);
+  background-color: var(--background-1); /* remember to update print styling */
   color: var(--text-1);
   padding: 8px 12px;
   border-radius: 8px;
@@ -770,14 +770,14 @@ h1 svg.icon {
   display: flex;
   flex-direction: column;
   margin: 16px 0;
-  background-color: var(--background-1);
+  background-color: var(--background-1); /* remember to update print styling */
   border-radius: 8px;
 }
 .code-block > .code-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: var(--background-2);
+  background-color: var(--background-2); /* remember to update print styling */
   padding: 4px 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -857,6 +857,7 @@ aside {
   margin-bottom: 0;
 }
 
+/* remember to update print styling for all the following asides */
 aside.note {
   background-color: var(--background-blue-1);
 }
@@ -972,6 +973,19 @@ aside.quote {
   .table-of-contents.print {
     display: block;
   }
+
+  /* replace background colors with borders {{{ */
+  .series-box {
+  }
+  .table-of-contents {
+  }
+  .see-also {
+  }
+  .code-block {
+  }
+  .code-block > .code-header {
+  }
+  /* all the asides */
 }
 
 /* }}} */
