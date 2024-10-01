@@ -12,6 +12,15 @@ taxonomies:
   author: authors
   series: series
 
+outputs:
+  page:
+    - html
+    - markdown
+
+outputFormats:
+  markdown:
+    ugly: true
+
 privacy:
   googleAnalytics:
     disable: true
