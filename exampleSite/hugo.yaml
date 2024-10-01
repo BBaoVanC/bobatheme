@@ -18,6 +18,9 @@ markup: # this just keeps the bobatheme markup styling
 outputs:
   _merge: deep
 
+outputFormats:
+  _merge: deep
+
 params:
   author:
     name: bbaovanc

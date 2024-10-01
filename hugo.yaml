@@ -17,6 +17,10 @@ outputs:
     - html
     - markdown
 
+outputFormats:
+  markdown:
+    ugly: true
+
 privacy:
   googleAnalytics:
     disable: true
