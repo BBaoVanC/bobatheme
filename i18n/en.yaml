@@ -30,6 +30,9 @@ readingtime:
 edit_history:
   other: "Edit history"
 
+view_markdown:
+  other: "View raw"
+
 
 # Post count
 no_posts:
@@ -66,6 +69,9 @@ aria_rss_link:
 
 aria_post_meta_edit_history:
   other: "link to page edit history"
+
+aria_post_meta_view_markdown:
+  other: "link to view raw markdown code of page"
 
 aria_post_meta_categories:
   other: "categories"

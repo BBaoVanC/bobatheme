@@ -1,0 +1,8 @@
+{{ with .OutputFormats.Get "markdown" }}
+    <span class="page-metadata-item post-meta-view-markdown" aria-label="{{ i18n "aria_post_meta_view_markdown" }}">
+        {{ partial "icon.html" "code" }}
+        <a href="{{ .Permalink }}" target="_blank">
+            {{- i18n "view_markdown" -}}
+        </a>
+    </span>
+{{ end }}
