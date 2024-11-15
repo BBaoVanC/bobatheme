@@ -248,31 +248,31 @@ hr {
   }
 }
 
-table.markdown {
+table.simple {
   border-collapse: collapse;
   border: 2px solid var(--text-1);
 }
 
-table.markdown thead {
+table.simple thead {
   background-color: var(--background-2);
   color: var(--text-2);
   border-bottom: 2px solid var(--text-1);
 }
 
-table.markdown th,
-table.markdown td {
+table.simple th,
+table.simple td {
   padding: 8px;
 }
 
-table.markdown :is(th, td) + :is(th, td) {
+table.simple :is(th, td) + :is(th, td) {
   border-left: 2px solid var(--text-1);
 }
 
-table.markdown tbody tr:nth-child(odd) {
+table.simple tbody tr:nth-child(odd) {
   background-color: var(--background-0);
   color: var(--text-0);
 }
-table.markdown tbody tr:nth-child(even) {
+table.simple tbody tr:nth-child(even) {
   background-color: var(--background-1);
   color: var(--text-1);
 }

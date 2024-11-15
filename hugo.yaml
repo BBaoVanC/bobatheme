@@ -2,6 +2,12 @@ markup:
   highlight:
     noClasses: false
     lineNos: true
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        # this is enabled by default already
+        #title: true
 
 params:
   readingtime: true
