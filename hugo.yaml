@@ -31,7 +31,7 @@ privacy:
   googleAnalytics:
     disable: true
 
-  twitter:
+  x:
     enableDNT: true
 
   vimeo:
