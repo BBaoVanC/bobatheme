@@ -1,5 +1,7 @@
 {{ if gt .Paginator.TotalPages 1 }}
     <nav class="pagination">
-        {{ template "_internal/pagination.html" . }}
+        {{/* _internal/pagination.html */}}
+        {{ fmt.Warnf "TODO: fix pagination.html to support 0.146" }}
+        {{/* partial "pagination.html" . */}}
     </nav>
 {{ end }}
