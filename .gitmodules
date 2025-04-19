@@ -1,4 +1,4 @@
 [submodule "assets/jam"]
 	path = assets/jam
-	url = https://github.com/michaelampr/jam.git
+	url = https://github.com/BBaoVanC/jam.git
 	branch = master
