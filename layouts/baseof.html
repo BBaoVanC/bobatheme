@@ -8,6 +8,12 @@
 
         {{ partial "top.html" . }}
 
+        {{ if hugo.IsServer -}}
+            <div style="position: fixed; bottom: 25px; right: 25px;">
+                {{ templates.Current.Name }}
+            </div>
+        {{ end -}}
+
         <div class="main-container">
             {{ if not .IsHome }}
                 {{ partial "breadcrumb.html" . }}
