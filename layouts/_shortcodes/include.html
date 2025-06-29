@@ -1,14 +1,14 @@
 {{/* https://github.com/gohugoio/hugo/issues/13823#issuecomment-3015270202 */}}
-{{ with .Get 0 }}
-    {{ with $.Page.GetPage . }}
-        {{- .RenderShortcodes }}
-    {{ else with $.Page.Resources.Get . }}
-        {{- .RenderShortcodes }}
-    {{ else with resources.Get . }}
-        {{- .Content }}
-    {{ else }}
-        {{ errorf "The %q shortcode was unable to find %q. See %s" $.Name . $.Position }}
-    {{ end }}
-{{ else }}
-    {{ errorf "The %q shortcode requires a positional parameter indicating the logical path of the file to include. See %s" .Name .Position }}
-{{ end }}
+{{ with .Get 0 -}}
+    {{ with $.Page.GetPage . -}}
+        {{ .RenderShortcodes -}}
+    {{ else with $.Page.Resources.Get . -}}
+        {{ .RenderShortcodes -}}
+    {{ else with resources.Get . -}}
+        {{ .Content -}}
+    {{ else -}}
+        {{ errorf "The %q shortcode was unable to find %q. See %s" $.Name . $.Position -}}
+    {{ end -}}
+{{ else -}}
+    {{ errorf "The %q shortcode requires a positional parameter indicating the logical path of the file to include. See %s" .Name .Position -}}
+{{ end -}}
