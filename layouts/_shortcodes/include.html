@@ -1,20 +1,14 @@
-{{ $path := "" }}
-{{ $markdown := false }}
-{{ if .IsNamedParams }}
-    {{ $path = .Get "path" }}
-    {{ with .Get "markdown" }}
-        {{ $markdown = . }}
-    {{ end }}
-{{ else }}
-    {{ $path = .Get 0 }}
-{{ end }}
-
-{{ with ($path | readFile) }}
-    {{ if $markdown }}
-        {{ $path | readFile | $.Page.RenderString (dict "display" "block") }}
+{{/* https://github.com/gohugoio/hugo/issues/13823#issuecomment-3015270202 */}}
+{{ with .Get 0 }}
+    {{ with $.Page.GetPage . }}
+        {{- .RenderShortcodes }}
+    {{ else with $.Page.Resources.Get . }}
+        {{- .RenderShortcodes }}
+    {{ else with resources.Get . }}
+        {{- .Content }}
     {{ else }}
-        {{ $path | readFile }}
+        {{ errorf "The %q shortcode was unable to find %q. See %s" $.Name . $.Position }}
     {{ end }}
 {{ else }}
-    {{ errorf "file not found: %s" $path }}
+    {{ errorf "The %q shortcode requires a positional parameter indicating the logical path of the file to include. See %s" .Name .Position }}
 {{ end }}
