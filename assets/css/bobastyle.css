@@ -291,17 +291,12 @@ table.simple tbody tr:nth-child(even) {
 
 /* Icons */
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 1em;
+  height: 1em;
   color: var(--text-1);
   text-align: center;
   display: inline;
-  vertical-align: middle;
-}
-
-h1 svg.icon {
-  width: 30px;
-  height: 30px;
+  vertical-align: sub;
 }
 
 /* }}} */
@@ -313,11 +308,6 @@ h1 svg.icon {
 .heading-link {
   color: inherit;
   font-weight: bold;
-}
-
-.heading-link svg {
-  width: 15px;
-  height: 15px;
 }
 
 /* }}} */
@@ -676,6 +666,7 @@ h1 svg.icon {
   display: flex;
   gap: 8px;
   justify-content: center;
+  font-size: 32px;
 }
 
 .share-buttons a {
@@ -690,8 +681,7 @@ h1 svg.icon {
 }
 
 .share-buttons svg {
-  width: 32px;
-  height: 32px;
+  display: block;
 }
 
 /* https://stackoverflow.com/a/72073682/19003757 */
