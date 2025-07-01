@@ -299,6 +299,11 @@ table.simple tbody tr:nth-child(even) {
   vertical-align: sub;
 }
 
+/* workarounds for some icons from jam-icons being non-square aspect ratio */
+.icon-code {
+  width: 1.25em;
+}
+
 /* }}} */
 
 
