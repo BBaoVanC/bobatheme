@@ -1,5 +1,5 @@
 {{ with .Params.authors }}
-    <span class="page-metadata-item" aria-label="{{ i18n "aria_post_meta_authors" }}">
+    <span class="page-metadata-item" data-pagefind-meta="authors" aria-label="{{ i18n "aria_post_meta_authors" }}">
         {{ partial "icon.html" "user-circle" }}
 
         {{ if index $.Site.Taxonomies "authors" }}
