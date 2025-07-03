@@ -7,18 +7,17 @@
 {{ end }}
 
     {{ with index . "src" }}
-        {{ $media := . }}
         {{ if eq .MediaType.MainType "image" }}
-            <img src="{{ $media.Permalink }}" alt="{{ $media.Title }}" loading="lazy" />
+            <img src="{{ .Permalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" />
         {{ else if eq .MediaType.MainType "video" }}
             <video controls preload="metadata">
-                <source src="{{ $media.Permalink }}" alt="{{ $media.Title }}">
+                <source src="{{ .Permalink }}" alt="{{ .Title }}">
                 {{ i18n "browser_no_video_support" }}
             </video>
         {{ end }}
 
         {{ if not $hidecaption }}
-            {{ with $media.Title }}
+            {{ with .Title }}
                 <figcaption>
                     {{ . | markdownify }}
                 </figcaption>
