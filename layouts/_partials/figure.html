@@ -8,7 +8,7 @@
 
     {{ with index . "src" }}
         {{ if eq .MediaType.MainType "image" }}
-            <img src="{{ .Permalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" />
+            <img src="{{ .Permalink }}" alt="{{ .Title }}" loading="lazy" />
         {{ else if eq .MediaType.MainType "video" }}
             <video controls preload="metadata">
                 <source src="{{ .Permalink }}" alt="{{ .Title }}">
