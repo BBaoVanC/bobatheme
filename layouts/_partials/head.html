@@ -24,11 +24,7 @@
         <link rel="apple-touch-icon" href="{{ . | absURL }}" />
     {{ end }}
 
-    {{ if .IsHome }}
-        <title>{{ .Site.Title | plainify }}</title>
-    {{ else }}
-        <title>{{ (print .Title " | " .Site.Title) | plainify }}</title>
-    {{ end }}
+    <title>{{ .Render "head_title" }}</title>
 
     {{ partial "seo-tags/opengraph.html" . }}
     {{ partial "seo-tags/twitter-cards.html" . }}
