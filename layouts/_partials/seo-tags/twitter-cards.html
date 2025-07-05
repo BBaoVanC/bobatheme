@@ -25,6 +25,17 @@
     <meta name="twitter:card" content="summary">
 {{ end }}
 
+{{/* twitter:site is the site author; twitter:creator is page author
+   * https://developer.x.com/en/docs/x-for-websites/cards/guides/getting-started
+   * "Card and Content Attribution"
+   */}}
 {{ with .Site.Params.social.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
+{{ end }}
+{{ with .GetTerms "authors" }}
+    {{ range . }}
+        {{ with .Params.twitter }}
+            <meta name="twitter:creator" content="@{{ . }}">
+        {{ end }}
+    {{ end }}
 {{ end }}
