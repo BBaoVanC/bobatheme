@@ -1,3 +1,7 @@
+{{/* we do not need to duplicate what's already covered by OpenGraph tags
+   * see: https://demo.bbaovanc.com/test/remove-twitter-tags/blog/swapfile-guide/
+   * so, no twitter:image/title/description
+   */}}
 {{ $images := $.Resources.ByType "image" }}
 {{ $featured := $images.GetMatch "*feature*" }}
 {{ if not $featured }}
@@ -17,12 +21,9 @@
     {{ else }}
         <meta name="twitter:card" content="summary">
     {{ end }}
-
-    <meta name="twitter:image" content="{{ $featured.Permalink }}">
+{{ else }}
+    <meta name="twitter:card" content="summary">
 {{ end }}
-
-<meta name="twitter:title" content="{{ .Title | plainify }}">
-<meta name="twitter:description" content="{{ (partial "seo-description.html" .) | plainify }}">
 
 {{ with .Site.Params.social.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
