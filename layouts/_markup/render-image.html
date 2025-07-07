@@ -1,8 +1,12 @@
+{{/* TODO: should we use .PageInner */}}
+{{ partial "embed-resource.html" (.Page.Resources.Get .Destination) }}
 {{ with .Title }}
-    <figure>
-        {{ partial "embed-resource.html" ($.Page.Resources.Get $.Destination) }}
-        <figcaption>{{ . }}</figcaption>
-    </figure>
-{{ else }}
-    {{ partial "embed-resource.html" (.Page.Resources.Get .Destination) }}
+    {{ errorf "%q" . }}
+{{ end }}
+{{ with .Attributes }}
+    {{/* FIXME: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_markup/render-image.html */}}
+    {{ errorf "%q" . }}
+{{ end }}
+{{ with .Text }}
+    {{ errorf "%q" . }}
 {{ end }}

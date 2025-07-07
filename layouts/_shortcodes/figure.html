@@ -1,8 +1,17 @@
-<p>
-    <figure>
+<figure>
+    {{ with .Get "src" }}
+        {{ with $.Page.Resources.Get . }}
+            {{ partial "embed-resource.html" . }}
+            {{ with .Title }}
+                <figcaption>{{ . | markdownify }}</figcaption>
+            {{ end }}
+        {{ else }}
+            {{ errorf "resource %q not found" . }}
+        {{ end }}
+    {{ else }}
         {{ .Inner }}
         {{ with .Get "caption" }}
-            <figcaption>{{ . }}</figcaption>
+            <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
-    </figure>
-</p>
+    {{ end }}
+</figure>

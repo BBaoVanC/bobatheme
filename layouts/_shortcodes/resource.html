@@ -1,0 +1,9 @@
+{{ with .Get 0 }}
+    {{ with $.Page.Resources.Get . }}
+        {{ partial "embed-resource.html" . }}
+    {{ else }}
+        {{ errorf "resource %q not found" . }}
+    {{ end }}
+{{ else }}
+    {{ errorf "resource name not provided as first parameter" }}
+{{ end }}
