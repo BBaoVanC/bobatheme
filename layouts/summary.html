@@ -6,11 +6,7 @@
 
 {{ partial "page-metadata/post-short.html" . }}
 
-{{ with .Resources.GetMatch "feature" }}
-    <div class="post-media">
-        {{ partial "figure.html" (dict "src" .) }}
-    </div>
-{{ end }}
+{{ partial "feature-figure.html" . }}
 
 <div class="page-description">
     {{ partial "description-or-summary.html" . }}

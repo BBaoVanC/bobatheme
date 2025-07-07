@@ -1,0 +1,8 @@
+{{ with .Title }}
+    <figure>
+        {{ partial "embed-resource.html" ($.Page.Resources.Get $.Destination) }}
+        <figcaption>{{ . }}</figcaption>
+    </figure>
+{{ else }}
+    {{ partial "embed-resource.html" (.Page.Resources.Get .Destination) }}
+{{ end }}

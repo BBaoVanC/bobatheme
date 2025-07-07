@@ -1,0 +1,21 @@
+{{ if eq .ResourceType "image" }}
+    {{/* TODO: figure out whether loading="lazy" should be set because MDN
+       *       claims that images won't work with JS disabled since it would
+       *       make tracking possible, but my experience says otherwise
+       */}}
+    <img src="{{ .Permalink }}" {{ with .Params.alt }}alt="{{ . }}"{{ end }} />
+{{ else if eq .ResourceType "video" }}
+    <video controls preload="metadata">
+        {{/* FIXME
+        <source src="{{ .Permalink }}" {{ with .Params.alt }}alt="{{ . }}"{{ end }} />
+        */}}
+        {{ i18n "browser_no_video_support" }}
+        <a href="{{ .Permalink }}" target="_blank" rel="noopener">
+            {{ i18n "browser_no_video_support_link" }}
+    </video>
+{{ else }}
+    {{/* TODO: could consider implementing more types, listed at:
+       * https://www.iana.org/assignments/media-types/media-types.xhtml
+       */}}
+    {{ errorf "Handling %q resource not supported" .ResourceType }}
+{{ end }}

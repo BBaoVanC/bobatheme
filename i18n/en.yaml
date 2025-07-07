@@ -7,6 +7,8 @@ table_of_contents:
 
 browser_no_video_support:
   other: "Your browser does not support video."
+browser_no_video_support_link:
+  other: "Click here to download it instead."
 
 latest_posts:
   other: "Latest Posts"

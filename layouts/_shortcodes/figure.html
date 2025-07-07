@@ -1,15 +1,8 @@
-{{ $resource := .Page.Resources.GetMatch (.Get "src") }}
-
-{{ $noborder := false }}
-{{ if .Get "noborder" }}
-    {{ $noborder = true }}
-{{ end }}
-
-{{ $hidecaption := false }}
-{{ if .Get "hidecaption" }}
-    {{ $hidecaption = true }}
-{{ end }}
-
 <p>
-    {{ partial "figure.html" (dict "src" $resource "noborder" $noborder "hidecaption" $hidecaption) }}
+    <figure>
+        {{ .Inner }}
+        {{ with .Get "caption" }}
+            <figcaption>{{ . }}</figcaption>
+        {{ end }}
+    </figure>
 </p>
