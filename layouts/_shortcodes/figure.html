@@ -1,6 +1,8 @@
 <figure>
+    {{ $resource_title := "" }}
     {{ with .Get "src" }}
         {{ with $.Page.Resources.Get . }}
+            {{ $resource_title = .Title }}
             {{ partial "embed-resource.html" . }}
         {{ else }}
             {{ errorf "resource %q not found" . }}
@@ -9,7 +11,7 @@
         {{ .Inner }}
     {{ end }}
 
-    {{ with or (.Get "caption") (.Get 0) .Title }}
+    {{ with or (.Get "caption") (.Get 0) $resource_title }}
         <figcaption>{{ . | markdownify }}</figcaption>
     {{ end }}
 </figure>
