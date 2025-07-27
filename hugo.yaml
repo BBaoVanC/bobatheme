@@ -4,8 +4,6 @@ markup:
     lineNos: true
   goldmark:
     parser:
-      # don't put <p> around ![]() image in markdown (used to embed any resource now)
-      wrapStandAloneImageWithinParagraph: false
       attribute:
         block: true
         # this is enabled by default already
