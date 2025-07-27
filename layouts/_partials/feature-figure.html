@@ -3,7 +3,7 @@
         <figure>
             {{ partial "embed-resource.html" . }}
             {{ with .Title }}
-                <figcaption>{{ . }}</figcaption>
+                <figcaption>{{ . | markdownify }}</figcaption>
             {{ end }}
         </figure>
     </div>
