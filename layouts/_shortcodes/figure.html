@@ -1,15 +1,17 @@
-{{ $resource := .Page.Resources.GetMatch (.Get "src") }}
+<figure>
+    {{ $resource_title := "" }}
+    {{ with .Get "src" }}
+        {{ with $.Page.Resources.Get . }}
+            {{ $resource_title = .Title }}
+            {{ partial "embed-resource.html" . }}
+        {{ else }}
+            {{ errorf "resource %q not found" . }}
+        {{ end }}
+    {{ else }}
+        {{ .Inner }}
+    {{ end }}
 
-{{ $noborder := false }}
-{{ if .Get "noborder" }}
-    {{ $noborder = true }}
-{{ end }}
-
-{{ $hidecaption := false }}
-{{ if .Get "hidecaption" }}
-    {{ $hidecaption = true }}
-{{ end }}
-
-<p>
-    {{ partial "figure.html" (dict "src" $resource "noborder" $noborder "hidecaption" $hidecaption) }}
-</p>
+    {{ with or (.Get "caption") (.Get 0) $resource_title }}
+        <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>

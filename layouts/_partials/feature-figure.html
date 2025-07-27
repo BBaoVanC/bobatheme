@@ -1,0 +1,10 @@
+{{ with .Resources.Get "feature" }}
+    <div class="post-media">
+        <figure>
+            {{ partial "embed-resource.html" . }}
+            {{ with .Title }}
+                <figcaption>{{ . | markdownify }}</figcaption>
+            {{ end }}
+        </figure>
+    </div>
+{{ end }}

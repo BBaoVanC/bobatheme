@@ -22,11 +22,7 @@
         </div>
     {{ end }}
 
-    {{ with .Resources.GetMatch "feature" }}
-        <div class="post-media">
-            {{ partial "figure.html" (dict "src" .) }}
-        </div>
-    {{ end }}
+    {{ partial "feature-figure.html" . }}
 
     <article class="post-content">
         {{ .Content }}
