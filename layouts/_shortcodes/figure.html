@@ -10,7 +10,7 @@
         {{ end }}
     {{ else }}
         {{ .Inner }}
-        {{ with .Get "caption" }}
+        {{ with or (.Get "caption") (.Get 0) }}
             <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
     {{ end }}
