@@ -2,16 +2,14 @@
     {{ with .Get "src" }}
         {{ with $.Page.Resources.Get . }}
             {{ partial "embed-resource.html" . }}
-            {{ with .Title }}
-                <figcaption>{{ . | markdownify }}</figcaption>
-            {{ end }}
         {{ else }}
             {{ errorf "resource %q not found" . }}
         {{ end }}
     {{ else }}
         {{ .Inner }}
-        {{ with or (.Get "caption") (.Get 0) }}
-            <figcaption>{{ . | markdownify }}</figcaption>
-        {{ end }}
+    {{ end }}
+
+    {{ with or (.Get "caption") (.Get 0) .Title }}
+        <figcaption>{{ . | markdownify }}</figcaption>
     {{ end }}
 </figure>
