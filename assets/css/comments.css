@@ -1,0 +1,121 @@
+/* Isso styling */
+h4.isso-thread-heading {
+    color: var(--text-0);
+    margin-bottom: 8px;
+}
+
+.isso-comment:not(:first-of-type),
+.isso-follow-up .isso-comment {
+    border-color: var(--background-3);
+}
+
+.isso-author,
+.isso-page-author-suffix,
+.isso-comment-footer,
+.isso-comment-footer .isso-votes {
+    color: var(--text-gray-0);
+}
+
+.isso-comment-header .isso-spacer,
+.isso-spacer:hover,
+.isso-permalink,
+.isso-permalink:hover {
+    color: var(--text-gray-1) !important;
+}
+a.isso-author:hover,
+.isso-permalink:hover {
+    text-decoration: underline !important;
+}
+
+.isso-comment.isso-is-page-author > .isso-text-wrapper {
+    background-color: var(--background-accent-1);
+}
+
+.isso-feedlink:hover,
+.isso-reply {
+    color: var(--link-0) !important;
+    text-shadow: unset !important;
+}
+.isso-reply:hover {
+    text-decoration: underline;
+}
+
+.isso-text pre,
+.isso-text :not(pre) > code {
+    background-color: var(--background-2);
+    border: none;
+    padding: 2px 4px;
+    border-radius: 5px;
+    /* thanks isso.css for setting this to 85% for whatever reason */
+    font-size: 0.75em;
+}
+
+.isso-input-wrapper input,
+.isso-post-action > input,
+.isso-textarea,
+.isso-preview {
+    color: var(--text-1);
+    background-color: var(--background-1);
+    border-color: var(--background-2) !important;
+}
+
+.isso-input-wrapper input:focus,
+.isso-textarea:focus {
+    border-color: var(--background-3) !important;
+}
+
+.isso-post-action > input:hover {
+    background-color: var(--background-2);
+}
+.isso-post-action > input:focus,
+.isso-post-action > input:active {
+    background-color: var(--background-3);
+}
+
+.isso-textarea {
+    margin-bottom: 4px;
+}
+.isso-input-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 4px;
+    max-width: 25%;
+}
+.isso-input-wrapper input {
+    order: 1;
+}
+.isso-input-wrapper label {
+    order: 2;
+    font-size: small;
+}
+.isso-post-action {
+    margin-left: 4px;
+    margin-top: 0;
+}
+@media screen and (max-width: 600px) {
+    .isso-input-wrapper {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+@media print {
+    .comments {
+        break-before: always;
+    }
+    .isso-comment {
+        max-width: unset;
+    }
+    .isso-text-wrapper {
+        break-inside: avoid;
+    }
+
+    .isso-postbox,
+    .isso-feedlink {
+        display: none;
+    }
+}
+
+.isso-target {
+    animation: target-fade 10s ease-out; /* defined in bobatheme */
+}

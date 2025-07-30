@@ -16,6 +16,27 @@
     {{ with resources.Get "js/bobatheme.js" | fingerprint "sha512" }}
         <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end }}
+    {{ if not hugo.IsServer }}
+        <script defer data-domain="bbaovanc.com" src="https://plausible.bbaovanc.com/js/bobalytics.outbound-links.js"></script>
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+        {{ with resources.Get "js/share-event.js" | fingerprint "sha512" }}
+            <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+        {{ end }}
+    {{ end }}
+
+    {{ if eq .Layout "search" }}
+        {{ with resources.Get "css/search.css" | fingerprint "sha512" }}
+            <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+
+        <link rel="stylesheet" type="text/css" href="{{ absURL "pagefind/pagefind-ui.css" }}" crossorigin="anonymous">
+        <script src="{{ absURL "pagefind/pagefind-ui.js" }}" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({ element: "#search-box", showSubResults: true });
+            });
+        </script>
+    {{ end }}
 
     {{ with .Site.Params.faviconSVG }}
         <link rel="icon" href="{{ . | absURL }}" />
@@ -26,6 +47,10 @@
 
     <title>{{ .Render "head_title" }}</title>
 
+    {{ range .Site.Params.rel_me }}
+        <link rel="me" href="{{ . }}" />
+    {{ end }}
+
     {{ partial "seo-tags/opengraph.html" . }}
     {{ partial "seo-tags/twitter-cards.html" . }}
     {{ partial "seo-tags/schema.html" . }}
@@ -34,6 +59,4 @@
 
     <meta name="language" content="{{ .Language.Lang }}">
     <meta name="description" content="{{ (partial "seo-description.html" .) | plainify }}">
-
-    {{ partial "additional-head.html" . }}
 </head>

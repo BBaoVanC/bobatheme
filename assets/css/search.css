@@ -1,0 +1,9 @@
+/* put on body so it overrides the defaults set in :root by pagefind.css */
+body {
+    /* https://pagefind.app/docs/ui-usage/#customising-the-styles */
+    --pagefind-ui-background: var(--background-1);
+    --pagefind-ui-border: var(--background-2);
+    --pagefind-ui-primary: var(--link-0);
+    --pagefind-ui-tag: var(--background-1);
+    --pagefind-ui-text: var(--text-1);
+}
