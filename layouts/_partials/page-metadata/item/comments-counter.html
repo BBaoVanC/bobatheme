@@ -1,0 +1,8 @@
+<span class="page-metadata-item" aria-label="comments counter">
+    {{ partial "icon.html" "message" }}
+    {{/* TODO: figure out if there's a nicer way to generate this URL
+       * the current issue is that we can't use RelRef, since content view means that we don't
+       * have access to the original page context
+       */}}
+    <a href="{{ .RelPermalink }}#isso-thread">comments</a>
+</span>

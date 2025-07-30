@@ -23,6 +23,44 @@
             <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
         {{ end }}
     {{ end }}
+    {{ $isso_url := .Permalink }}
+    {{ if .IsTranslated }}
+        {{ with index .AllTranslations 0 }}
+            {{ $isso_url = .Permalink }}
+        {{ end }}
+    {{ end }}
+    <script defer src="https://isso.bbaovanc.com/js/embed.min.js"
+            data-isso-id="{{ $isso_url }}"
+            data-isso-default-lang="{{ .Language.Lang }}"
+            data-isso-css="true"
+            data-isso-max-comments-top="inf"
+            data-isso-max-comments-nested="inf"
+            data-isso-reveal-on-click="5"
+            {{/*
+            data-isso-avatar-bg="#111"
+            data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..."
+            */}}
+            data-isso-vote="true"
+            {{/*
+            data-isso-vote-levels=""
+            */}}
+            data-isso-feed="true"
+            data-isso-require-email="false"
+            data-isso-reply-notifications="true"
+            data-isso-reply-notifications-default-enabled="true"
+
+            {{ with (.GetTerms "authors") }}
+                {{ $authorHashes := slice }}
+                {{ range . }}
+                    {{ with .Params.issoUserID }}
+                        {{ $authorHashes = $authorHashes | append . }}
+                    {{ end }}
+                {{ end }}
+
+                data-isso-page-author-hashes="{{ delimit $authorHashes "," }}"
+            {{ end }}
+            >
+    </script>
 
     {{ if eq .Layout "search" }}
         {{ with resources.Get "css/search.css" | fingerprint "sha512" }}
