@@ -12,6 +12,6 @@
     {{ end }}
 
     {{ with or (.Get "caption") (.Get 0) $resource_title }}
-        <figcaption>{{ . | markdownify }}</figcaption>
+        <figcaption>{{ (replace . "\\bt" "`") | markdownify }}</figcaption>
     {{ end }}
 </figure>
