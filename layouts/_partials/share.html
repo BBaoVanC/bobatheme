@@ -1,4 +1,22 @@
+{{ define "_partials/share-button.html" }}
+    <a class="{{ .ShortName }}-share"
+       target="_blank"
+       rel="noopener"
+       aria-label="{{ i18n (printf "aria_share_%s" .ShortName) }}"
+       onclick="share_event('{{ .ProperName }}');"
+       href="{{ .URL }}">
+        {{- partial "icon.html" (or .IconName .ShortName) -}}
+    </a>
+{{ end }}
+
 <div class="share-buttons">
+    {{ $services := dict
+        "twitter" (dict "ProperName" "Twitter" "URL" (printf "https://twitter.com/intent/tweet?url=%s&text=%s&via=bbaovanc" .Permalink .Title))
+    }}
+    {{ range $name, $info := $services }}
+        {{ $data := merge $info (dict "ShortName" $name) }}
+        {{ partial "share-button.html" $data }}
+    {{ end }}
     {{ if .Site.Params.shareButtons.twitter }}
         <a class="twitter-share"
            target="_blank"
