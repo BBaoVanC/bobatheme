@@ -924,8 +924,10 @@ aside.quote {
 /* Print compatibility {{{ */
 @media print {
   .top > .navbar,
-  .section-header-link,
+  .content-heading-link,
   .post-meta-edit-history,
+  .post-meta-view-markdown,
+  .code-copy-button,
   .prevnext,
   .share-buttons,
   .related-posts {

@@ -1,6 +1,6 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="section-heading">
     {{ .Text | safeHTML }}
-    <a class="heading-link" href="#{{ .Anchor | safeURL }}">
+    <a class="content-heading-link" href="#{{ .Anchor | safeURL }}">
         <span aria-label="{{ i18n "aria_heading_link" }}">
             {{ partial "icon.html" "link" }}
         </span>
