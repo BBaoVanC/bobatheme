@@ -198,21 +198,22 @@ video {
   max-width: 100%;
 }
 
-.post-media > figure img,
-.post-media > figure video {
+figure > .figure-media {
   padding: 5px;
-  border: 7px solid var(--figure-border);
 }
 
-figure img,
-figure video {
-  padding: 5px;
+figure > .figure-media.border {
   border: 2px solid var(--figure-border);
 }
 
+.post-media > figure > .figure-media {
+  border: 7px solid var(--figure-border);
+}
+
 figure {
-  margin: auto;
-  display: inline-block;
+  display: block;
+  text-align: center;
+  margin: 0;
 }
 
 figcaption {

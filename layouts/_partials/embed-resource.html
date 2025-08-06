@@ -3,9 +3,9 @@
        *       claims that images won't work with JS disabled since it would
        *       make tracking possible, but my experience says otherwise
        */}}
-    <img src="{{ .Permalink }}" {{ with .Params.alt }}alt="{{ . }}"{{ end }} />
+    <img class="figure-media" src="{{ .Permalink }}" {{ with .Params.alt }}alt="{{ . }}"{{ end }} />
 {{ else if eq .ResourceType "video" }}
-    <video controls preload="metadata">
+    <video class="figure-media" controls preload="metadata">
         {{ with .Params.alt }}
             {{ warnf "video does not support alt text, '%s'" . }}
         {{ end }}
