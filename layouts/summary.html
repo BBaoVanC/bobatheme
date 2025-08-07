@@ -8,9 +8,11 @@
 
 {{ partial "feature-figure.html" . }}
 
-<div class="page-description">
-    {{ partial "description-or-summary.html" . }}
-</div>
+{{ with .Summary }}
+    <div class="page-description">
+        {{ . }}
+    </div>
+{{ end }}
 
 <div class="readmore">
     <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>

@@ -28,7 +28,7 @@
                             </a>
                             {{ partial "page-metadata/taxonomy.html" . }}
                         </div>
-                        {{ partial "description-or-summary.html" . }}
+                        {{ .Summary }}
                     </article>
                 {{ end }}
             {{ end }}

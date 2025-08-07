@@ -6,9 +6,11 @@
 
 {{ partial "page-metadata/series.html" . }}
 
-<div class="page-description">
-    {{ partial "description-or-summary.html" . }}
-</div>
+{{ with .Summary }}
+    <div class="page-description">
+        {{ . }}
+    </div>
+{{ end }}
 
 <div class="page-list series-inner">
     {{ range .Data.Pages.Reverse }}

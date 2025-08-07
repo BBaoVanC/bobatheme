@@ -5,8 +5,10 @@
             {{ .Title | markdownify }}
         </h2>
 
-        <div class="section-description">
-            {{ partial "description-or-summary.html" . }}
-        </div>
+        {{ with .Summary }}
+            <div class="section-description">
+                {{ . }}
+            </div>
+        {{ end }}
     </div>
 </a>

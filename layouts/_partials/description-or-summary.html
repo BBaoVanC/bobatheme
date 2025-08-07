@@ -1,7 +1,0 @@
-{{ with .Description }}
-    <p>{{ . | markdownify }}</p>
-{{ else }}
-    {{ with .Summary }}
-        {{ . }}
-    {{ end }}
-{{ end }}
