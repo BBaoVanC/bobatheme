@@ -1,6 +1,6 @@
 {{ if gt .Paginator.TotalPages 1 }}
     <nav class="pagination">
         {{/* https://github.com/gohugoio/hugo/blob/a88b488181279befd50e1d127f9f67604f2f9854/tpl/tplimpl/embedded/templates/_partials/pagination.html */}}
-        {{ partial "_internal/pagination.html" . }}
+        {{ partial "pagination-hugo.html" . }}
     </nav>
 {{ end }}
