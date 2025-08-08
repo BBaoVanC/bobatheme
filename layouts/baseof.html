@@ -18,22 +18,22 @@
                     THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
                 {{ end }}
             </main>
+
+            {{ if or .Site.Copyright .Site.Params.footer }}
+                <footer>
+                    {{ with .Site.Copyright }}
+                        {{ . | safeHTML }}
+                    {{ end }}
+
+                    {{ with .Site.Params.footer }}
+                        {{ . | $.RenderString (dict "display" "block") }}
+                    {{ end }}
+                </footer>
+            {{ end }}
         </div>
 
         {{ block "post-body" . }}
             {{/* currently this is only used for related posts */}}
-        {{ end }}
-
-        {{ if or .Site.Copyright .Site.Params.footer }}
-            <footer>
-                {{ with .Site.Copyright }}
-                    {{ . | safeHTML }}
-                {{ end }}
-
-                {{ with .Site.Params.footer }}
-                    {{ . | $.RenderString (dict "display" "block") }}
-                {{ end }}
-            </footer>
         {{ end }}
     </body>
 

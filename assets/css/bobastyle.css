@@ -158,6 +158,14 @@ pre > code {
 
 /* }}} */
 
+/* Common distances/sizes {{{ */
+
+:root {
+  --page-margin: 16px;
+}
+
+/* }}} */
+
 /* Basic elements {{{ */
 
 html {
@@ -178,13 +186,14 @@ body {
 }
 
 .main-container {
-  margin: 20px auto;
-  padding: 0 20px;
-  max-width: 760px; /* 720px + 20px for left & right padding */
+  margin: var(--page-margin) auto;
+  /* use padding because otherwise there's no way to have margin be both auto, and a minimum value */
+  padding: 0 var(--page-margin);
+  max-width: calc(720px + 2 * var(--page-margin)); /* padding is included in the element's width */
 }
 
 footer {
-  margin: 20px 0;
+  margin: var(--page-margin) 0;
   text-align: center;
   font-size: smaller;
 }
@@ -326,11 +335,13 @@ table.simple tbody tr:nth-child(even) {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: var(--background-1);
+  /* padding can't be here because then the first navbar element will be shifted too far over,
+   * or it will need its hover background to be chopped off on the left */
 }
 
 .header {
   flex-grow: 1;
-  margin: 8px 16px;
+  margin: 8px var(--page-margin);
   font-size: 1.25em;
   display: flex;
   align-items: center;
@@ -342,7 +353,7 @@ table.simple tbody tr:nth-child(even) {
 }
 
 .navbar-item {
-  padding: 12px 16px;
+  padding: 12px var(--page-margin);
   white-space: nowrap;
 }
 
@@ -376,7 +387,7 @@ table.simple tbody tr:nth-child(even) {
 /* Breadcrumb navigation {{{ */
 
 .breadcrumb {
-  margin: 20px 0;
+  margin: var(--page-margin) 0;
 }
 
 .breadcrumb ul {
