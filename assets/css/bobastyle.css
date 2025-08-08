@@ -891,11 +891,6 @@ aside.quote {
 
 /* Related posts section {{{ */
 
-.full-width-page-list {
-  /* make left/right 0 margin so it takes up full width */
-  margin: 25px 0;
-}
-
 .related-posts > hr,
 .related-posts > h1 {
   margin-left: 20px;
