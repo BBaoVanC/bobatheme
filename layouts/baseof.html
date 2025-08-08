@@ -13,7 +13,7 @@
                 {{ partial "breadcrumb.html" . }}
             {{ end }}
 
-            <main id="main-content" {{ if .IsPage }}data-pagefind-body{{ end }}>
+            <main id="main-content">
                 {{ block "main" . }}
                     THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
                 {{ end }}
