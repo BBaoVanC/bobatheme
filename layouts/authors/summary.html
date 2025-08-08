@@ -1,5 +1,5 @@
 <h2 class="page-title">
-    <a class="heading-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
 </h2>
 
