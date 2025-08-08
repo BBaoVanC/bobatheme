@@ -166,41 +166,8 @@ pre > code {
 
 /* }}} */
 
-/* Basic elements {{{ */
 
-html {
-  scroll-behavior: smooth;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-body {
-  background-color: var(--background-0);
-  color: var(--text-0);
-  overflow-wrap: break-word;
-  margin: 0;
-}
-
-.main-container {
-  margin: var(--page-margin) auto;
-  /* use padding because otherwise there's no way to have margin be both auto, and a minimum value */
-  padding: 0 var(--page-margin);
-  max-width: calc(720px + 2 * var(--page-margin)); /* padding is included in the element's width */
-}
-
-footer {
-  margin: var(--page-margin) 0;
-  text-align: center;
-  font-size: smaller;
-}
-
-footer p {
-  margin: 0;
-}
+/* Common elements {{{ */
 
 img,
 video {
@@ -238,6 +205,12 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* this is also used i.e. in page-title */
+.heading-link {
+  color: inherit;
+  text-weight: bold;
 }
 
 blockquote {
@@ -317,12 +290,40 @@ table.simple tbody tr:nth-child(even) {
 /* }}} */
 
 
-/* Heading formatting (article section titles) {{{ */
+/* Baseof formatting {{{ */
 
-/* this is also used i.e. in page-title */
-.heading-link {
-  color: inherit;
-  font-weight: bold;
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+  background-color: var(--background-0);
+  color: var(--text-0);
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.main-container {
+  margin: var(--page-margin) auto;
+  /* use padding because otherwise there's no way to have margin be both auto, and a minimum value */
+  padding: 0 var(--page-margin);
+  max-width: calc(720px + 2 * var(--page-margin)); /* padding is included in the element's width */
+}
+
+footer {
+  margin: var(--page-margin) 0;
+  text-align: center;
+  font-size: smaller;
+}
+
+footer p {
+  margin: 0;
 }
 
 /* }}} */
@@ -645,7 +646,7 @@ table.simple tbody tr:nth-child(even) {
 /* }}} */
 
 
-/* Content (single) formatting {{{ */
+/* Components exclusive to content/single pages {{{ */
 
 .series-box {
   background-color: var(--background-1);
@@ -885,8 +886,6 @@ aside.quote {
 
 /* }}} */
 
-/* }}} */
-
 /* Related posts section {{{ */
 
 .full-width-page-list {
@@ -919,6 +918,8 @@ aside.quote {
   gap: 20px;
   overflow-x: scroll;
 }
+
+/* }}} */
 
 /* }}} */
 
