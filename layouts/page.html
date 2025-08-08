@@ -60,10 +60,6 @@
         </div>
     {{ end }}
 
-    {{ if .Site.Params.shareButtons }}
-        {{ partial "share.html" . }}
-    {{ end }}
-
     {{ if .Params.comments }}
         <div class="comments">
             {{ partial "comments.html" . }}

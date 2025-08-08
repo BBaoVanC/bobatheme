@@ -19,9 +19,6 @@
     {{ if not hugo.IsServer }}
         <script defer data-domain="bbaovanc.com" src="https://plausible.bbaovanc.com/js/bobalytics.outbound-links.js"></script>
         <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-        {{ with resources.Get "js/share-event.js" | fingerprint "sha512" }}
-            <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
-        {{ end }}
     {{ end }}
     {{ $isso_url := .Permalink }}
     {{ if .IsTranslated }}
