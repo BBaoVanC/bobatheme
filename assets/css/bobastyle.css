@@ -217,14 +217,6 @@ hr {
   border: 1px solid var(--background-3);
 }
 
-@media (min-width: 720px) {
-  .full-width-hr {
-    /* see also: the related-posts section too */
-    margin-left: calc(-100vw / 2 + 760px / 2);
-    margin-right: calc(-100vw / 2 + 760px / 2);
-  }
-}
-
 table.simple {
   border-collapse: collapse;
   border: 2px solid var(--text-1);
