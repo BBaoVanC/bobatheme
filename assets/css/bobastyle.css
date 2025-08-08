@@ -891,10 +891,14 @@ aside.quote {
 
 /* Related posts section {{{ */
 
+/* set the margins on the contents instead of the parent .related-posts
+ * so that the posts in the list clip off the edge of the screen,
+ * which makes a more obvious indicator that it's scrollable
+ */
+
 .related-posts > hr,
 .related-posts > h1 {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: var(--page-margin);
 }
 
 .related-posts .page {
@@ -904,10 +908,10 @@ aside.quote {
 }
 
 .related-posts .page:first-child {
-  margin-left: 20px;
+  margin-left: var(--page-margin);
 }
 .related-posts .page:last-child {
-  margin-right: 20px;
+  margin-right: var(--page-margin);
 }
 
 .related-posts .page-list {
@@ -915,6 +919,7 @@ aside.quote {
   flex-direction: row;
   gap: 20px;
   overflow-x: auto;
+  margin-bottom: var(--page-margin);
 }
 
 /* }}} */
