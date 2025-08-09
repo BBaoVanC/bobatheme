@@ -6,6 +6,12 @@
     {{ with resources.Get "css/bobastyle.css" | fingerprint "sha512" }}
         <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
+    {{ with resources.Get "css/noscript.css" | fingerprint "sha512" }}
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        </noscript>
+    {{ end }}
+
     {{ with resources.Get "css/syntax.css" | fingerprint "sha512" }}
         <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="print" onload="this.media='all'">
     {{ end }}
