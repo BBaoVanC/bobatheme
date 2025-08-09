@@ -1,3 +1,14 @@
+.comments > h2 {
+    margin-bottom: 0;
+}
+.comments .email-address-notice {
+    margin: 0;
+    font-size: smaller;
+}
+.comments .enable-javascript-notice {
+    font-style: italic;
+}
+
 /* Isso styling */
 h4.isso-thread-heading {
     color: var(--text-0);
