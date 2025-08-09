@@ -1,3 +1,6 @@
+{{/* put comments CSS here instead of in <head> so that it doesn't get
+   * loaded unnecessarily on regular pages
+   */}}
 {{ with resources.Get "css/comments.css" | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
