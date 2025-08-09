@@ -784,10 +784,13 @@ footer p {
   padding: 4px 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  height: 2em;
+}
+.code-block > .code-header > * {
+  margin: auto 0;
 }
 .code-block > .code-header > .code-type {
   border-top-left-radius: 8px;
-  margin: auto 0;
 }
 /* TODO: make the code copy button prettier */
 .code-block > .code-header > .code-copy-button {
