@@ -31,6 +31,8 @@
    */}}
 {{ with .Site.Params.social.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
+{{ else }}
+    {{ errorf "a twitter username is required for twitter cards to work" }}
 {{ end }}
 {{ with .GetTerms "authors" }}
     {{ range . }}
