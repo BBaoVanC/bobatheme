@@ -705,19 +705,6 @@ footer p {
 }
 */
 
-/* See also formating */
-.see-also {
-  background-color: var(--background-1);
-  color: var(--text-1);
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.see-also p {
-  margin: 0;
-}
-
 /* Previous and next page buttons {{{ */
 
 .prevnext {
@@ -767,6 +754,45 @@ footer p {
 }
 
 /* }}} */
+
+/* Related posts section {{{ */
+
+/* set the margins on the contents instead of the parent .related-posts
+ * so that the posts in the list clip off the edge of the screen,
+ * which makes a more obvious indicator that it's scrollable
+ */
+
+.related-posts > hr,
+.related-posts > h1 {
+  margin: var(--page-margin);
+}
+
+.related-posts .page {
+  min-width: 300px;
+  max-width: 300px;
+
+}
+
+.related-posts .page:first-child {
+  margin-left: var(--page-margin);
+}
+.related-posts .page:last-child {
+  margin-right: var(--page-margin);
+}
+
+.related-posts .page-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  margin-bottom: var(--page-margin);
+}
+
+/* }}} */
+
+/* }}} */
+
+/* Content components (can appear both in single and list pages) {{{ */
 
 /* Code & code blocks {{{ */
 .code-block {
@@ -884,42 +910,21 @@ aside.quote {
 
 /* }}} */
 
-/* Related posts section {{{ */
-
-/* set the margins on the contents instead of the parent .related-posts
- * so that the posts in the list clip off the edge of the screen,
- * which makes a more obvious indicator that it's scrollable
- */
-
-.related-posts > hr,
-.related-posts > h1 {
-  margin: var(--page-margin);
+/* See also formating */
+.see-also {
+  background-color: var(--background-1);
+  color: var(--text-1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px 0;
 }
 
-.related-posts .page {
-  min-width: 300px;
-  max-width: 300px;
-
-}
-
-.related-posts .page:first-child {
-  margin-left: var(--page-margin);
-}
-.related-posts .page:last-child {
-  margin-right: var(--page-margin);
-}
-
-.related-posts .page-list {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-  margin-bottom: var(--page-margin);
+.see-also p {
+  margin: 0;
 }
 
 /* }}} */
 
-/* }}} */
 
 
 /* @media specializations {{{ */
