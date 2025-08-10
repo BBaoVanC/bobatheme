@@ -340,7 +340,7 @@ footer p {
    * or it will need its hover background to be chopped off on the left */
 }
 
-.header {
+.brand {
   flex-grow: 1;
   margin: 8px var(--page-margin);
   font-size: 1.25em;
@@ -348,7 +348,7 @@ footer p {
   align-items: center;
 }
 
-.header a {
+.brand a {
   color: inherit;
   font-weight: bold;
 }

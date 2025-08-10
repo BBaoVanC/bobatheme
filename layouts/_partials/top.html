@@ -1,9 +1,9 @@
-<div class="top">
-    <header class="header">
+<header class="top">
+    <div class="brand">
         <a href="{{ .Site.Home.Permalink | absLangURL }}">
             {{ .Site.Title | markdownify }}
         </a>
-    </header>
+    </div>
 
     <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
         {{ with .Site.Home }}
@@ -21,4 +21,4 @@
                href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
     </nav>
-</div>
+</header>
