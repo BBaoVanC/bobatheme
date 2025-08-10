@@ -506,6 +506,14 @@ footer p {
   margin-top: 10px;
 }
 
+:is(
+  .page-metadata-section:is(.categories, .tags, .series),
+  .page-metadata-item.authors
+) > a:not(:last-child):after {
+  color: var(--text-0);
+  content: ",";
+}
+
 .post-media {
   margin-top: 15px;
 }

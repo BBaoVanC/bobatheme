@@ -1,11 +1,8 @@
 {{ with (.GetTerms "series") }}
-    {{ $series := slice }}
-    {{ range . }}
-        {{ $series = $series | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-    {{ end }}
-
-    <div class="page-metadata-section series" data-pagefind-meta="series" aria-label="{{ i18n "aria_post_meta_series" }}">
+    <div class="page-metadata-section series" aria-label="{{ i18n "aria_post_meta_series" }}">
         {{ partial "icon.html" "files" }}
-        {{ delimit $series ", " | safeHTML }}
+        {{ range . }}
+            <a href="{{ .Permalink }}" data-pagefind-filter="series">{{ .LinkTitle }}</a>
+        {{ end }}
     </div>
 {{ end }}

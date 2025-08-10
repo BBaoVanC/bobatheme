@@ -1,11 +1,10 @@
 {{ with (.GetTerms "tags") }}
     {{ $tags := slice }}
-    {{ range . }}
-        {{ $tags = $tags | append (printf `<a href="%s">%s</a>` .Permalink .LinkTitle) }}
-    {{ end }}
 
-    <div class="page-metadata-section tags" data-pagefind-meta="tags" aria-label="{{ i18n "aria_post_meta_tags" }}">
+    <div class="page-metadata-section tags" aria-label="{{ i18n "aria_post_meta_tags" }}">
         {{ partial "icon.html" "tag" }}
-        {{ delimit $tags ", " | safeHTML }}
+        {{ range . }}
+            <a href="{{ .Permalink }}" data-pagefind-filter="tag">{{ .LinkTitle }}</a>
+        {{ end }}
     </div>
 {{ end }}
