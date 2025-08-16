@@ -24,7 +24,17 @@ series:
 resources:
   - name: feature
     src: something.webp
-    title: Some image (image format can be anything; webp is just an example)
+    title: >-
+      Fallback title if one is not provided when calling figure shortcode with
+      this listed as the src
+    params:
+      alt: Write an accessible description of this image. Don't over-write.
+
+  - src: demonstration.webp
+    params:
+      alt: >-
+        Annotate an image without giving it an explicit name (the filename is
+        simply used as the `name` instead).
 
 ---
 
