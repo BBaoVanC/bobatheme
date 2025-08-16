@@ -8,7 +8,7 @@ description = "Simple Hugo theme for boba.best and bbaovanc.com"
 homepage = "https://bbaovanc.com"
 tags = []
 features = []
-min_version = "0.93.0"
+min_version = "0.146.0"
 
 [author]
   name = "bbaovanc"
