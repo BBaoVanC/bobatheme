@@ -293,17 +293,35 @@ body {
   color: var(--text-0);
   overflow-wrap: break-word;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--page-margin);
 }
 
-.main-container {
-  margin: var(--page-margin) auto;
-  /* use padding because otherwise there's no way to have margin be both auto, and a minimum value */
-  padding: 0 var(--page-margin);
-  max-width: calc(720px + 2 * var(--page-margin)); /* padding is included in the element's width */
+.body-module {
+  width: 100%; /* without, it collapses inside flexbox for some reason TODO: figure out why */
+}
+
+.body-module--marginless {
+  margin: 0;
+}
+
+.body-module--full-width {
+  margin: 0 var(--page-margin);
+  /*
+  margin-left: var(--page-margin);
+  margin-right: var(--page-margin);
+  */
+}
+.body-module--wide {
+  margin-left: var(--page-margin);
+  margin-right: var(--page-margin);
+  max-width: 720px;
 }
 
 footer {
-  margin: var(--page-margin) 0;
+  margin-bottom: var(--page-margin);
   text-align: center;
   font-size: smaller;
 }
@@ -375,10 +393,6 @@ footer p {
 /* }}} */
 
 /* Breadcrumb navigation {{{ */
-
-.breadcrumb {
-  margin: var(--page-margin) 0;
-}
 
 .breadcrumb ul {
   margin: 0;

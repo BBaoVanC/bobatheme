@@ -1,13 +1,13 @@
 {{ define "main" }}
     {{ with .Content }}
-        <article class="homepage-content">
+        <article class="body-module body-module--wide">
             {{ . }}
         </article>
-        <hr>
+        <hr class="body-module body-module--wide">
     {{ end }}
 
     {{ if .Site.Params.homepageLatestPosts }}
-        <div class="homepage-latest-posts">
+        <div class="body-module body-module--wide">
             <h1>
                 {{ i18n "latest_posts" }}
                 {{ partial "rss-link.html" . }}

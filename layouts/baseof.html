@@ -8,29 +8,29 @@
 
         {{ partial "top.html" . }}
 
-        <div class="main-container">
-            {{ if not .IsHome }}
-                {{ partial "breadcrumb.html" . }}
-            {{ end }}
+        {{ if not .IsHome }}
+            {{ partial "breadcrumb.html" . }}
+        {{ end }}
 
-            <main id="main-content">
-                {{ block "main" . }}
-                    THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
+        {{ block "pre-body" . }}{{ end }}
+
+        <main id="main-content">
+            {{ block "main" . }}
+                THIS TEXT SHOULD NOT SHOW. YUZSIQGHE (that string is so I can grep for it)
+            {{ end }}
+        </main>
+
+        {{ if or .Site.Copyright .Site.Params.footer }}
+            <footer class="body-module body-module--wide">
+                {{ with .Site.Copyright }}
+                    {{ . | safeHTML }}
                 {{ end }}
-            </main>
 
-            {{ if or .Site.Copyright .Site.Params.footer }}
-                <footer>
-                    {{ with .Site.Copyright }}
-                        {{ . | safeHTML }}
-                    {{ end }}
-
-                    {{ with .Site.Params.footer }}
-                        {{ . | $.RenderString (dict "display" "block") }}
-                    {{ end }}
-                </footer>
-            {{ end }}
-        </div>
+                {{ with .Site.Params.footer }}
+                    {{ . | $.RenderString (dict "display" "block") }}
+                {{ end }}
+            </footer>
+        {{ end }}
 
         {{ block "post-body" . }}
             {{/* currently this is only used for related posts */}}

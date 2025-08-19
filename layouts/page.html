@@ -1,84 +1,86 @@
 {{ define "main" }}
-    <div class="page-title">
-        <h1>
-            {{ .Title | markdownify }}
-            {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-        </h1>
-    </div>
+    <article class="body-module body-module--wide">
+        <div class="page-title">
+            <h1>
+                {{ .Title | markdownify }}
+                {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+            </h1>
+        </div>
 
-    {{ partial "page-metadata/post-full.html" . }}
-    {{ partial "series-box.html" . }}
+        {{ partial "page-metadata/post-full.html" . }}
+        {{ partial "series-box.html" . }}
 
-    {{ if .Params.Toc }}
-        <div class="table-of-contents" aria-label="{{ i18n "aria_table_of_contents" }}">
-            <details>
-                <summary>{{ i18n "table_of_contents" }}</summary>
+        {{ if .Params.Toc }}
+            <div class="table-of-contents" aria-label="{{ i18n "aria_table_of_contents" }}">
+                <details>
+                    <summary>{{ i18n "table_of_contents" }}</summary>
+                    {{ .TableOfContents }}
+                </details>
+            </div>
+            <div class="table-of-contents print">
+                {{ i18n "table_of_contents" }}
                 {{ .TableOfContents }}
-            </details>
-        </div>
-        <div class="table-of-contents print">
-            {{ i18n "table_of_contents" }}
-            {{ .TableOfContents }}
-        </div>
+            </div>
+        {{ end }}
+
+        {{ partial "feature-figure.html" . }}
+
+        <article class="post-content" data-pagefind-body>
+            {{ .Content }}
+        </article>
+
+        {{ partial "series-box.html" . }}
+
+        {{ if or .NextInSection .PrevInSection }}
+            <div class="prevnext">
+                {{ with .NextInSection }}
+                    <a class="prev" href="{{ .Permalink }}">
+                        <div class="prev-caption">
+                            &larr; {{ i18n "newer_post" }}
+                        </div>
+                        <div class="prev-post">
+                            {{ .Title | markdownify }}
+                        </div>
+                    </a>
+                {{ else }}
+                    <div class="prev"></div>
+                {{ end }}
+
+                {{ with .PrevInSection }}
+                    <a class="next" href="{{ .Permalink }}">
+                        <div class="next-caption">
+                            {{ i18n "older_post" }} &rarr;
+                        </div>
+                        <div class="next-post">
+                            {{ .Title | markdownify }}
+                        </div>
+                    </a>
+                {{ else }}
+                    <div class="next"></div>
+                {{ end }}
+            </div>
+        {{ end }}
+
+        {{ if .Site.Params.shareButtons }}
+            {{ partial "share.html" . }}
+        {{ end }}
+
+        {{ if .Params.comments }}
+            <div class="comments">
+                {{ partial "comments.html" . }}
+            </div>
+        {{ end }}
     {{ end }}
 
-    {{ partial "feature-figure.html" . }}
 
-    <article class="post-content" data-pagefind-body>
-        {{ .Content }}
+    {{ define "post-body" }}
+        {{ $related := .Site.RegularPages.Related . | first 10 }}
+        {{ with $related }}
+            <div class="related-posts">
+                <hr>
+                <h1>{{ i18n "related_posts" }}</h1>
+                {{ partial "page-list.html" . }}
+            </div>
+        {{ end }}
     </article>
-
-    {{ partial "series-box.html" . }}
-
-    {{ if or .NextInSection .PrevInSection }}
-        <div class="prevnext">
-            {{ with .NextInSection }}
-                <a class="prev" href="{{ .Permalink }}">
-                    <div class="prev-caption">
-                        &larr; {{ i18n "newer_post" }}
-                    </div>
-                    <div class="prev-post">
-                        {{ .Title | markdownify }}
-                    </div>
-                </a>
-            {{ else }}
-                <div class="prev"></div>
-            {{ end }}
-
-            {{ with .PrevInSection }}
-                <a class="next" href="{{ .Permalink }}">
-                    <div class="next-caption">
-                        {{ i18n "older_post" }} &rarr;
-                    </div>
-                    <div class="next-post">
-                        {{ .Title | markdownify }}
-                    </div>
-                </a>
-            {{ else }}
-                <div class="next"></div>
-            {{ end }}
-        </div>
-    {{ end }}
-
-    {{ if .Site.Params.shareButtons }}
-        {{ partial "share.html" . }}
-    {{ end }}
-
-    {{ if .Params.comments }}
-        <div class="comments">
-            {{ partial "comments.html" . }}
-        </div>
-    {{ end }}
-{{ end }}
-
-
-{{ define "post-body" }}
-    {{ $related := .Site.RegularPages.Related . | first 10 }}
-    {{ with $related }}
-        <div class="related-posts">
-            <hr>
-            <h1>{{ i18n "related_posts" }}</h1>
-            {{ partial "page-list.html" . }}
-        </div>
-    {{ end }}
 {{ end }}
