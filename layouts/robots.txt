@@ -1,2 +1,6 @@
 User-Agent: *
 Sitemap: {{ "sitemap.xml" | absLangURL }}
+
+{{/* It complains about the raw markdown output having no title tag */ -}}
+User-Agent: Bingbot
+Disallow: /blog/*.md$
