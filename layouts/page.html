@@ -70,17 +70,17 @@
                 {{ partial "comments.html" . }}
             </div>
         {{ end }}
-    {{ end }}
-
-
-    {{ define "post-body" }}
-        {{ $related := .Site.RegularPages.Related . | first 10 }}
-        {{ with $related }}
-            <div class="related-posts">
-                <hr>
-                <h1>{{ i18n "related_posts" }}</h1>
-                {{ partial "page-list.html" . }}
-            </div>
-        {{ end }}
     </article>
+{{ end }}
+
+
+{{ define "post-body" }}
+    {{ $related := .Site.RegularPages.Related . | first 10 }}
+    {{ with $related }}
+        <div class="related-posts body-module body-module--full-width">
+            <hr>
+            <h1>{{ i18n "related_posts" }}</h1>
+            {{ partial "page-list.html" . }}
+        </div>
+    {{ end }}
 {{ end }}

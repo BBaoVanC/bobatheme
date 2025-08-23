@@ -293,14 +293,9 @@ body {
   color: var(--text-0);
   overflow-wrap: break-word;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--page-margin);
 }
 
 .body-module {
-  width: 100%; /* without, it collapses inside flexbox for some reason TODO: figure out why */
 }
 
 .body-module--marginless {

@@ -20,6 +20,10 @@
             {{ end }}
         </main>
 
+        {{ block "post-body" . }}
+            {{/* currently this is only used for related posts */}}
+        {{ end }}
+
         {{ if or .Site.Copyright .Site.Params.footer }}
             <footer class="body-module body-module--wide">
                 {{ with .Site.Copyright }}
@@ -30,10 +34,6 @@
                     {{ . | $.RenderString (dict "display" "block") }}
                 {{ end }}
             </footer>
-        {{ end }}
-
-        {{ block "post-body" . }}
-            {{/* currently this is only used for related posts */}}
         {{ end }}
     </body>
 
