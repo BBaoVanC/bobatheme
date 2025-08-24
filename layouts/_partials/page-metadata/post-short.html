@@ -1,5 +1,5 @@
 {{ if or .Date .Params.authors .Site.Params.readingtime }}
-    <div class="page-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
+    <section class="page-metadata" aria-label="{{ i18n "aria_post_metadata" }}">
         {{ if .Date }}
             <span class="page-metadata-item" aria-label="date">
                 {{ partial "icon.html" "calendar" }}
@@ -14,5 +14,5 @@
         {{ partial "page-metadata/item/series.html" . }}
         {{ partial "page-metadata/item/categories.html" . }}
         {{ partial "page-metadata/item/tags.html" . }}
-    </div>
+    </section>
 {{ end }}
