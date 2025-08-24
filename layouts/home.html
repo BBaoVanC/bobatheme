@@ -1,15 +1,15 @@
 {{ define "main" }}
     {{ with .Content }}
-        <article class="body-module body-module--wide">
+        <article class="body-module--center">
             {{ . }}
         </article>
-        <hr class="body-module body-module--wide">
+        <hr class="body-module--center">
     {{ end }}
 {{ end }}
 
 {{ define "post-body" }}
     {{ if .Site.Params.homepageLatestPosts }}
-        <div class="body-module body-module--wide">
+        <div class="body-module--center">
             <h1>
                 {{ i18n "latest_posts" }}
                 {{ partial "rss-link.html" . }}

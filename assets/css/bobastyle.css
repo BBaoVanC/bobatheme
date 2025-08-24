@@ -295,24 +295,31 @@ body {
   margin: 0;
 }
 
-.body-module {
-}
+/* body-module types:
+ *
+ * full-width: no max-width, no margin from the sides of the page
+ * full-padded: no max-width, but has margin from the left/right page edges
+ * center: max-width 720px, centered when too large, padded when screen is narrow
+ */
 
-.body-module--marginless {
-  margin: 0;
+.body-module--full-width,
+.body-module--full-padded,
+.body-module--center-wide {
+  margin-block: var(--page-margin);
 }
 
 .body-module--full-width {
-  margin: 0 var(--page-margin);
-  /*
-  margin-left: var(--page-margin);
-  margin-right: var(--page-margin);
-  */
+  margin-inline: 0;
 }
-.body-module--wide {
-  margin-left: var(--page-margin);
-  margin-right: var(--page-margin);
-  max-width: 720px;
+.body-module-full-padded {
+  margin-inline: var(--page-margin);
+}
+.body-module--center {
+  margin-inline: auto;
+  /* add the minimum margin here because we are using auto for its centering */
+  padding-inline: var(--page-margin);
+  /* account for the padding being included in the element's calculated width */
+  max-width: calc(720px + 2 * var(--page-margin));
 }
 
 footer {

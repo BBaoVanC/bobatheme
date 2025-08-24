@@ -25,7 +25,7 @@
         {{ end }}
 
         {{ if or .Site.Copyright .Site.Params.footer }}
-            <footer class="body-module body-module--wide">
+            <footer class="body-module--center">
                 {{ with .Site.Copyright }}
                     {{ . | safeHTML }}
                 {{ end }}
