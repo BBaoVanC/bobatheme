@@ -1,24 +1,26 @@
 {{ define "main" }}
-    <h1>
-        {{ partial "icon.html" "user-circle" }}
-        {{ .Title | markdownify }}
-    </h1>
+    <section class="body-module--center">
+        <h1>
+            {{ partial "icon.html" "user-circle" }}
+            {{ .Title | markdownify }}
+        </h1>
 
-    {{ with .Content }}
-        {{ . }}
-    {{ end }}
-
-    <div class="page-list">
-        {{ with .Paginator.Pages }}
-            {{ range . }}
-                <article class="page">
-                    {{ .Render "summary" }}
-                </article>
-            {{ end }}
-        {{ else }}
-            <div>
-                {{ i18n "no_posts" }}
-            </div>
+        {{ with .Content }}
+            {{ . }}
         {{ end }}
-    </div>
+
+        <div class="page-list">
+            {{ with .Paginator.Pages }}
+                {{ range . }}
+                    <article class="page">
+                        {{ .Render "summary" }}
+                    </article>
+                {{ end }}
+            {{ else }}
+                <div>
+                    {{ i18n "no_posts" }}
+                </div>
+            {{ end }}
+        </div>
+    </section>
 {{ end }}

@@ -77,7 +77,7 @@
 {{ define "post-body" }}
     {{ $related := .Site.RegularPages.Related . | first 10 }}
     {{ with $related }}
-        <div class="related-posts body-module--full-width">
+        <div class="body-module--full-width related-posts">
             <hr>
             <h1>{{ i18n "related_posts" }}</h1>
             {{ partial "page-list.html" . }}

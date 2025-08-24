@@ -20,9 +20,7 @@
             {{ end }}
         </main>
 
-        {{ block "post-body" . }}
-            {{/* currently this is only used for related posts */}}
-        {{ end }}
+        {{ block "post-body" . }}{{ end }}
 
         {{ if or .Site.Copyright .Site.Params.footer }}
             <footer class="body-module--center">
