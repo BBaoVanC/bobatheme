@@ -302,13 +302,13 @@ body {
   max-width: calc(720px + 2 * var(--page-margin)); /* padding is included in the element's width */
 }
 
-footer {
+.site-footer {
   margin: var(--page-margin) 0;
   text-align: center;
   font-size: smaller;
 }
 
-footer p {
+.site-footer p {
   margin: 0;
 }
 

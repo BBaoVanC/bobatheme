@@ -20,7 +20,7 @@
             </main>
 
             {{ if or .Site.Copyright .Site.Params.footer }}
-                <footer>
+                <footer class="site-footer">
                     {{ with .Site.Copyright }}
                         {{ . | safeHTML }}
                     {{ end }}
