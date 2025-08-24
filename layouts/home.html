@@ -3,10 +3,10 @@
         <article class="homepage-content">
             {{ . }}
         </article>
-        <hr>
     {{ end }}
 
     {{ if .Site.Params.homepageLatestPosts }}
+        <hr>
         <div class="homepage-latest-posts">
             <h1>
                 {{ i18n "latest_posts" }}
