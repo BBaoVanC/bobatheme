@@ -1,25 +1,27 @@
 {{ define "main" }}
-    <h1>
-        {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
-        {{ .Title | markdownify }}
-        {{ partial "rss-link.html" . }}
-    </h1>
+    <section>
+        <h1>
+            {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
+            {{ .Title | markdownify }}
+            {{ partial "rss-link.html" . }}
+        </h1>
 
-    {{ with .Content }}
-        {{ . }}
-    {{ end }}
-
-    <div class="list-page-container">
-        {{ with .Sections }}
-            <div class="sections">
-                {{ range . }}
-                    {{ .Render "summary" }}
-                {{ end }}
-            </div>
+        {{ with .Content }}
+            {{ . }}
         {{ end }}
 
-        {{ partial "page-list.html" .Paginator.Pages }}
-    </div>
+        <div class="list-page-container">
+            {{ with .Sections }}
+                <div class="sections">
+                    {{ range . }}
+                        {{ .Render "summary" }}
+                    {{ end }}
+                </div>
+            {{ end }}
 
-    {{ partial "pagination.html" . }}
+            {{ partial "page-list.html" .Paginator.Pages }}
+        </div>
+
+        {{ partial "pagination.html" . }}
+    </section>
 {{ end }}

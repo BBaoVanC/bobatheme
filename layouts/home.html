@@ -7,7 +7,7 @@
 
     {{ if .Site.Params.homepageLatestPosts }}
         <hr>
-        <div class="homepage-latest-posts">
+        <section class="homepage-latest-posts">
             <h1>
                 {{ i18n "latest_posts" }}
                 {{ partial "rss-link.html" . }}
@@ -16,6 +16,6 @@
             {{ partial "page-list.html" (.Paginate .Site.RegularPages).Pages }}
 
             {{ partial "pagination.html" . }}
-        </div>
+        </section>
     {{ end }}
 {{ end }}
