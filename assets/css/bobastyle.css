@@ -446,13 +446,6 @@ body {
 
 /* List layout {{{ */
 
-/* flexbox container for sections and main page list */
-.list-page-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
 .page-list {
   display: flex;
   flex-direction: column;
@@ -607,6 +600,7 @@ body {
 /* Subsections on list pages {{{ */
 
 .sections {
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   gap: 10px;

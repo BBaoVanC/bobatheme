@@ -9,17 +9,15 @@
         {{ . }}
     {{ end }}
 
-    <div class="list-page-container">
-        {{ with .Sections }}
-            <div class="sections">
-                {{ range . }}
-                    {{ .Render "summary" }}
-                {{ end }}
-            </div>
-        {{ end }}
+    {{ with .Sections }}
+        <div class="sections">
+            {{ range . }}
+                {{ .Render "summary" }}
+            {{ end }}
+        </div>
+    {{ end }}
 
-        {{ partial "page-list.html" .Paginator.Pages }}
-    </div>
+    {{ partial "page-list.html" .Paginator.Pages }}
 
     {{ partial "pagination.html" . }}
 {{ end }}
