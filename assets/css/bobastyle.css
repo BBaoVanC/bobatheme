@@ -611,6 +611,9 @@ body {
   color: var(--text-1);
   border-radius: 12px;
   padding: 1px 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .section:hover {
@@ -632,6 +635,16 @@ body {
 
 .section-description {
   margin-bottom: 5px;
+}
+
+.section-arrow {
+  margin-block: auto;
+  max-height: fit-content;
+  float: right;
+}
+.section-arrow > .icon {
+  height: 48px;
+  width: 48px;
 }
 
 /* }}} */
