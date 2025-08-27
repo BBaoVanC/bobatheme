@@ -1,13 +1,13 @@
 <header class="top">
-    <div class="brand">
+    <div class="top-brand">
         <a href="{{ .Site.Home.Permalink | absLangURL }}">
             {{ .Site.Title | markdownify }}
         </a>
     </div>
 
-    <nav class="navbar" aria-label="{{ i18n "aria_navbar" }}">
+    <nav class="top-navbar" aria-label="{{ i18n "aria_navbar" }}">
         {{ with .Site.Home }}
-            <a class="navbar-item{{ if $.IsHome }} active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
+            <a class="top-navbar-item{{ if $.IsHome }} top-navbar-item--active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
         {{ end }}
 
         {{ range .Site.Menus.main }}
@@ -16,7 +16,7 @@
             {{ if or ($.HasMenuCurrent .Menu .) (eq .Page $) }}
                 {{ $isActive = true }}
             {{ end }}
-            <a class="navbar-item{{ if $isActive }} active{{ end }}"
+            <a class="top-navbar-item{{ if $isActive }} top-navbar-item--active{{ end }}"
                {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}
                href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}

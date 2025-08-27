@@ -340,7 +340,7 @@ body {
    * or it will need its hover background to be chopped off on the left */
 }
 
-.brand {
+.top-brand {
   flex-grow: 1;
   margin: 8px var(--page-margin);
   font-size: 1.25em;
@@ -348,27 +348,27 @@ body {
   align-items: center;
 }
 
-.brand a {
+.top-brand > a {
   color: inherit;
   font-weight: bold;
 }
 
-.navbar {
+.top-navbar {
   display: flex;
   flex-wrap: wrap;
 }
 
-.navbar-item {
+.top-navbar-item {
   padding: 12px var(--page-margin);
   white-space: nowrap;
 }
 
-.navbar-item:hover {
+.top-navbar-item:hover {
   background-color: var(--background-2);
   text-decoration: none;
 }
 
-.navbar-item.active {
+.top-navbar-item--active {
   font-weight: bold;
 }
 
