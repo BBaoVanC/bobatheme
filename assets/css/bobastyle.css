@@ -174,30 +174,6 @@ video {
   max-width: 100%;
 }
 
-figure > .figure-media {
-  padding: 5px;
-}
-
-figure > .figure-media.border {
-  border: 2px solid var(--figure-border);
-}
-
-.post-media > figure > .figure-media {
-  border: 7px solid var(--figure-border);
-}
-
-figure {
-  display: block;
-  text-align: center;
-  margin: 0;
-}
-
-figcaption {
-  font-style: italic;
-  font-size: small;
-  text-align: center;
-}
-
 a {
   color: var(--link-0);
   text-decoration: inherit;
@@ -495,9 +471,7 @@ body {
   content: ",";
 }
 
-.post-media {
-  margin-top: 15px;
-}
+/* for formatting of the featured image/media, see the .featured-media class */
 
 .summary-card-description {
   margin-top: 10px;
@@ -505,6 +479,37 @@ body {
 
 .summary-card-readmore {
   margin-top: 5px;
+}
+
+/* }}} */
+
+/* Figures, and featured media component (used in page.html and summary-card) {{{ */
+
+figure > .figure-media {
+  padding: 5px;
+}
+
+figure > .figure-media.border {
+  border: 2px solid var(--figure-border);
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 0;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: small;
+  text-align: center;
+}
+
+.featured-media {
+  margin-top: 15px;
+}
+.featured-media > figure > .figure-media {
+  border: 7px solid var(--figure-border);
 }
 
 /* }}} */
