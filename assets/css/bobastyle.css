@@ -446,17 +446,24 @@ body {
 
 /* Summary card formatting {{{ */
 
-.page-list > .page {
+.summary-card {
   padding: 24px;
   border-radius: 12px;
   background-color: var(--background-1);
   color: var(--text-1);
 }
 
-/* also see .page-title in list layout section for some extra rules */
-
-.page > .page-title {
+.summary-card-title {
   margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.summary-card-title a {
+  color: inherit;
+}
+
+.summary-card-title h1 {
+  margin: 0;
 }
 
 /* hugo just can't handle this feature
@@ -492,11 +499,11 @@ body {
   margin-top: 15px;
 }
 
-.page-description {
+.summary-card-description {
   margin-top: 10px;
 }
 
-.readmore {
+.summary-card-readmore {
   margin-top: 5px;
 }
 
@@ -596,7 +603,7 @@ body {
   padding: 8px;
   border-radius: 16px;
 }
-.page-list.series-inner > .page {
+.page-list.series-inner > .summary-card {
   flex: 1;
   min-width: 49%;
 }
@@ -782,16 +789,16 @@ body {
   margin: var(--page-margin);
 }
 
-.related-posts .page {
+.related-posts .summary-card {
   min-width: 300px;
   max-width: 300px;
 
 }
 
-.related-posts .page:first-child {
+.related-posts .summary-card:first-child {
   margin-left: var(--page-margin);
 }
-.related-posts .page:last-child {
+.related-posts .summary-card:last-child {
   margin-right: var(--page-margin);
 }
 

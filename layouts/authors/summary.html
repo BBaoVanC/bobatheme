@@ -1,5 +1,5 @@
-<article class="page">
-    <h2 class="page-title">
+<article class="summary-card">
+    <h2 class="summary-card-title">
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
     </h2>
@@ -7,12 +7,12 @@
     {{ partial "page-metadata/author.html" . }}
 
     {{ with .Summary }}
-        <div class="page-description">
+        <div class="summary-card-description">
             {{ . }}
         </div>
     {{ end }}
 
-    <div class="readmore">
+    <div class="summary-card-readmore">
         <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
     </div>
 </article>

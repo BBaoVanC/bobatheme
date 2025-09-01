@@ -1,5 +1,5 @@
-<article class="page">
-    <h2 class="page-title">
+<article class="summary-card">
+    <h2 class="summary-card-title">
         {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
@@ -8,7 +8,7 @@
     {{ partial "page-metadata/series.html" . }}
 
     {{ with .Summary }}
-        <div class="page-description">
+        <div class="summary-card-description">
             {{ . }}
         </div>
     {{ end }}
