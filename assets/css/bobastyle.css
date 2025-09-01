@@ -444,16 +444,7 @@ body {
 
 /* }}} */
 
-/* List layout {{{ */
-
-.page-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  gap: 40px;
-  margin-top: 16px;
-}
+/* Summary card formatting {{{ */
 
 .page-list > .page {
   padding: 24px;
@@ -461,6 +452,8 @@ body {
   background-color: var(--background-1);
   color: var(--text-1);
 }
+
+/* also see .page-title in list layout section for some extra rules */
 
 .page > .page-title {
   margin-top: 0;
@@ -473,18 +466,6 @@ body {
   opacity: .75;
 }
 */
-
-.page-title {
-  margin-bottom: 10px;
-}
-
-.page-title a {
-  color: inherit;
-}
-
-.page-title h1 {
-  margin: 0;
-}
 
 .page-metadata {
   margin-bottom: 24px;
@@ -517,6 +498,31 @@ body {
 
 .readmore {
   margin-top: 5px;
+}
+
+/* }}} */
+
+/* List layout {{{ */
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.page-title {
+  margin-bottom: 10px;
+}
+
+.page-title a {
+  color: inherit;
+}
+
+.page-title h1 {
+  margin: 0;
 }
 
 /* }}} */
