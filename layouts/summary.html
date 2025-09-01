@@ -1,19 +1,21 @@
-<h2 class="page-title">
-    {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-</h2>
+<article class="page">
+    <h2 class="page-title">
+        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+    </h2>
 
-{{ partial "page-metadata/post-short.html" . }}
+    {{ partial "page-metadata/post-short.html" . }}
 
-{{ partial "feature-figure.html" . }}
+    {{ partial "feature-figure.html" . }}
 
-{{ with .Summary }}
-    <div class="page-description">
-        {{ . }}
+    {{ with .Summary }}
+        <div class="page-description">
+            {{ . }}
+        </div>
+    {{ end }}
+
+    <div class="readmore">
+        <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
     </div>
-{{ end }}
-
-<div class="readmore">
-    <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
-</div>
+</article>

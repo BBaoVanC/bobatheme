@@ -1,21 +1,21 @@
-<h2 class="page-title">
-    {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-</h2>
+<article class="page">
+    <h2 class="page-title">
+        {{ with .Parent.Params.icon }}{{ partial "icon.html" . }}{{ end }}
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+    </h2>
 
-{{ partial "page-metadata/series.html" . }}
+    {{ partial "page-metadata/series.html" . }}
 
-{{ with .Summary }}
-    <div class="page-description">
-        {{ . }}
-    </div>
-{{ end }}
-
-<div class="page-list series-inner">
-    {{ range .Data.Pages.Reverse }}
-        <article class="page">
-            {{ .Render "summary" }}
-        </article>
+    {{ with .Summary }}
+        <div class="page-description">
+            {{ . }}
+        </div>
     {{ end }}
-</div>
+
+    <div class="page-list series-inner">
+        {{ range .Data.Pages.Reverse }}
+            {{ .Render "summary" }}
+        {{ end }}
+    </div>
+</article>
