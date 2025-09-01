@@ -10,12 +10,10 @@
         {{ . }}
     {{ end }}
 
-    <div class="page-list series">
+    <div class="page-list page-list--series">
         {{ with .Paginator.Pages }}
             {{ range . }}
-                <div class="page series">
-                    {{ .Render "summary" }}
-                </div>
+                {{ .Render "summary" }}
             {{ end }}
         {{ else }}
             <div>

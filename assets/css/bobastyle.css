@@ -589,17 +589,11 @@ figcaption {
 
 /* Series list layout {{{ */
 
-.page-list.series {
-  display: flex;
+.page-list--series {
   gap: 80px;
-  flex-flow: row wrap;
-  list-style: none;
-  color: var(--text-0);
-  padding: 8px;
-  border-radius: 16px;
 }
 
-.page-list.series-inner {
+.page-list--series-inner {
   gap: 10px;
   flex-direction: row;
   flex-flow: row wrap;
@@ -608,7 +602,7 @@ figcaption {
   padding: 8px;
   border-radius: 16px;
 }
-.page-list.series-inner > .summary-card {
+.page-list--series-inner > .summary-card {
   flex: 1;
   min-width: 49%;
 }
