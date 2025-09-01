@@ -48,6 +48,8 @@ post_count:
 # Navigation
 read_more:
   other: "Read more"
+see_posts:
+  other: "See posts"
 
 related_posts:
   other: "Related Posts"

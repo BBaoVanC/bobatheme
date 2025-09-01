@@ -1,16 +1,18 @@
-<h2 class="page-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
-</h2>
+<article class="summary-card">
+    <h2 class="summary-card-title">
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Draft }}{{ partial "icon.html" "write" }}{{ end }}
+    </h2>
 
-{{ partial "page-metadata/author.html" . }}
+    {{ partial "page-metadata/author.html" . }}
 
-{{ with .Summary }}
-    <div class="page-description">
-        {{ . }}
+    {{ with .Summary }}
+        <div class="summary-card-description">
+            {{ . }}
+        </div>
+    {{ end }}
+
+    <div class="summary-card-readmore">
+        <a href="{{ .Permalink }}">{{ i18n "see_posts" }} &rarr;</a>
     </div>
-{{ end }}
-
-<div class="readmore">
-    <a href="{{ .Permalink }}">{{ i18n "read_more" }} &rarr;</a>
-</div>
+</article>
