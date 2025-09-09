@@ -784,7 +784,7 @@ figcaption {
  */
 
 .related-posts > hr,
-.related-posts > h1 {
+.related-posts > h2 {
   margin: var(--page-margin);
 }
 
