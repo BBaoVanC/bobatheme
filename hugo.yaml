@@ -21,11 +21,6 @@ taxonomies:
 outputs:
   page:
     - html
-    - markdown
-
-outputFormats:
-  markdown:
-    ugly: true
 
 privacy:
   googleAnalytics:
