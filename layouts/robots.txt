@@ -1,7 +1,3 @@
-{{/* It complains about the raw markdown output having no title tag */ -}}
-User-Agent: Bingbot
-Disallow: /blog/*.md$
-
 User-Agent: *
 Allow: /
 
