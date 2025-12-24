@@ -1,19 +1,19 @@
-<a class="section-anchor" href="{{ .Permalink }}">
-    <div class="section">
+<a class="section-card-anchor" href="{{ .Permalink }}">
+    <div class="section-card">
         <div>
-            <h2 class="section-title">
+            <h2 class="section-card-title">
                 {{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}
                 {{ .Title | markdownify }}
             </h2>
 
             {{ with .Summary }}
-                <div class="section-description">
+                <div class="section-card-description">
                     {{ . }}
                 </div>
             {{ end }}
         </div>
 
-        <div class="section-arrow">
+        <div class="section-card-arrow">
             {{ partial "icon.html" "arrow-right" }}
         </div>
     </div>

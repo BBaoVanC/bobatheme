@@ -618,7 +618,7 @@ figcaption {
   gap: 10px;
 }
 
-.section {
+.section-card {
   background-color: var(--background-1);
   color: var(--text-1);
   border-radius: 12px;
@@ -628,33 +628,33 @@ figcaption {
   justify-content: space-between;
 }
 
-.section:hover {
+.section-card:hover {
   background-color: var(--background-2);
   color: var(--text-2);
 }
 
-.section-title {
+.section-card-title {
   margin: 10px 0;
 }
 
-.section-anchor {
+.section-card-anchor {
   color: inherit;
 }
 
-.section-anchor:hover {
+.section-card-anchor:hover {
   text-decoration: none;
 }
 
-.section-description {
+.section-card-description {
   margin-bottom: 5px;
 }
 
-.section-arrow {
+.section-card-arrow {
   margin-block: auto;
   max-height: fit-content;
   float: right;
 }
-.section-arrow > .icon {
+.section-card-arrow > .icon {
   height: 48px;
   width: 48px;
 }
