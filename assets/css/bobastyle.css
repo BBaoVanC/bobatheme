@@ -960,7 +960,7 @@ aside.quote {
 
 /* Print compatibility {{{ */
 @media print {
-  .top > .navbar,
+  .top-navbar,
   .content-heading-link,
   .post-meta-edit-history,
   .post-meta-view-markdown,
@@ -979,7 +979,7 @@ aside.quote {
   .top {
     background-color: unset;
   }
-  .top > .header {
+  .top-brand {
     margin-left: 0;
     margin-right: 0;
   }
