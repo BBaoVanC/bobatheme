@@ -823,7 +823,7 @@ figcaption {
   background-color: var(--background-1);
   border-radius: 8px;
 }
-.code-block > .code-header {
+.code-block-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -833,17 +833,17 @@ figcaption {
   border-top-right-radius: 8px;
   height: 2em;
 }
-.code-block > .code-header > * {
+.code-block-header > * {
   margin: auto 0;
 }
-.code-block > .code-header > .code-type {
+.code-block-type {
   border-top-left-radius: 8px;
 }
 /* TODO: make the code copy button prettier */
-.code-block > .code-header > .code-copy-button {
+.code-block-copy-button {
   color: var(--link-1);
 }
-.code-block > .code-header > .code-copy-button:hover {
+.code-block-copy-button:hover {
   cursor: pointer;
 }
 .code-block > .highlight {
@@ -877,7 +877,7 @@ figcaption {
   overflow-wrap: break-word;
 }
 
-.code-block > .code-header > .code-type,
+.code-block-type,
 code {
   border-radius: 5px;
 }
