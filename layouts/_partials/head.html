@@ -68,19 +68,12 @@
             >
     </script>
 
-    {{ if eq .Layout "search" }}
-        {{ with resources.Get "css/search.css" | fingerprint "sha512" }}
-            <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-        {{ end }}
-
-        <link rel="stylesheet" type="text/css" href="{{ absURL "pagefind/pagefind-ui.css" }}" crossorigin="anonymous">
-        <script src="{{ absURL "pagefind/pagefind-ui.js" }}" crossorigin="anonymous"></script>
-        <script>
-            window.addEventListener('DOMContentLoaded', (event) => {
-                new PagefindUI({ element: "#search-box", showSubResults: true });
-            });
-        </script>
+    {{ with resources.Get "css/search.css" | fingerprint "sha512" }}
+        <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
+
+    <link rel="stylesheet" type="text/css" href="{{ absURL "pagefind/pagefind-component-ui.css" }}" crossorigin="anonymous">
+    <script src="{{ absURL "pagefind/pagefind-component-ui.js" }}" type="module" crossorigin="anonymous"></script>
 
     {{ with .Site.Params.faviconSVG }}
         <link rel="icon" href="{{ . | absURL }}" />

@@ -5,6 +5,9 @@
         </a>
     </div>
 
+    <pagefind-modal-trigger></pagefind-modal-trigger>
+    <pagefind-modal></pagefind-modal>
+
     <nav class="top-navbar" aria-label="{{ i18n "aria_navbar" }}">
         {{ with .Site.Home }}
             <a class="top-navbar-item{{ if $.IsHome }} top-navbar-item--active{{ end }}" href="{{ .Permalink | absLangURL }}">{{ .Title | markdownify }}</a>
