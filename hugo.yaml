@@ -24,19 +24,19 @@ outputs:
   home:
     - html
     - rss
-    - REDIR
+    - redirects
 
 outputFormats:
   # https://honnef.co/articles/generating-netlify-_redirects-from-hugo/
-  REDIR:
-    mediaType: text/caddy
+  redirects:
     baseName: _redirects
     isPlainText: true
-    notAlternative: true
+    mediaType: text/redirects
+    root: true
 
 mediaTypes:
   # https://honnef.co/articles/generating-netlify-_redirects-from-hugo/
-  text/caddy:
+  text/redirects:
     delimeter: ""
 
 privacy:
