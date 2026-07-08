@@ -1,0 +1,7 @@
+{{ range hugo.Sites -}}
+{{ range $p := .Pages -}}
+{{ range .Aliases -}}
+{{ . }} {{ $p.RelPermalink }}
+{{ end -}}
+{{ end -}}
+{{ end -}}

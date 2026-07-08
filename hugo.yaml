@@ -21,6 +21,23 @@ taxonomies:
 outputs:
   page:
     - html
+  home:
+    - html
+    - rss
+    - REDIR
+
+outputFormats:
+  # https://honnef.co/articles/generating-netlify-_redirects-from-hugo/
+  REDIR:
+    mediaType: text/caddy
+    baseName: _redirects
+    isPlainText: true
+    notAlternative: true
+
+mediaTypes:
+  # https://honnef.co/articles/generating-netlify-_redirects-from-hugo/
+  text/caddy:
+    delimeter: ""
 
 privacy:
   googleAnalytics:
