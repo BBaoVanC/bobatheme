@@ -14,9 +14,8 @@ async function copy_to_clipboard(button) {
     await navigator.clipboard.writeText(rawCode);
 
     // TODO: maybe we could add a fancier indicator, like a flash or something
-    const originalCopyText = button.innerHTML;
     button.innerHTML = "Copied!";
     setTimeout(() => {
-        button.innerHTML = originalCopyText;
+        button.innerHTML = "{{ i18n "copy_to_clipboard" }}";
     }, 3000);
 }

@@ -19,8 +19,10 @@
         <link rel="stylesheet" type="text/css" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="print" onload="this.media='all'">
     {{ end }}
 
-    {{ with resources.Get "js/bobatheme.js" | fingerprint "sha512" }}
-        <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ with resources.Get "js/bobatheme.tmpl.js" }}
+        {{ with resources.ExecuteAsTemplate "js/bobatheme.js" $ . | fingerprint "sha512" }}
+            <script defer src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+        {{ end }}
     {{ end }}
     {{ if not hugo.IsServer }}
         <script defer data-domain="bbaovanc.com" src="https://plausible.bbaovanc.com/js/bobalytics.outbound-links.js"></script>
